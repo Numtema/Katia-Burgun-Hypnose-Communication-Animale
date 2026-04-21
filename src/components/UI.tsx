@@ -32,9 +32,9 @@ export function HlsBackgroundVideo({ src, className = "", style = {} }: { src: s
   );
 }
 
-export function SectionBadge({ children }: { children: React.ReactNode }) {
+export function SectionBadge({ children, className }: { children: React.ReactNode; className?: string; }) {
   return (
-    <div className="liquid-glass inline-flex items-center rounded-full px-4 py-1.5 text-[10px] font-medium text-site opacity-90 uppercase tracking-widest font-body border border-site">
+    <div className={cn("liquid-glass inline-flex items-center rounded-full px-4 py-1.5 text-[10px] font-medium text-site opacity-90 uppercase tracking-widest font-body border border-site", className)}>
       <span className="relative z-10">{children}</span>
     </div>
   );

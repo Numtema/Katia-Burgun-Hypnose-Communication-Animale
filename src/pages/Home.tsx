@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, MapPin, Calendar, Heart, ChevronRight, Sparkles, MessageCircle, GraduationCap, Plus, Star } from 'lucide-react';
+import { Sparkles, MessageCircle, GraduationCap, Plus, Star } from 'lucide-react';
 import { HlsBackgroundVideo, SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
 
 const HERO_VIDEO = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4";
@@ -12,12 +12,12 @@ const communicationImg = "https://images.unsplash.com/photo-1541364983171-a8ba01
 const formationImg = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200";
 
 const faqs = [
-  { q: "Comment se déroule une séance d'hypnose ?", a: "La séance débute par un échange pour définir votre objectif. Ensuite, je vous guide vers un état de relaxation profonde (transe légère) où nous travaillons avec votre inconscient via des métaphores et des suggestions bienveillantes. Vous restez maître de vous-même à chaque instant." },
-  { q: "La communication animale, ça marche vraiment ?", a: "Oui, c'est une connexion de cœur à cœur (télépathique) qui permet de recevoir des informations sensorielles, émotionnelles et mentales de l'animal. Cela permet de comprendre ses besoins profonds et d'apaiser des troubles du comportement souvent liés au vécu ou à l'environnement." },
-  { q: "Les séances sont-elles remboursées ?", a: "L'hypnose n'est pas remboursée par la Sécurité Sociale, mais de nombreuses mutuelles prennent en charge une partie ou la totalité des séances (MGEN, Allianz, AXA, etc.). Vérifiez auprès de votre contrat. Je vous remets une facture systématiquement." },
-  { q: "Puis-je faire une séance à distance ?", a: "Tout à fait. La communication animale se fait exclusivement à distance. Pour l'hypnose, les séances en visio sont tout aussi efficaces qu'en cabinet, du moment que vous êtes dans un endroit calme où vous ne serez pas dérangé." },
-  { q: "Combien de séances sont nécessaires ?", a: "C'est variable selon chaque personne et chaque objectif. Parfois une seule séance suffit pour un déclic majeur (notamment en communication animale ou arrêt du tabac), mais un accompagnement de 3 à 5 séances est souvent idéal pour ancrer un changement profond et durable." },
-  { q: "Comment annuler un rendez-vous ?", a: "Par respect pour mon temps de travail et pour les personnes en attente, merci de me prévenir au moins 48h à l'avance. Tout rendez-vous annulé moins de 48h avant la séance est dû." }
+  { q: "Quelle est la différence entre l'hypnose Ericksonienne et la communication animale ?", a: "L'hypnose Ericksonienne s'adresse à l'humain. Elle vise à mobiliser vos ressources intérieures pour retrouver un mieux-être, dépasser certains blocages ou apaiser le stress.\nLa communication animale s'adresse à la compréhension de l'animal, de ses émotions, de ses besoins et de la relation que vous vivez avec lui." },
+  { q: "Comment savoir quel accompagnement choisir ?", a: "Si votre besoin concerne votre état émotionnel, votre stress, votre sommeil ou un blocage personnel, l'hypnose est la voie la plus adaptée.\nSi vous cherchez à mieux comprendre votre animal, un comportement ou une situation que vous vivez avec lui, la communication animale est la bonne porte d'entrée." },
+  { q: "Les séances peuvent-elles se faire à distance ?", a: "Oui. Les séances d'hypnose comme les consultations en communication animale peuvent être proposées à distance selon votre situation." },
+  { q: "La communication animale remplace-t-elle un vétérinaire ?", a: "Non. La communication animale ne remplace jamais un avis, un diagnostic ou un suivi vétérinaire. Elle vient en complément d'une démarche de soin et de compréhension." },
+  { q: "Combien de séances d'hypnose faut-il prévoir ?", a: "Cela dépend de votre objectif et de votre rythme. Certaines personnes ressentent un apaisement dès les premières séances, d'autres ont besoin d'un accompagnement sur plusieurs rendez-vous." },
+  { q: "Comment se passe une consultation en communication animale ?", a: "Vous m'envoyez une photo récente de votre animal ainsi que vos questions. Après la séance, je vous fais une restitution des informations perçues et nous échangeons ensemble." }
 ];
 
 export default function Home() {
@@ -29,33 +29,52 @@ export default function Home() {
       <section id="home" className="relative h-screen bg-site flex items-center overflow-hidden transition-colors duration-500">
         <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-40 grayscale mix-blend-[var(--glass-blend)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/80 via-[var(--site-bg)]/20 to-[var(--site-bg)]" />
-        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
-          <SectionBadge>Séances en ligne & Cabinet</SectionBadge>
-          <BlurText text="Retrouvez l'harmonie avec" delay={40} className="justify-center mt-8 text-4xl sm:text-7xl italic font-heading text-site" />
-          <BlurText text="vous-même et votre animal" delay={60} className="justify-center mt-2 text-4xl sm:text-7xl italic font-heading text-[#6d8b7a] dark:text-[#8ba394]" />
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="mt-8 max-w-3xl mx-auto text-sm sm:text-base font-light text-[var(--site-fg)] opacity-70 leading-relaxed font-body">
-            Hypnose Ericksonienne & Communication Intuitive : libérez vos blocages et créez un lien profond avec vos compagnons. Un accompagnement bienveillant en Normandie et à distance.
-          </motion.p>
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
-            <PrimaryButton href="/#services">Découvrir les services</PrimaryButton>
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-[var(--site-border)] px-8 py-3.5 text-[11px] uppercase tracking-widest font-bold text-site transition-all hover:bg-[var(--site-surface)]">Prendre rendez-vous</a>
-          </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-12">
+          <SectionBadge>Hypnose Ericksonienne & Communication animale</SectionBadge>
+          <BlurText text="Hypnose pour vous," delay={40} className="justify-center mt-8 text-4xl sm:text-6xl md:text-7xl italic font-heading text-site" />
+          <BlurText text="communication animale pour votre compagnon" delay={60} className="justify-center mt-2 text-3xl sm:text-5xl md:text-6xl italic font-heading text-[#6d8b7a] dark:text-[#8ba394]" />
           
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
-            transition={{ delay: 2, duration: 1 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          >
-            <span className="text-[9px] uppercase tracking-[0.3em] font-medium text-[var(--site-muted)]">Découvrir</span>
-            <div className="w-px h-8 bg-site opacity-20 relative overflow-hidden">
-              <motion.div 
-                animate={{ y: [0, 32] }}
-                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                className="w-full h-1/2 bg-[#8ba394] absolute top-0"
-              />
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="mt-8 max-w-4xl mx-auto text-sm sm:text-base font-light text-[var(--site-fg)] opacity-80 leading-relaxed font-body">
+            À Fontaine-le-Dun, en Normandie et à distance, Katia Burgun accompagne les humains en hypnose Ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
+          </motion.p>
+          
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4, duration: 1 }} className="mt-4 max-w-2xl mx-auto text-sm sm:text-base font-medium text-site italic">
+            Deux accompagnements distincts, une même intention : remettre de l’écoute, du sens et de l’apaisement dans votre vie et dans votre lien avec votre animal.
+          </motion.p>
+          
+          <div className="mt-12 flex flex-wrap justify-center gap-6">
+            <PrimaryButton href="#contact">Prendre rendez-vous</PrimaryButton>
+            <a href="#services" className="inline-flex items-center gap-2 rounded-full border border-[var(--site-border)] px-8 py-3.5 text-[11px] uppercase tracking-widest font-bold text-site transition-all hover:bg-[var(--site-surface)]">Découvrir les accompagnements</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Orientation immédiate */}
+      <section className="bg-[var(--site-surface-solid)] py-16 px-6 lg:px-16 border-y border-site">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+             <h2 className="text-2xl sm:text-3xl text-site font-heading italic">Vous êtes au bon endroit si...</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 sm:p-10 rounded-[2.5rem] bg-[var(--site-bg)] border border-site flex flex-col h-full hover:border-[#8ba394]/50 transition-colors">
+               <SectionBadge className="self-start mb-6 !bg-[#8ba394]/10 !text-[#8ba394] !border-[#8ba394]/20">Pour vous</SectionBadge>
+               <p className="text-[var(--site-muted)] text-sm sm:text-base font-light leading-relaxed mb-10 flex-1">
+                 Vous ressentez du stress, des blocages, une fatigue émotionnelle, des difficultés de sommeil ou le besoin de retrouver un apaisement intérieur.
+               </p>
+               <a href="/hypnose-ericksonienne-houdetot" className="text-xs uppercase tracking-widest font-bold text-[#8ba394] hover:text-[#7a9283] transition-colors self-start border-b border-transparent hover:border-[#8ba394]">
+                 Découvrir l'hypnose →
+               </a>
             </div>
-          </motion.div>
+            <div className="p-8 sm:p-10 rounded-[2.5rem] bg-[var(--site-bg)] border border-site flex flex-col h-full hover:border-[#8ba394]/50 transition-colors">
+               <SectionBadge className="self-start mb-6">Pour votre animal</SectionBadge>
+               <p className="text-[var(--site-muted)] text-sm sm:text-base font-light leading-relaxed mb-10 flex-1">
+                 Vous souhaitez mieux comprendre un comportement, une émotion, un changement, une inquiétude, ou renforcer votre lien avec votre compagnon.
+               </p>
+               <a href="/communication-animale" className="text-xs uppercase tracking-widest font-bold text-[#8ba394] hover:text-[#7a9283] transition-colors self-start border-b border-transparent hover:border-[#8ba394]">
+                 Découvrir la communication animale →
+               </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -63,7 +82,7 @@ export default function Home() {
       <section className="bg-site py-24 px-6 border-b border-site transition-colors duration-500">
         <div className="mx-auto max-w-4xl text-center">
           <p className="font-heading text-3xl sm:text-5xl italic text-site leading-tight mb-8">
-            « L'harmonie naît de l'écoute : celle de notre inconscient et celle du cœur de nos animaux. »
+            « L'harmonie naît de l'écoute : celle de soi, et celle du vivant. »
           </p>
           <div className="flex items-center justify-center gap-4">
             <div className="w-8 h-[1px] bg-[#8ba394]" />
@@ -73,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="bg-site py-24 sm:py-32 px-6 lg:px-16 overflow-hidden transition-colors duration-500">
+      <section id="about" className="bg-site py-24 sm:py-32 px-6 lg:px-16 overflow-hidden transition-colors duration-500 border-b border-site">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-site group">
@@ -82,57 +101,101 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:col-span-7 flex flex-col items-start">
-            <SectionBadge>À propos</SectionBadge>
-            <h2 className="mt-8 text-4xl sm:text-6xl text-site font-heading italic leading-tight">Une passionnée du vivant, dédiée à <span className="text-[#8ba394]">l'harmonie</span></h2>
+            <h2 className="text-4xl sm:text-5xl text-site font-heading italic leading-tight">Une approche sensible du vivant, au service de <span className="text-[#8ba394]">l'humain et de l'animal</span></h2>
             <div className="mt-8 space-y-6 text-[var(--site-muted)] font-light text-sm sm:text-base max-w-xl leading-relaxed">
-              <p>Depuis toujours, j'ai ressenti un lien profond et inexplicable avec les animaux. Je sentais qu'ils avaient des choses à nous dire, bien au-delà de leurs simples comportements.</p>
-              <p>Très vite, je me suis rendu compte que le bien-être de l'animal est intimement lié à celui de son gardien. Un animal stressé est souvent l'éponge des émotions de son humain. C'est pour cette raison que j'ai ajouté une corde à mon arc en me formant à l'Hypnose Ericksonienne.</p>
-              <p>Aujourd'hui, ma double compétence me permet d'offrir un accompagnement global : j'apaise l'animal par la communication intuitive, et j'accompagne l'humain vers la sérénité grâce à l'hypnose.</p>
+              <p>Depuis toujours, je ressens un lien profond avec les animaux et une attention particulière à ce qui ne se dit pas toujours avec des mots. Avec le temps, une évidence s'est imposée : le bien-être de l'animal et celui de son humain sont souvent intimement liés.</p>
+              <p>C'est cette compréhension qui m'a conduite à développer une double approche. D'un côté, la communication animale me permet d'explorer les ressentis, les besoins et les messages de l'animal. De l'autre, l'hypnose Ericksonienne m'offre un cadre d'accompagnement pour aider l'humain à retrouver de l'apaisement, du recul et un nouvel équilibre intérieur.</p>
+              <p>Aujourd'hui, j'accompagne chacun avec bienveillance, en cabinet à Fontaine-le-Dun et à distance, dans le respect de son rythme, de sa sensibilité et de son histoire.</p>
             </div>
             
-            <div className="mt-12 grid grid-cols-3 gap-8 w-full border-t border-site pt-10">
-              {[['800h', 'De pratique'], ['+250', 'Accompagnés'], ['2', 'Spécialités']].map(([v, l]) => (<div key={l}><div className="text-3xl font-heading italic text-[#6d8b7a] dark:text-[#8ba394]">{v}</div><div className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-medium">{l}</div></div>))}
+            <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-8 w-full border-t border-site pt-10">
+              {[['800h', 'De pratique'], ['+250', 'Accompagnés'], ['2', 'Spécialités complémentaires']].map(([v, l]) => (<div key={l}><div className="text-3xl font-heading italic text-[#6d8b7a] dark:text-[#8ba394]">{v}</div><div className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-medium leading-tight mt-1">{l}</div></div>))}
             </div>
-            <div className="mt-12"><PrimaryButton href="/qui-suis-je" className="bg-[var(--site-surface)] border border-site px-10">En savoir plus sur moi</PrimaryButton></div>
+            <div className="mt-12"><PrimaryButton href="/qui-suis-je" className="bg-[var(--site-surface)] border border-site px-10">En savoir plus sur mon parcours</PrimaryButton></div>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section id="services" className="bg-site py-24 sm:py-32 px-6 lg:px-16 border-t border-site transition-colors duration-500">
+      <section id="services" className="bg-site py-24 sm:py-32 px-6 lg:px-16 transition-colors duration-500">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center text-center mb-24">
-            <SectionBadge>Expertise</SectionBadge>
-            <h2 className="mt-8 text-5xl sm:text-7xl text-site font-heading italic">Services <span className="text-[#8ba394]">& Tarifs</span></h2>
-            <p className="mt-6 text-[var(--site-muted)] max-w-lg font-light">Des accompagnements sur-mesure pour vous et vos animaux, en cabinet ou à distance.</p>
+            <h2 className="text-4xl sm:text-6xl text-site font-heading italic">Des accompagnements adaptés à <span className="text-[#8ba394]">votre besoin</span></h2>
+            <p className="mt-6 text-[var(--site-muted)] max-w-2xl mx-auto font-light leading-relaxed">Vous pouvez consulter pour vous-même, pour votre animal, ou pour avancer plus sereinement dans la relation que vous partagez.</p>
           </div>
           
           <div className="space-y-32">
-            <ServiceRow 
-              icon={MessageCircle} 
-              title="Communication Animale" 
-              price="80€ / Consultation" 
-              desc="Écoutez ce que votre animal a à vous dire. Une connexion intuitive pour comprendre ses émotions et ses besoins profonds." 
-              image={communicationImg}
-              href="/communication-animale"
-            />
-            <ServiceRow 
-              reverse 
-              icon={Sparkles} 
-              title="Hypnose Ericksonienne" 
-              price="60€ / Séance (1h30)" 
-              desc="Libérez votre potentiel inconscient. Un voyage intérieur pour apaiser le stress, retrouver le sommeil et dépasser vos blocages." 
-              image={hypnoseImg} 
-              href="/hypnose-ericksonienne-houdetot"
-            />
-            <ServiceRow 
-              icon={GraduationCap} 
-              title="Formation" 
-              price="150€ / Personne" 
-              desc="Réveillez vos capacités intuitives. Apprenez à communiquer avec le vivant lors d'une journée d'initiation à mon domicile." 
-              image={formationImg} 
-              href="/formation-initiation-communication-animale"
-            />
+            {/* Service 1 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-site group">
+                <img src={communicationImg} className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" alt="Communication animale" />
+                <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><MessageCircle className="h-5 w-5 text-[#6d8b7a] dark:text-[#8ba394]" /></div>
+              </div>
+              <div className="flex flex-col items-start px-2">
+                <SectionBadge className="mb-6">Communication animale</SectionBadge>
+                <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">Mieux comprendre ce que votre animal exprime</h3>
+                <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">La communication animale permet d'explorer les ressentis, les émotions et les besoins de votre compagnon. Elle peut vous aider à mettre du sens sur certains comportements, à mieux vivre une période de changement, ou à renforcer votre lien avec lui.</p>
+                <div className="mb-10 text-sm">
+                   <strong className="text-site font-medium block mb-2">Cas fréquents :</strong>
+                   <span className="text-[var(--site-muted)] font-light leading-relaxed">Changement de comportement, stress, incompréhension, séparation, arrivée d'un nouvel animal, déménagement, fin de vie, besoin de mieux comprendre ce que vit votre compagnon.</span>
+                </div>
+                <div className="flex items-center gap-3 mb-8 bg-[var(--site-surface)] px-6 py-3 rounded-full border border-site">
+                  <span className="text-[#6d8b7a] dark:text-[#8ba394] font-heading italic text-xl">80 €</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold text-[var(--site-muted)]">La consultation</span>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                   <PrimaryButton href="/communication-animale" className="bg-[var(--site-surface)] border border-site px-6 py-3 text-xs sm:text-sm">Découvrir la communication animale</PrimaryButton>
+                   <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-[#8ba394]/40 px-6 py-3 text-[10px] uppercase tracking-widest font-bold text-[#6d8b7a] dark:text-[#8ba394] hover:bg-[#8ba394]/10 transition-all">Réserver</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Service 2 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:flex-row-reverse">
+              <div className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-site group lg:order-2">
+                <img src={hypnoseImg} className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" alt="Hypnose Ericksonienne" />
+                <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><Sparkles className="h-5 w-5 text-[#6d8b7a] dark:text-[#8ba394]" /></div>
+              </div>
+              <div className="flex flex-col items-start px-2 lg:order-1">
+                <SectionBadge className="mb-6">Hypnose Ericksonienne</SectionBadge>
+                <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">Retrouver un mieux-être intérieur durable</h3>
+                <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">L'hypnose Ericksonienne est un accompagnement centré sur vos ressources intérieures. Elle peut vous aider à apaiser le stress, retrouver un sommeil plus serein, traverser une période difficile, dépasser certains blocages et avancer avec plus de clarté.</p>
+                <div className="mb-10 text-sm">
+                   <strong className="text-site font-medium block mb-2">Cas fréquents :</strong>
+                   <span className="text-[var(--site-muted)] font-light leading-relaxed">Stress, anxiété, sommeil, surcharge émotionnelle, manque de confiance, schémas répétitifs, besoin de recentrage.</span>
+                </div>
+                <div className="flex items-center gap-3 mb-8 bg-[var(--site-surface)] px-6 py-3 rounded-full border border-site">
+                  <span className="text-[#6d8b7a] dark:text-[#8ba394] font-heading italic text-xl">60 €</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold text-[var(--site-muted)]">La séance d'1h30</span>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                   <PrimaryButton href="/hypnose-ericksonienne-houdetot" className="bg-[var(--site-surface)] border border-site px-6 py-3 text-xs sm:text-sm">Découvrir l'hypnose</PrimaryButton>
+                   <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-[#8ba394]/40 px-6 py-3 text-[10px] uppercase tracking-widest font-bold text-[#6d8b7a] dark:text-[#8ba394] hover:bg-[#8ba394]/10 transition-all">Réserver</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Service 3 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-site group">
+                <img src={formationImg} className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" alt="Formation Initiation" />
+                <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><GraduationCap className="h-5 w-5 text-[#6d8b7a] dark:text-[#8ba394]" /></div>
+              </div>
+              <div className="flex flex-col items-start px-2">
+                <SectionBadge className="mb-6">Formation en communication animale</SectionBadge>
+                <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">Développer votre sensibilité et votre écoute intuitive</h3>
+                <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">Lors de cette journée d'initiation, je vous transmets les bases de la communication animale dans un cadre simple, accessible et bienveillant. Une formation pensée pour les personnes qui souhaitent découvrir ou approfondir leur lien avec le vivant.</p>
+                <div className="flex items-center gap-3 mb-8 bg-[var(--site-surface)] px-6 py-3 rounded-full border border-site">
+                  <span className="text-[#6d8b7a] dark:text-[#8ba394] font-heading italic text-xl">150 €</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold text-[var(--site-muted)]">Par personne</span>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                   <PrimaryButton href="/formation-initiation-communication-animale" className="bg-[var(--site-surface)] border border-site px-6 py-3 text-xs sm:text-sm">Découvrir la formation</PrimaryButton>
+                   <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-[#8ba394]/40 px-6 py-3 text-[10px] uppercase tracking-widest font-bold text-[#6d8b7a] dark:text-[#8ba394] hover:bg-[#8ba394]/10 transition-all">Réserver</a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -142,16 +205,15 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-4 lg:sticky lg:top-32">
-              <SectionBadge>Comment ça se passe ?</SectionBadge>
-              <h2 className="mt-8 text-4xl sm:text-5xl text-site font-heading italic leading-tight">Un processus simple et <span className="text-[#8ba394]">bienveillant</span></h2>
-              <p className="mt-6 text-[var(--site-muted)] font-light leading-relaxed">Chaque séance est unique. Je m'adapte à votre rythme et à celui de votre compagnon.</p>
+              <h2 className="text-4xl sm:text-5xl text-site font-heading italic leading-tight">Comment se déroule <span className="text-[#8ba394]">l'accompagnement ?</span></h2>
+              <p className="mt-8 text-[var(--site-muted)] font-light leading-relaxed">Chaque séance est personnalisée. Le déroulement varie selon qu'il s'agit d'une séance d'hypnose ou d'une communication animale, mais l'intention reste la même : vous accueillir avec clarté, douceur et sérieux.</p>
             </div>
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { n: '01', t: 'Prise de contact', d: 'Vous me contactez pour définir votre objectif (pour vous ou votre animal).' },
-                { n: '02', t: 'Préparation', d: 'Pour votre animal : vous m\'envoyez sa photo et vos questions. Pour vous : vous vous installez au calme.' },
-                { n: '03', t: 'La Séance', d: 'Je réalise la séance d\'hypnose avec vous, ou je me connecte intuitivement à votre animal.' },
-                { n: '04', t: 'Restitution', d: 'Nous échangeons sur les informations reçues. Vous repartez avec des réponses et un profond apaisement.' }
+                { n: '01', t: 'Premier échange', d: 'Nous faisons le point sur votre besoin, pour vous ou pour votre animal, afin de choisir l\'accompagnement le plus juste.' },
+                { n: '02', t: 'Préparation', d: 'Pour une communication animale, vous m\'envoyez une photo de votre animal ainsi que vos questions. Pour une séance d\'hypnose, nous clarifions votre objectif ensemble.' },
+                { n: '03', t: 'La séance', d: 'Je vous accompagne en hypnose Ericksonienne, ou je réalise la communication animale dans un cadre calme et concentré.' },
+                { n: '04', t: 'Restitution et intégration', d: 'Nous échangeons sur ce qui a émergé pendant la séance, les ressentis, les prises de conscience et les pistes d\'apaisement.' }
               ].map(step => (
                 <div key={step.n} className="p-8 rounded-3xl border border-site bg-[var(--site-surface)] hover:border-[#8ba394]/50 transition-all group">
                    <div className="text-5xl font-heading italic text-[#8ba394]/10 group-hover:text-[#8ba394]/30 transition-colors mb-6">{step.n}</div>
@@ -167,22 +229,20 @@ export default function Home() {
       {/* Testimonials */}
       <section id="testimonials" className="bg-site py-24 sm:py-32 px-6 lg:px-16 transition-colors duration-500">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col items-start mb-20 text-left">
-            <SectionBadge>Vos histoires, notre chemin</SectionBadge>
-            <h2 className="mt-8 text-4xl sm:text-5xl text-site font-heading italic max-w-2xl">Reconnexion & <span className="text-[#8ba394]">apaisement</span></h2>
+          <div className="flex flex-col items-center mb-20 text-center">
+            <h2 className="text-4xl sm:text-5xl text-site font-heading italic max-w-2xl">Des accompagnements vécus avec <span className="text-[#8ba394]">confiance</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { t: "L'approche de Katia a complètement transformé ma façon de gérer le stress. Ses séances d'hypnose sont une véritable bulle d'oxygène dans ma semaine.", n: "Sophie L.", r: "Patiente en hypnose" },
-              { t: "Une expérience incroyable avec mon chien qui avait des problèmes de comportement. Katia a su mettre des mots sur ses maux. Je recommande les yeux fermés.", n: "Marc D.", r: "Communication animale" },
-              { t: "La formation en communication animale est fascinante. Katia transmet son savoir avec tellement de bienveillance et de clarté. Une belle découverte.", n: "Élise M.", r: "Élève en formation" }
+              { t: "L'approche de Katia a transformé ma façon de gérer le stress. Ses séances d'hypnose m'apportent un vrai espace d'apaisement.", r: "Hypnose Ericksonienne" },
+              { t: "Grâce à Katia, j'ai mieux compris ce que vivait mon chien. Cela a changé ma manière de l'accompagner au quotidien.", r: "Communication animale" },
+              { t: "Une journée riche, claire et profondément humaine. Katia transmet avec beaucoup de générosité.", r: "Formation en communication animale" }
             ].map((it, i) => (
-              <motion.div key={i} whileHover={{ y: -5 }} className="p-10 rounded-[2.5rem] bg-[var(--site-surface)] border border-site backdrop-blur-sm relative">
+              <motion.div key={i} whileHover={{ y: -5 }} className="p-10 rounded-[2.5rem] bg-[var(--site-surface)] border border-site backdrop-blur-sm relative flex flex-col h-full">
                 <div className="flex gap-0.5 mb-6">{[1,2,3,4,5].map(s => <Star key={s} className="h-3 w-3 text-[#8ba394] fill-[#8ba394]" />)}</div>
-                <p className="text-base text-site opacity-90 font-heading italic leading-relaxed mb-10">“{it.t}”</p>
-                <div className="mt-8 border-t border-site pt-6">
-                  <div className="text-site font-medium text-xs font-body">{it.n}</div>
-                  <div className="mt-1 text-[9px] text-[#8ba394] uppercase tracking-widest font-bold font-body">{it.r}</div>
+                <p className="text-base text-site opacity-90 font-heading italic leading-relaxed mb-10 flex-1">“{it.t}”</p>
+                <div className="mt-auto border-t border-site pt-6">
+                  <div className="mt-1 text-[10px] text-[#8ba394] uppercase tracking-widest font-bold font-body">{it.r}</div>
                 </div>
               </motion.div>
             ))}
@@ -192,20 +252,18 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="bg-site py-24 sm:py-32 px-6 lg:px-16 border-t border-site transition-colors duration-500">
+      <section id="faq" className="bg-[var(--site-surface)] py-24 sm:py-32 px-6 lg:px-16 border-t border-site transition-colors duration-500">
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-20">
-            <SectionBadge>Questions fréquentes</SectionBadge>
-            <h2 className="mt-8 text-4xl sm:text-6xl text-site font-heading italic">Ce qu'on me <span className="text-[#8ba394]">demande</span> souvent</h2>
-            <p className="mt-6 text-[var(--site-muted)] font-light text-sm">Une question spécifique ? N'hésitez pas à me contacter directement.</p>
+             <h2 className="text-4xl sm:text-5xl text-site font-heading italic">Questions <span className="text-[#8ba394]">fréquentes</span></h2>
           </div>
           
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-site bg-[var(--site-surface)] rounded-3xl overflow-hidden">
+              <div key={idx} className="border border-site bg-[var(--site-bg)] rounded-3xl overflow-hidden">
                 <button 
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-[var(--site-bg)] transition-colors"
+                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-[var(--site-surface-solid)] transition-colors"
                 >
                   <span className="text-site font-body text-sm font-medium">{faq.q}</span>
                   <div className={cn("p-2 rounded-full border border-site transition-transform duration-300", openFaq === idx ? "rotate-45" : "")}>
@@ -220,7 +278,7 @@ export default function Home() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-8 pb-8 text-[var(--site-muted)] text-sm font-light leading-relaxed border-t border-site pt-6 mx-8">
+                      <div className="px-8 pb-8 text-[var(--site-muted)] text-sm font-light leading-relaxed border-t border-site pt-6 mx-8 whitespace-pre-line">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -229,33 +287,8 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center group">
-            <PrimaryButton href="#contact" className="px-10">Me contacter</PrimaryButton>
-          </div>
         </div>
       </section>
-    </div>
-  );
-}
-
-function ServiceRow({ title, price, desc, image, reverse, icon: Icon, href }: any) {
-  return (
-    <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-12 items-center", reverse ? "lg:flex-row-reverse" : "")}>
-      <div className={cn("relative aspect-video rounded-[2.5rem] overflow-hidden border border-site group", reverse ? "lg:order-2" : "")}>
-        <img src={image} className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
-        <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><Icon className="h-5 w-5 text-[#6d8b7a] dark:text-[#8ba394]" /></div>
-      </div>
-      <div className={cn("flex flex-col items-start px-2", reverse ? "lg:order-1" : "")}>
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-[#6d8b7a] dark:text-[#8ba394] font-heading italic text-3xl">{price}</span>
-        </div>
-        <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">{title}</h3>
-        <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-10 max-w-lg">{desc}</p>
-        <div className="flex gap-4">
-           <PrimaryButton href={href} className="bg-[var(--site-surface)] border border-site px-6 py-3">En savoir plus</PrimaryButton>
-           <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-[#8ba394]/40 px-6 py-3 text-[10px] uppercase tracking-widest font-bold text-[#6d8b7a] dark:text-[#8ba394] hover:bg-[#8ba394]/10 transition-all">Réserver</a>
-        </div>
-      </div>
     </div>
   );
 }

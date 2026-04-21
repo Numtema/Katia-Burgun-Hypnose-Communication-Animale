@@ -19,6 +19,7 @@ import Testimonials from "./pages/Testimonials";
 import Legal from "./pages/Legal";
 
 import ContactSection from "./components/ContactSection";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -64,16 +65,7 @@ export default function App() {
         <ContactSection />
         <Footer />
 
-        {/* Floating WhatsApp Bubble */}
-        <a 
-          href="https://wa.me/33677495288" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="fixed bottom-10 right-10 z-[100] h-14 w-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform active:scale-95 group"
-        >
-          <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-20" />
-          <MessageCircle className="h-7 w-7 text-white relative z-10" />
-        </a>
+        <FloatingWhatsApp />
       </div>
     </BrowserRouter>
   );
