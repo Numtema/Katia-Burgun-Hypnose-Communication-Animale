@@ -4,7 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import { motion } from 'motion/react';
 import { SectionBadge, BlurText, PrimaryButton } from '../components/UI';
 
-const portraitKatia = "https://katia-hypnotherapeute-normandie.vercel.app/_next/image?url=https%3A%2F%2Fscontent.fcdg3-1.fna.fbcdn.net%2Fv%2Ft39.30808-6%2F280736276_115864707788474_7526965914387568168_n.jpg%3F_nc_cat%3D106%26ccb%3D1-7%26_nc_sid%3D1d70fc%26_nc_ohc%3DjUP3--iFNh4Q7kNvwHpwvJ2%26_nc_oc%3DAdpIWNW1vwMQyhxm3byXUJ_FdegQrIr3jgM5jtGFeANaN5mN0mqxh18LK9gNklOrbnIwC6sX5K6RQNsqqhqdKk1w%26_nc_zt%3D23%26_nc_ht%3Dscontent.fcdg3-1.fna%26_nc_gid%3DgsjpyQADe76772P9QOpNkA%26_nc_ss%3D7a3a8%26oh%3D00_Af0oF_XrNSnxlEw3i4LkXUMGpZ8Zqv92LFO0l91cMzpdLg%26oe%3D69E5A58C&w=1920&q=75";
+const portraitKatia = "/katia-portrait.jpeg";
+const diplomeKatia = "/katia-diplome.jpeg";
 
 export default function Bio() {
   return (
@@ -49,20 +50,29 @@ export default function Bio() {
       <section className="py-24 px-6 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-4xl text-site font-heading italic mb-16 text-center">Parcours & formations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {[
-              { year: '2018', title: 'Première formation en communication animale', desc: "Initiation auprès d'une communicante reconnue, puis pratique intensive pendant deux ans auprès d'animaux variés." },
-              { year: '2020', title: 'Perfectionnement télépathique', desc: "Approfondissement des canaux intuitifs, travail sur la fin de vie, l'animal perdu, et les problématiques complexes." },
-              { year: '2022', title: 'Formation Hypnose Ericksonienne', desc: "Cursus complet (800 heures) en hypnose Ericksonienne et thérapie brève, avec supervisions cliniques régulières." },
-              { year: '2023', title: 'Ouverture du cabinet', desc: "Installation à Fontaine-le-Dun (76). Séances individuelles en cabinet et à distance." },
-              { year: '2024', title: 'Lancement des formations', desc: "Transmission des techniques de communication animale lors de journées d'initiation à mon domicile." },
-            ].map((item) => (
-              <div key={item.year} className="p-8 rounded-3xl border border-site bg-[var(--site-surface)]">
-                <div className="text-[#8ba394] font-heading italic text-3xl mb-4">{item.year}</div>
-                <h3 className="text-site font-body font-medium mb-2">{item.title}</h3>
-                <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            <div className="space-y-8">
+              {[
+                { year: '2018', title: 'Première formation en communication animale', desc: "Initiation auprès d'une communicante reconnue, puis pratique intensive pendant deux ans auprès d'animaux variés." },
+                { year: '2020', title: 'Perfectionnement télépathique', desc: "Approfondissement des canaux intuitifs, travail sur la fin de vie, l'animal perdu, et les problématiques complexes." },
+                { year: '2022', title: 'Formation Hypnose Ericksonienne', desc: "Cursus complet (800 heures) en hypnose Ericksonienne et thérapie brève, avec supervisions cliniques régulières." },
+                { year: '2023', title: 'Ouverture du cabinet', desc: "Installation à Fontaine-le-Dun (76). Séances individuelles en cabinet et à distance." },
+                { year: '2024', title: 'Lancement des formations', desc: "Transmission des techniques de communication animale lors de journées d'initiation à mon domicile." },
+              ].map((item) => (
+                <div key={item.year} className="p-8 rounded-3xl border border-site bg-[var(--site-surface)]">
+                  <div className="text-[#8ba394] font-heading italic text-3xl mb-4">{item.year}</div>
+                  <h3 className="text-site font-body font-medium mb-2">{item.title}</h3>
+                  <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="relative rounded-[3rem] overflow-hidden border border-site shadow-xl group h-full flex items-center justify-center bg-[var(--site-surface-solid)]">
+              <div className="absolute inset-0 bg-[#8ba394]/5" />
+              <img src={diplomeKatia} alt="Diplôme Hypnose Ericksonienne" className="w-full object-contain max-h-[800px] z-10 transition-transform duration-1000 group-hover:scale-[1.02]" referrerPolicy="no-referrer" />
+            </div>
+
           </div>
         </div>
       </section>

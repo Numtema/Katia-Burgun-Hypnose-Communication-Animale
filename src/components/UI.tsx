@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import Hls from 'hls.js';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function cn(...classes: (string | boolean | undefined | null)[]) {
   return classes.filter(Boolean).join(" ");
@@ -51,11 +52,22 @@ export function SectionBadge({ children, className }: { children: React.ReactNod
 export function PrimaryButton({ children, className = "", href = "#contact" }: { children: React.ReactNode; className?: string; href?: string }) {
   const isExternal = href.startsWith('http') || href.startsWith('tel') || href.startsWith('mailto') || href.startsWith('https://wa.me');
   
+  const baseClassName = cn("liquid-glass-strong inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-[11px] uppercase tracking-widest font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#8ba394]/20", className);
+  
+  if (isExternal || href.startsWith('#')) {
+    return (
+      <a href={href} className={baseClassName} style={{ backgroundColor: "#8ba394" }}>
+        {children}
+        <ArrowUpRight className="h-4 w-4" />
+      </a>
+    );
+  }
+
   return (
-    <a href={href} className={cn("liquid-glass-strong inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-[11px] uppercase tracking-widest font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-[#8ba394]/20", className)} style={{ backgroundColor: "#8ba394" }}>
+    <Link to={href} className={baseClassName} style={{ backgroundColor: "#8ba394" }}>
       {children}
       <ArrowUpRight className="h-4 w-4" />
-    </a>
+    </Link>
   );
 }
 

@@ -81,7 +81,7 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
               </Link>
             ))}
             <div className="w-px h-4 bg-site opacity-20 mx-2" />
-            <Link to="#contact" className="bg-[#8ba394] hover:bg-[#7a9283] px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff] transition-all">Prendre RDV</Link>
+            <a href="#contact" className="bg-[#8ba394] hover:bg-[#7a9283] px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff] transition-all">Prendre RDV</a>
           </nav>
           
           <button 
@@ -92,7 +92,7 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
             {isLightMode ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
           
-          <Link to="#contact" className="xl:hidden bg-[#8ba394] px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff]">Contact</Link>
+          <a href="#contact" className="xl:hidden bg-[#8ba394] px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff]">Contact</a>
         </div>
       </div>
     </header>
