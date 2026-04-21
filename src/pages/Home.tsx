@@ -36,7 +36,7 @@ export default function Home() {
           <BlurText text="communication animale pour votre compagnon" delay={60} className="justify-center mt-2 text-3xl sm:text-5xl md:text-6xl italic font-heading text-[#6d8b7a] dark:text-[#8ba394]" />
           
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="mt-8 max-w-4xl mx-auto text-sm sm:text-base font-light text-[var(--site-fg)] opacity-80 leading-relaxed font-body">
-            À Fontaine-le-Dun, en Normandie et à distance, Katia Burgun accompagne les humains en hypnose Ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
+            À Fontaine-le-Dun, en Normandie et à distance, Katia Burgun vous accompagne en hypnose Ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
           </motion.p>
           
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4, duration: 1 }} className="mt-4 max-w-2xl mx-auto text-sm sm:text-base font-medium text-site italic">

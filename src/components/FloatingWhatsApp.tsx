@@ -43,39 +43,53 @@ export default function FloatingWhatsApp() {
 
   return (
     <>
-      {/* Floating Button */}
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 sm:bottom-10 right-6 sm:right-10 z-[100] h-14 w-14 sm:h-16 sm:w-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(37,211,102,0.4)] hover:scale-110 transition-transform active:scale-95 group focus:outline-none"
-        aria-label="Contact WhatsApp"
-      >
-        <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-20" />
-        <AnimatePresence mode="wait">
-          {isOpen ? (
-            <motion.div 
-              key="close"
-              initial={{ opacity: 0, rotate: -90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: 90 }}
-              transition={{ duration: 0.2 }}
-            >
-              <X className="h-6 w-6 sm:h-7 sm:w-7 text-white relative z-10" />
-            </motion.div>
-          ) : (
-            <motion.div 
-              key="whatsapp"
-              initial={{ opacity: 0, rotate: 90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              exit={{ opacity: 0, rotate: -90 }}
-              transition={{ duration: 0.2 }}
-            >
-               <WhatsAppIcon className="h-7 w-7 sm:h-9 sm:w-9 text-white relative z-10 fill-white stroke-transparent" />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </button>
+      {/* Floating Buttons Container */}
+      <div className="fixed bottom-6 sm:bottom-10 right-6 sm:right-10 z-[100] flex items-center gap-3">
+        
+        {/* Floating Contact Pill */}
+        <a 
+          href="#contact"
+          className="relative bg-[#8ba394] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] sm:text-[11px] shadow-lg shadow-[#8ba394]/30 hover:scale-105 hover:bg-[#7a9283] transition-all flex items-center"
+        >
+          Contact
+          {/* Decorative purple dot from user request */}
+          <span className="absolute -bottom-1 -right-1 block h-3.5 w-3.5 rounded-full bg-[#9b72b8] border-2 border-[var(--site-surface-solid)]" />
+        </a>
 
-      {/* Floating Panel */}
+        {/* Existing Floating WhatsApp Button */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="h-14 w-14 sm:h-16 sm:w-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(37,211,102,0.4)] hover:scale-110 transition-transform active:scale-95 group focus:outline-none relative"
+          aria-label="Contact WhatsApp"
+        >
+          <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-20" />
+          <AnimatePresence mode="wait">
+            {isOpen ? (
+              <motion.div 
+                key="close"
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <X className="h-6 w-6 sm:h-7 sm:w-7 text-white relative z-10" />
+              </motion.div>
+            ) : (
+              <motion.div 
+                key="whatsapp"
+                initial={{ opacity: 0, rotate: 90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: -90 }}
+                transition={{ duration: 0.2 }}
+              >
+                 <WhatsAppIcon className="h-7 w-7 sm:h-9 sm:w-9 text-white relative z-10 fill-white stroke-transparent" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </button>
+      </div>
+
+      {/* Floating Panel (Existing modal) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
