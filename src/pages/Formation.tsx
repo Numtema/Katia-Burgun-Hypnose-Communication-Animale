@@ -152,33 +152,61 @@ export default function Formation() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-24 px-6 lg:px-16">
-        <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-5">
-            <SectionBadge>Résultats</SectionBadge>
-            <h2 className="mt-8 text-4xl text-site font-heading italic mb-8">Ce que cette formation vous apporte</h2>
-            <p className="text-[var(--site-muted)] font-light leading-relaxed mb-8">
-              À l’issue de la journée, vous repartez avec des fondations solides pour ouvrir votre propre chemin de pratique personnel.
-            </p>
-            <div className="bg-[var(--site-surface)] p-8 rounded-3xl border border-site italic text-sm text-[var(--site-muted)] font-light">
-              "Cette journée n’a pas pour but de faire de vous un professionnel en un jour. Elle vous permet de poser des fondations, de vivre une immersion et d'ouvrir votre chemin."
-            </div>
-          </div>
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {[
-              { t: 'Compréhension claire', d: 'Les bases théoriques et le cadre de la communication animale.' },
-              { t: 'Expérience pratique', d: 'Une première expérience guidée et structurée.' },
-              { t: 'Repères intuitifs', d: 'Reconnaître vos propres perceptions et signaux.' },
-              { t: 'Exercices concrets', d: 'Des outils simples pour continuer de vous entraîner.' },
-              { t: 'Vision juste', d: 'Savoir ce que la pratique permet et ses limites.' },
-              { t: 'Support écrit', d: 'Un livret récapitulatif pour prolonger le travail.' }
-            ].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-site bg-[var(--site-surface)]">
-                <h3 className="text-site font-medium text-sm mb-2">{item.t}</h3>
-                <p className="text-[var(--site-muted)] text-xs font-light">{item.d}</p>
+      {/* Benefits - Modern Editorial Layout */}
+      <section className="py-24 px-6 lg:px-16 overflow-hidden relative">
+        <div className="mx-auto max-w-7xl relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            {/* Left Sticky Side */}
+            <div className="lg:col-span-5 lg:sticky lg:top-32">
+              <SectionBadge>Résultats</SectionBadge>
+              <h2 className="mt-8 text-4xl sm:text-6xl text-site font-heading italic mb-8">
+                Ce que cette formation <br className="hidden lg:block"/> <span className="text-[#8ba394]">vous apporte</span>
+              </h2>
+              <p className="text-[var(--site-muted)] font-light leading-relaxed mb-12 text-base sm:text-lg max-w-md">
+                À l’issue de la journée, vous repartez avec des fondations solides pour ouvrir votre propre chemin de pratique personnel.
+              </p>
+              
+              {/* Hype Quote Box */}
+              <div className="relative p-8 sm:p-10 overflow-hidden rounded-[2.5rem] bg-[var(--site-surface-solid)] border border-site shadow-xl group">
+                <div className="absolute top-0 left-0 w-2 h-full bg-[#8ba394]" />
+                <div className="absolute -top-8 -right-4 text-[12rem] font-heading font-bold italic text-[#8ba394] opacity-10 leading-none transition-transform duration-700 group-hover:scale-110">
+                  "
+                </div>
+                <p className="relative z-10 text-site italic font-medium leading-relaxed text-lg sm:text-xl">
+                  "Cette journée n’a pas pour but de faire de vous un professionnel en un jour. Elle vous permet de poser des fondations, de vivre une immersion et d'ouvrir votre chemin."
+                </p>
               </div>
-            ))}
+            </div>
+
+            {/* Right Scrolling Side - Hype List */}
+            <div className="lg:col-span-7 space-y-6">
+              {[
+                { t: 'Compréhension claire', d: 'Les bases théoriques et le cadre de la communication animale.' },
+                { t: 'Expérience pratique', d: 'Une première expérience guidée et structurée.' },
+                { t: 'Repères intuitifs', d: 'Reconnaître vos propres perceptions et signaux.' },
+                { t: 'Exercices concrets', d: 'Des outils simples pour continuer de vous entraîner.' },
+                { t: 'Vision juste', d: 'Savoir ce que la pratique permet et ses limites.' },
+                { t: 'Support écrit', d: 'Un livret récapitulatif pour prolonger le travail.' }
+              ].map((item, i) => (
+                <div key={i} className="group relative overflow-hidden rounded-[2.5rem] border border-site bg-[var(--site-surface)] hover:bg-[var(--site-surface-solid)] hover:border-[#8ba394]/40 transition-all duration-500 p-8 sm:p-10 shadow-sm hover:shadow-xl">
+                  {/* Big background number */}
+                  <div className="absolute -right-6 -bottom-6 text-[10rem] font-heading font-black italic text-[#8ba394] opacity-[0.03] group-hover:opacity-10 group-hover:-translate-y-2 group-hover:-translate-x-2 transition-all duration-700 pointer-events-none select-none leading-none z-0">
+                    {(i+1).toString().padStart(2, '0')}
+                  </div>
+                  
+                  <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-[1.25rem] bg-[#8ba394]/10 border border-[#8ba394]/20 flex items-center justify-center text-[#8ba394] font-heading text-2xl italic group-hover:scale-110 group-hover:bg-[#8ba394] group-hover:text-[var(--site-bg)] shadow-inner transition-all duration-500">
+                      {(i+1).toString().padStart(2, '0')}
+                    </div>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl text-site font-medium mb-3 group-hover:text-[#8ba394] transition-colors">{item.t}</h3>
+                      <p className="text-[var(--site-muted)] font-light leading-relaxed text-sm sm:text-base">{item.d}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

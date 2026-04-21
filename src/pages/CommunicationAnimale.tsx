@@ -28,7 +28,7 @@ const animalSpecies = [
   { name: 'Chats', image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=600' },
   { name: 'Chevaux', image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=600' },
   { name: 'Lapins', image: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&q=80&w=600' },
-  { name: 'Oiseaux', image: 'https://images.unsplash.com/photo-1522926193917-458b40d16be9?auto=format&fit=crop&q=80&w=600' },
+  { name: 'Oiseaux', image: 'https://images.unsplash.com/photo-1552504443-bd215eb309e4?auto=format&fit=crop&q=80&w=600' },
   { name: 'Reptiles', image: 'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?auto=format&fit=crop&q=80&w=600' },
   { name: 'NAC', image: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=80&w=600' }
 ];
@@ -219,22 +219,55 @@ export default function CommunicationAnimale() {
             <h2 className="mt-8 text-4xl sm:text-5xl text-site font-heading italic">Dans quelles situations <span className="text-[#8ba394]">me consulter ?</span></h2>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 mt-12">
             {[
-              { t: 'Comportements inexpliqués', i: Zap, d: 'Agressivité, stress, agitation, destruction, malpropreté, peur ou tristesse.' },
-              { t: 'Difficultés physiques', i: Activity, d: 'En complément vétérinaire, pour comprendre le ressenti physique de l’animal.' },
-              { t: 'Animal perdu ou en fugue', i: Search, d: 'Tenter de capter des indices sur son état ou son environnement (sans garantie).' },
-              { t: 'Adoption & transition', i: Users, d: 'Arrivée dans un nouveau foyer, séparation, voyage ou déménagement.' },
-              { t: 'Fin de vie', i: Heart, d: 'Entendre son ressenti et accompagner ce moment délicat avec douceur et paix.' },
-              { t: 'Mieux le connaître', i: Sparkles, d: 'Connaître ses goûts, ce qu’il cherche à vous faire comprendre et ses souhaits.' }
+              { image: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&q=80&w=800', icon: Zap, t: 'Comportements inexpliqués', d: 'Agressivité, stress, agitation, destruction, malpropreté, peur ou tristesse.' },
+              { image: 'https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&q=80&w=800', icon: Activity, t: 'Difficultés physiques', d: 'En complément vétérinaire, pour comprendre le ressenti physique de l’animal.' },
+              { image: 'https://images.unsplash.com/photo-1528659556816-ecdf9e5fa4ea?auto=format&fit=crop&q=80&w=800', icon: Search, t: 'Animal perdu ou en fugue', d: 'Tenter de capter des indices sur son état ou son environnement (sans garantie).' },
+              { image: 'https://images.unsplash.com/photo-1422565096762-bdb997a56a84?auto=format&fit=crop&q=80&w=800', icon: Users, t: 'Adoption & transition', d: 'Arrivée dans un nouveau foyer, séparation, voyage ou déménagement.' },
+              { image: 'https://images.unsplash.com/photo-1560743641-3914f2c45636?auto=format&fit=crop&q=80&w=800', icon: Heart, t: 'Fin de vie', d: 'Entendre son ressenti et accompagner ce moment délicat avec douceur et paix.' },
+              { image: 'https://images.unsplash.com/photo-1433162653888-a571f31cedd4?auto=format&fit=crop&q=80&w=800', icon: Sparkles, t: 'Mieux le connaître', d: 'Connaître ses goûts, ce qu’il cherche à vous faire comprendre et ses souhaits.' }
             ].map((item, idx) => (
-              <div key={idx} className="p-8 rounded-[2rem] border border-site bg-[var(--site-surface)] flex gap-6 group hover:border-[#8ba394]/30 transition-all">
-                <div className="h-10 w-10 shrink-0 rounded-xl bg-[#8ba394]/10 flex items-center justify-center text-[#8ba394] group-hover:scale-110 transition-transform">
-                  <item.i className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-site font-medium text-sm mb-2">{item.t}</h3>
-                  <p className="text-[var(--site-muted)] text-xs font-light leading-relaxed">{item.d}</p>
+              <div key={idx} className="relative pt-12 group">
+                {/* Offset Card Background */}
+                <div className="absolute inset-x-0 bottom-0 top-12 border border-[#8ba394]/30 rounded-[2.5rem] bg-[var(--site-bg)] translate-x-3 translate-y-3 -z-10 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4 group-hover:border-[#8ba394]/50" />
+                
+                {/* Main Card */}
+                <div className="bg-[var(--site-surface-solid)] rounded-[2.5rem] border border-site p-8 sm:p-10 relative z-10 flex flex-col h-full shadow-xl">
+                  
+                  {/* Overlapping Top-Left Element */}
+                  <div className="absolute -top-10 left-8">
+                    <div className="relative">
+                      <img src={item.image} alt={item.t} className="w-20 h-20 rounded-[1.5rem] object-cover border-4 border-[var(--site-surface-solid)] shadow-md grayscale opacity-90 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100" referrerPolicy="no-referrer" />
+                      <div className="absolute -bottom-3 -left-3 bg-[#8ba394] text-[var(--site-bg)] p-2 rounded-xl border-[4px] border-[var(--site-surface-solid)]">
+                        <item.icon className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Top-Right Badge */}
+                  <div className="absolute top-8 right-8">
+                     <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-site text-[9px] uppercase tracking-widest text-[var(--site-muted)] font-medium">
+                       <CheckCircle className="w-3 h-3 text-[#8ba394]" /> Situation
+                     </div>
+                  </div>
+
+                  {/* Main Quote Content */}
+                  <div className="mt-12 flex-1">
+                    <p className="text-xl sm:text-2xl text-site font-heading italic leading-relaxed">
+                      "{item.d}"
+                    </p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-full h-px bg-site opacity-10 my-8" />
+
+                  {/* Footer Info */}
+                  <div>
+                     <h3 className="text-[11px] text-site uppercase tracking-widest font-bold mb-1.5">{item.t}</h3>
+                     <p className="text-[9px] uppercase tracking-widest text-[#8ba394]/80">Communication</p>
+                  </div>
+
                 </div>
               </div>
             ))}
