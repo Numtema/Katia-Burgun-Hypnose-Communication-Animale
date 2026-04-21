@@ -27,15 +27,15 @@ export default function Home() {
   return (
     <div className="bg-site transition-colors duration-500">
       {/* Hero */}
-      <section id="home" className="relative h-screen bg-site flex items-center overflow-hidden transition-colors duration-500">
+      <section id="home" className="relative min-h-[100dvh] pt-32 pb-16 bg-site flex items-center overflow-hidden transition-colors duration-500">
         <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-70 md:opacity-80 object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/80 via-[var(--site-bg)]/30 to-[var(--site-bg)]" />
-        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-12">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-6">
           <SectionBadge>Hypnose Ericksonienne & Communication animale</SectionBadge>
           <BlurText text="Hypnose pour vous," delay={40} className="justify-center mt-8 text-4xl sm:text-6xl md:text-7xl italic font-heading text-site" />
           <BlurText text="communication animale pour votre compagnon" delay={60} className="justify-center mt-2 text-3xl sm:text-5xl md:text-6xl italic font-heading text-[#6d8b7a] dark:text-[#8ba394]" />
           
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="mt-8 max-w-4xl mx-auto text-sm sm:text-base font-light text-[var(--site-fg)] opacity-80 leading-relaxed font-body">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="mt-8 max-w-4xl mx-auto text-sm sm:text-lg font-light text-[var(--site-fg)] opacity-80 leading-relaxed font-body">
             À Fontaine-le-Dun, en Normandie et à distance, Katia Burgun vous accompagne en hypnose Ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
           </motion.p>
           
@@ -54,7 +54,7 @@ export default function Home() {
       <section className="bg-[var(--site-surface-solid)] py-16 px-6 lg:px-16 border-y border-site">
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-12">
-             <h2 className="text-2xl sm:text-3xl text-site font-heading italic">Vous êtes au bon endroit si...</h2>
+             <h2 className="text-3xl sm:text-4xl text-site font-heading italic px-4">Vous êtes au bon endroit si...</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Link to="/hypnose-ericksonienne-houdetot" className="rounded-[2.5rem] bg-[var(--site-bg)] border border-site flex flex-col h-full hover:border-[#8ba394]/50 transition-all duration-500 overflow-hidden group shadow-lg hover:shadow-xl">
