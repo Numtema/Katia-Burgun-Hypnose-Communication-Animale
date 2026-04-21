@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 import { SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
 
-const commImg = "https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?auto=format&fit=crop&q=80&w=1200";
+const commImg = "/chat-katia.jpeg";
 
 const animalSpecies = [
   { name: 'Chiens', image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600' },
@@ -134,19 +134,56 @@ export default function CommunicationAnimale() {
             <p className="mt-6 text-[var(--site-muted)] font-light max-w-2xl mx-auto">La communication animale peut vous aider à mieux comprendre votre compagnon lorsque quelque chose semble flou, bloqué ou difficile à expliquer.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 mt-12">
             {[
-              { t: 'Comprendre ses émotions', d: 'Votre animal peut exprimer du stress, de l’inconfort, de la peur ou une joie que l’observation seule ne permet pas toujours d’identifier.' },
-              { t: 'Éclairer les comportements', d: 'Agressivité, anxiété, malpropreté, agitation... Comprendre ce que l’animal cherche à exprimer à travers ses agissements.' },
-              { t: 'Renforcer le lien', d: 'Mieux comprendre son animal, c’est souvent apaiser la relation, rétablir la confiance et retrouver une communication plus juste.' },
-              { t: 'Accompagner les étapes', d: 'Adoption, déménagement, séparation, vieillissement ou fin de vie : des moments qui demandent une écoute particulière.' },
-              { t: 'Recevoir un message', d: 'L’animal peut venir montrer quelque chose du lien qu’il partage avec son humain, mettant en lumière des dynamiques émotionnelles.' },
-              { t: 'Résonance & Éthique', d: 'Une approche respectueuse de l’animal, de son rythme et de son intégrité, toujours en complément d’un suivi classique.' }
-            ].map((item, i) => (
-              <div key={i} className="p-8 rounded-3xl border border-site bg-[var(--site-surface)] hover:border-[#8ba394]/30 transition-all group">
-                <Heart className="h-5 w-5 text-[#8ba394] mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-site font-medium mb-3">{item.t}</h3>
-                <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed">{item.d}</p>
+              { image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=800', icon: Heart, t: 'Comprendre ses émotions', d: 'Votre animal peut exprimer du stress, de l’inconfort, de la peur ou une joie que l’observation seule ne permet pas toujours d’identifier.' },
+              { image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800', icon: Activity, t: 'Éclairer les comportements', d: 'Agressivité, anxiété, malpropreté, agitation... Comprendre ce que l’animal cherche à exprimer à travers ses agissements.' },
+              { image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800', icon: PawPrint, t: 'Renforcer le lien', d: 'Mieux comprendre son animal, c’est souvent apaiser la relation, rétablir la confiance et retrouver une communication plus juste.' },
+              { image: 'https://images.unsplash.com/photo-1506456637651-4098cbacddaa?auto=format&fit=crop&q=80&w=800', icon: Clock, t: 'Accompagner les étapes', d: 'Adoption, déménagement, séparation, vieillissement ou fin de vie : des moments qui demandent une écoute particulière.' },
+              { image: 'https://images.unsplash.com/photo-1517423568366-8b83523034fd?auto=format&fit=crop&q=80&w=800', icon: MessageCircle, t: 'Recevoir un message', d: 'L’animal peut venir montrer quelque chose du lien qu’il partage avec son humain, mettant en lumière des dynamiques émotionnelles.' },
+              { image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800', icon: ShieldCheck, t: 'Résonance & Éthique', d: 'Une approche respectueuse de l’animal, de son rythme et de son intégrité, toujours en complément d’un suivi classique.' }
+            ].map((item, idx) => (
+              <div key={idx} className="relative pt-12 group">
+                {/* Offset Card Background */}
+                <div className="absolute inset-x-0 bottom-0 top-12 border border-[#8ba394]/30 rounded-[2.5rem] bg-[var(--site-bg)] translate-x-3 translate-y-3 -z-10 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4 group-hover:border-[#8ba394]/50" />
+                
+                {/* Main Card */}
+                <div className="bg-[var(--site-surface-solid)] rounded-[2.5rem] border border-site p-8 sm:p-10 relative z-10 flex flex-col h-full shadow-xl">
+                  
+                  {/* Overlapping Top-Left Element */}
+                  <div className="absolute -top-10 left-8">
+                    <div className="relative">
+                      <img src={item.image} alt={item.t} className="w-20 h-20 rounded-[1.5rem] object-cover border-4 border-[var(--site-surface-solid)] shadow-md grayscale opacity-90 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100" referrerPolicy="no-referrer" />
+                      <div className="absolute -bottom-3 -left-3 bg-[#8ba394] text-[var(--site-bg)] p-2 rounded-xl border-[4px] border-[var(--site-surface-solid)]">
+                        <item.icon className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Top-Right Badge */}
+                  <div className="absolute top-8 right-8">
+                     <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-site text-[9px] uppercase tracking-widest text-[var(--site-muted)] font-medium">
+                       <CheckCircle className="w-3 h-3 text-[#8ba394]" /> Bénéfice
+                     </div>
+                  </div>
+
+                  {/* Main Quote Content */}
+                  <div className="mt-12 flex-1">
+                    <p className="text-xl sm:text-2xl text-site font-heading italic leading-relaxed">
+                      "{item.d}"
+                    </p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-full h-px bg-site opacity-10 my-8" />
+
+                  {/* Footer Info */}
+                  <div>
+                     <h3 className="text-[11px] text-site uppercase tracking-widest font-bold mb-1.5">{item.t}</h3>
+                     <p className="text-[9px] uppercase tracking-widest text-[#8ba394]/80">Communication • Lien</p>
+                  </div>
+
+                </div>
               </div>
             ))}
           </div>
