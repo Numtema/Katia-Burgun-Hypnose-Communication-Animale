@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Sparkles, MessageCircle, GraduationCap, Plus, Star } from 'lucide-react';
 import { HlsBackgroundVideo, SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
 
-const HERO_VIDEO = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4";
+const HERO_VIDEO = "/hero-video.mp4";
 const STATS_VIDEO = "https://stream.mux.com/NcU3HlHeF7CUL86azTTzpy3Tlb00d6iF3BmCdFslMJYM.m3u8";
 
 const portraitKatia2 = "https://katia-hypnotherapeute-normandie.vercel.app/_next/image?url=https%3A%2F%2Fscontent.fcdg3-1.fna.fbcdn.net%2Fv%2Ft39.30808-6%2F280736276_115864707788474_7526965914387568168_n.jpg%3F_nc_cat%3D106%26ccb%3D1-7%26_nc_sid%3D1d70fc%26_nc_ohc%3DjUP3--iFNh4Q7kNvwHpwvJ2%26_nc_oc%3DAdpIWNW1vwMQyhxm3byXUJ_FdegQrIr3jgM5jtGFeANaN5mN0mqxh18LK9gNklOrbnIwC6sX5K6RQNsqqhqdKk1w%26_nc_zt%3D23%26_nc_ht%3Dscontent.fcdg3-1.fna%26_nc_gid%3DgsjpyQADe76772P9QOpNkA%26_nc_ss%3D7a3a8%26oh%3D00_Af0oF_XrNSnxlEw3i4LkXUMGpZ8Zqv92LFO0l91cMzpdLg%26oe%3D69E5A58C&w=1920&q=75";
@@ -28,8 +28,8 @@ export default function Home() {
     <div className="bg-site transition-colors duration-500">
       {/* Hero */}
       <section id="home" className="relative h-screen bg-site flex items-center overflow-hidden transition-colors duration-500">
-        <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-40 grayscale mix-blend-[var(--glass-blend)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/80 via-[var(--site-bg)]/20 to-[var(--site-bg)]" />
+        <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-70 md:opacity-80 object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/80 via-[var(--site-bg)]/30 to-[var(--site-bg)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-12">
           <SectionBadge>Hypnose Ericksonienne & Communication animale</SectionBadge>
           <BlurText text="Hypnose pour vous," delay={40} className="justify-center mt-8 text-4xl sm:text-6xl md:text-7xl italic font-heading text-site" />

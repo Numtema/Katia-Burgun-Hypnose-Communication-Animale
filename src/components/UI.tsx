@@ -11,6 +11,14 @@ export function useHlsVideo(videoRef: React.RefObject<HTMLVideoElement | null>, 
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !src) return;
+    
+    // If it's a direct MP4 file, just use native playback
+    if (src.toLowerCase().endsWith('.mp4')) {
+      video.src = src;
+      video.play().catch(() => {});
+      return;
+    }
+
     let hls: Hls;
     if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = src;
