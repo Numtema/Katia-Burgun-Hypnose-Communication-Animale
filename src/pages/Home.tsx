@@ -123,7 +123,7 @@ export default function Home() {
               price="60€ / Séance (1h30)" 
               desc="Libérez votre potentiel inconscient. Un voyage intérieur pour apaiser le stress, retrouver le sommeil et dépasser vos blocages." 
               image={hypnoseImg} 
-              href="/hypnose"
+              href="/hypnose-ericksonienne-houdetot"
             />
             <ServiceRow 
               icon={GraduationCap} 

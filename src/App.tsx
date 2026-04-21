@@ -50,6 +50,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/qui-suis-je" element={<Bio />} />
             <Route path="/hypnose" element={<Hypnose />} />
+            <Route path="/hypnose-ericksonienne-houdetot" element={<Hypnose />} />
             <Route path="/communication-animale" element={<CommunicationAnimale />} />
             <Route path="/formation" element={<Formation />} />
             <Route path="/formation-initiation-communication-animale" element={<Formation />} />

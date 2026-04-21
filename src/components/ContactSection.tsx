@@ -1,11 +1,30 @@
-import React from 'react';
-import { Phone, MapPin, Calendar, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, MapPin, Calendar, ChevronRight, MessageSquare } from 'lucide-react';
 import { SectionBadge } from './UI';
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: 'Hypnose Ericksonienne',
+    message: ''
+  });
+
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const text = `Bonjour Katia, je vous contacte via votre site web.\n\n*Nom :* ${formData.name}\n*Email :* ${formData.email}\n*Téléphone :* ${formData.phone}\n*Service :* ${formData.service}\n*Message :* ${formData.message}`;
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/33677495288?text=${encodedText}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="contact" className="bg-site py-24 sm:py-32 px-6 lg:px-16 border-t border-site transition-colors duration-500">
       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20">
+        {/* ... existing left column ... */}
         <div>
           <SectionBadge>Contact</SectionBadge>
           <h2 className="mt-8 text-5xl sm:text-6xl text-site font-heading italic leading-tight">Prenons <span className="text-[#8ba394]">rendez-vous</span></h2>
@@ -47,24 +66,48 @@ export default function ContactSection() {
         </div>
 
         <div className="bg-[var(--site-surface-solid)] rounded-[3.5rem] p-8 sm:p-12 border border-site shadow-2xl transition-colors duration-500">
-          <form className="space-y-6" onSubmit={e => e.preventDefault()}>
+          <form className="space-y-6" onSubmit={handleWhatsAppSubmit}>
              <div className="space-y-2">
                <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Nom complet</label>
-               <input placeholder="Votre nom" className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors" />
+               <input 
+                 required
+                 placeholder="Votre nom" 
+                 value={formData.name}
+                 onChange={e => setFormData({...formData, name: e.target.value})}
+                 className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors" 
+               />
              </div>
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Email</label>
-                  <input type="email" placeholder="vous@exemple.fr" className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors" />
+                  <input 
+                    required
+                    type="email" 
+                    placeholder="vous@exemple.fr" 
+                    value={formData.email}
+                    onChange={e => setFormData({...formData, email: e.target.value})}
+                    className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors" 
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Téléphone</label>
-                  <input type="tel" placeholder="06 00 00 00 00" className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors" />
+                  <input 
+                    required
+                    type="tel" 
+                    placeholder="06 00 00 00 00" 
+                    value={formData.phone}
+                    onChange={e => setFormData({...formData, phone: e.target.value})}
+                    className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors" 
+                  />
                 </div>
              </div>
              <div className="space-y-2">
                <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Service</label>
-               <select className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors appearance-none">
+               <select 
+                 value={formData.service}
+                 onChange={e => setFormData({...formData, service: e.target.value})}
+                 className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors appearance-none"
+               >
                   <option className="bg-[var(--site-bg)] text-site">Hypnose Ericksonienne</option>
                   <option className="bg-[var(--site-bg)] text-site">Communication Animale</option>
                   <option className="bg-[var(--site-bg)] text-site">Formation Initiation</option>
@@ -72,11 +115,19 @@ export default function ContactSection() {
              </div>
              <div className="space-y-2">
                <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Votre message</label>
-               <textarea rows={4} placeholder="Parlez-moi de votre besoin..." className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors resize-none"></textarea>
+               <textarea 
+                 required
+                 rows={4} 
+                 placeholder="Parlez-moi de votre besoin..." 
+                 value={formData.message}
+                 onChange={e => setFormData({...formData, message: e.target.value})}
+                 className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors resize-none"
+               ></textarea>
              </div>
-             <button className="w-full bg-[#8ba394] hover:bg-[#7a9283] py-5 rounded-2xl text-[10px] font-bold uppercase tracking-[0.3em] text-[white] flex items-center justify-center gap-3 transition-all transform hover:scale-[1.01]">
-               Envoyer le message <ChevronRight className="h-4 w-4" />
+             <button type="submit" className="w-full bg-[#25D366] hover:bg-[#1fb355] py-5 rounded-2xl text-[10px] font-bold uppercase tracking-[0.3em] text-[white] flex items-center justify-center gap-3 transition-all transform hover:scale-[1.01] shadow-lg shadow-[#25D366]/20">
+               Envoyer via WhatsApp <MessageSquare className="h-4 w-4" />
              </button>
+             <p className="text-[10px] text-center text-[var(--site-muted)] italic">Le message sera pré-rempli et s'ouvrira dans WhatsApp.</p>
           </form>
         </div>
       </div>
