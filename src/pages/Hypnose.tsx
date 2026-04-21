@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Moon, Sun, Heart, RefreshCw, Shield, Zap, CheckCircle, ArrowLeft, Brain, Plus, Compass, Anchor, Cloud, ShieldCheck, MessageCircle } from 'lucide-react';
 import { SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
 
-const hypnoseImg = "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&q=80&w=1200";
+const hypnoseImg = "/hypnose-katia.png";
 
 const faqs = [
   { 
@@ -101,21 +101,56 @@ export default function Hypnose() {
             <p className="mt-6 text-[var(--site-muted)] font-light max-w-2xl mx-auto italic">Un accompagnement doux pour dépasser vos blocages et retrouver un équilibre intérieur.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 mt-12">
             {[
-              { icon: Moon, title: 'Sommeil & Stress', desc: 'Retrouver un sommeil profond, apaiser l\'anxiété, calmer les ruminations et les pensées incessantes.' },
-              { icon: Zap, title: 'Confiance en soi', desc: 'Affirmer sa valeur, oser prendre sa place, se libérer du regard des autres et du doute de soi.' },
-              { icon: RefreshCw, title: 'Bloquages émotionnels', desc: 'Traverser une séparation, un changement de vie ou un bouleversement avec sérénité.' },
-              { icon: Anchor, title: 'Addictions & Habitudes', desc: 'Arrêter de fumer, se libérer du grignotage, sortir de comportements automatiques néfastes.' },
-              { icon: Shield, title: 'Phobies & Peurs', desc: 'Dompter ses phobies (avion, insectes, etc.), apprivoiser ses peurs et retrouver sa liberté d\'agir.' },
-              { icon: Cloud, title: 'Mieux-être durable', desc: 'Retrouver de l\'énergie, une clarté mentale et une relation plus sereine avec soi-même.' },
+              { image: 'https://images.unsplash.com/photo-1511295742362-92c96b124e4d?auto=format&fit=crop&q=80&w=800', icon: Moon, title: 'Sommeil & Stress', desc: 'Retrouver un sommeil profond, apaiser l\'anxiété, calmer les ruminations et les pensées incessantes.' },
+              { image: 'https://images.unsplash.com/photo-1542598953-41525a720dc5?auto=format&fit=crop&q=80&w=800', icon: Zap, title: 'Confiance en soi', desc: 'Affirmer sa valeur, oser prendre sa place, se libérer du regard des autres et du doute de soi.' },
+              { image: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=800', icon: RefreshCw, title: 'Bloquages émotionnels', desc: 'Traverser une séparation, un changement de vie ou un bouleversement avec sérénité.' },
+              { image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800', icon: Anchor, title: 'Addictions & Habitudes', desc: 'Arrêter de fumer, se libérer du grignotage, sortir de comportements automatiques néfastes.' },
+              { image: 'https://images.unsplash.com/photo-1454486847846-928ef231b25f?auto=format&fit=crop&q=80&w=800', icon: Shield, title: 'Phobies & Peurs', desc: 'Dompter ses phobies (avion, insectes, etc.), apprivoiser ses peurs et retrouver sa liberté d\'agir.' },
+              { image: 'https://images.unsplash.com/photo-1515377905703-c47fea345719?auto=format&fit=crop&q=80&w=800', icon: Cloud, title: 'Mieux-être durable', desc: 'Retrouver de l\'énergie, une clarté mentale et une relation plus sereine avec soi-même.' },
             ].map((item, idx) => (
-              <div key={idx} className="p-10 rounded-[2.5rem] border border-site bg-[var(--site-surface-solid)] hover:border-[#8ba394]/40 transition-all group">
-                <div className="h-12 w-12 rounded-2xl bg-[#8ba394]/10 flex items-center justify-center text-[#8ba394] mb-8 group-hover:scale-110 transition-transform">
-                  <item.icon className="h-6 w-6" />
+              <div key={idx} className="relative pt-12 group">
+                {/* Offset Card Background */}
+                <div className="absolute inset-x-0 bottom-0 top-12 border border-[#8ba394]/30 rounded-[2.5rem] bg-[var(--site-bg)] translate-x-3 translate-y-3 -z-10 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4 group-hover:border-[#8ba394]/50" />
+                
+                {/* Main Card */}
+                <div className="bg-[var(--site-surface-solid)] rounded-[2.5rem] border border-site p-8 sm:p-10 relative z-10 flex flex-col h-full shadow-xl">
+                  
+                  {/* Overlapping Top-Left Element */}
+                  <div className="absolute -top-10 left-8">
+                    <div className="relative">
+                      <img src={item.image} alt={item.title} className="w-20 h-20 rounded-[1.5rem] object-cover border-4 border-[var(--site-surface-solid)] shadow-md grayscale opacity-90 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100" referrerPolicy="no-referrer" />
+                      <div className="absolute -bottom-3 -left-3 bg-[#8ba394] text-[var(--site-bg)] p-2 rounded-xl border-[4px] border-[var(--site-surface-solid)]">
+                        <item.icon className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Top-Right Badge */}
+                  <div className="absolute top-8 right-8">
+                     <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-site text-[9px] uppercase tracking-widest text-[var(--site-muted)] font-medium">
+                       <CheckCircle className="w-3 h-3 text-[#8ba394]" /> Objectif
+                     </div>
+                  </div>
+
+                  {/* Main Quote Content */}
+                  <div className="mt-12 flex-1">
+                    <p className="text-xl sm:text-2xl text-site font-heading italic leading-relaxed">
+                      "{item.desc}"
+                    </p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-full h-px bg-site opacity-10 my-8" />
+
+                  {/* Footer Info */}
+                  <div>
+                     <h3 className="text-[11px] text-site uppercase tracking-widest font-bold mb-1.5">{item.title}</h3>
+                     <p className="text-[9px] uppercase tracking-widest text-[#8ba394]/80">Hypnose • Mieux-être</p>
+                  </div>
+
                 </div>
-                <h3 className="text-site font-heading italic text-2xl mb-4">{item.title}</h3>
-                <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

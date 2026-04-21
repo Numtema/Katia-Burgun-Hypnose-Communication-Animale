@@ -60,11 +60,11 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
               <button className="px-4 py-2 text-[10px] uppercase tracking-widest text-[var(--site-muted)] hover:text-site flex items-center gap-1 transition-all">
                 Services <ChevronDown className="w-3 h-3 opacity-50" />
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <div className="bg-[var(--site-surface)] backdrop-blur-md border border-site rounded-2xl shadow-xl flex flex-col p-2">
-                  <Link to="/hypnose-ericksonienne-houdetot" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/10 rounded-xl transition-colors font-medium">Hypnose</Link>
-                  <Link to="/communication-animale" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/10 rounded-xl transition-colors font-medium">Communication animale</Link>
-                  <Link to="/formation-initiation-communication-animale" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/10 rounded-xl transition-colors font-medium">Formation</Link>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="bg-[var(--site-surface-solid)] border border-site rounded-2xl shadow-xl flex flex-col p-2">
+                  <Link to="/hypnose-ericksonienne-houdetot" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Hypnose</Link>
+                  <Link to="/communication-animale" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Communication animale</Link>
+                  <Link to="/formation-initiation-communication-animale" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Formation</Link>
                 </div>
               </div>
             </div>
