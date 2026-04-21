@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun, ChevronDown } from 'lucide-react';
 
@@ -9,6 +9,16 @@ interface NavigationProps {
 
 export default function Navigation({ isLightMode, onToggleTheme }: NavigationProps) {
   const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const navItems = [
     { label: "Accueil", href: "/" },
     { label: "Qui suis-je", href: "/qui-suis-je" },
@@ -23,16 +33,16 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed left-0 right-0 top-4 z-50 px-6 sm:px-16">
+    <header className={`fixed left-0 right-0 top-0 z-50 px-6 sm:px-16 transition-all duration-300 ${isScrolled ? 'py-4 bg-[var(--site-surface)]/90 backdrop-blur-md border-b border-site shadow-sm' : 'py-6 pt-8'}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3 group">
           <div className="flex flex-col">
-            <span className="font-heading text-xl sm:text-2xl italic text-site leading-none">Katia Burgun</span>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#6d8b7a] dark:text-[#8ba394]">Hypnose - Communication Animale</span>
+            <span className="font-heading text-xl sm:text-2xl italic text-site leading-none transition-transform group-hover:scale-[1.02]">Katia Burgun</span>
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#6d8b7a] dark:text-[#8ba394] mt-0.5">Hypnose - Communication Animale</span>
           </div>
         </Link>
         <div className="flex items-center gap-4">
-          <nav className="hidden xl:flex items-center gap-1 rounded-full px-2 py-1.5 liquid-glass border border-site">
+          <nav className={`hidden xl:flex items-center gap-1 rounded-full px-2 py-1.5 transition-colors ${isScrolled ? 'bg-transparent' : 'liquid-glass border border-site'}`}>
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -82,7 +92,7 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
             {isLightMode ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
           
-          <Link to="/#contact" className="xl:hidden bg-[#8ba394] px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff]">Contact</Link>
+          <Link to="#contact" className="xl:hidden bg-[#8ba394] px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff]">Contact</Link>
         </div>
       </div>
     </header>
