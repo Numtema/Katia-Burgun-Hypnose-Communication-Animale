@@ -13,9 +13,8 @@ export function useHlsVideo(videoRef: React.RefObject<HTMLVideoElement | null>, 
     const video = videoRef.current;
     if (!video || !src) return;
     
-    // If it's a direct MP4 file, just use native playback
+    // If it's a direct MP4 file, just use native playback (src already set in render)
     if (src.toLowerCase().endsWith('.mp4')) {
-      video.src = src;
       video.play().catch(() => {});
       return;
     }
@@ -35,9 +34,10 @@ export function useHlsVideo(videoRef: React.RefObject<HTMLVideoElement | null>, 
 
 export function HlsBackgroundVideo({ src, className = "", style = {} }: { src: string; className?: string; style?: React.CSSProperties }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const isMp4 = src?.toLowerCase().endsWith('.mp4');
   useHlsVideo(ref, src);
   return (
-    <video ref={ref} autoPlay loop muted playsInline className={cn("absolute inset-0 h-full w-full object-cover", className)} style={style} />
+    <video ref={ref} src={isMp4 ? src : undefined} autoPlay loop muted playsInline className={cn("absolute inset-0 h-full w-full object-cover", className)} style={style} />
   );
 }
 
