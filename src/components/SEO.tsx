@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import defaultImage from '../assets/katia-portrait.jpeg';
+
 interface SEOProps {
   title: string;
   description: string;
@@ -13,7 +15,7 @@ export default function SEO({
   title, 
   description, 
   keywords, 
-  image = '/katia-portrait.jpeg',
+  image = defaultImage,
   canonical 
 }: SEOProps) {
   const location = useLocation();

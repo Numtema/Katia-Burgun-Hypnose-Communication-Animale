@@ -6,12 +6,13 @@ import { HlsBackgroundVideo, SectionBadge, BlurText, PrimaryButton, cn } from '.
 import SEO from '../components/SEO';
 import JSONLD from '../components/JSONLD';
 
-const HERO_VIDEO = "/hero-video.mp4";
+import portraitKatia2 from '../assets/katia-portrait.jpeg';
+import hypnoseImg from '../assets/hypnose-katia.png';
+import communicationImg from '../assets/chat-katia.jpeg';
+
+import HERO_VIDEO from '../assets/hero-video.mp4';
 const STATS_VIDEO = "https://stream.mux.com/NcU3HlHeF7CUL86azTTzpy3Tlb00d6iF3BmCdFslMJYM.m3u8";
 
-const portraitKatia2 = "/katia-portrait.jpeg";
-const hypnoseImg = "/hypnose-katia.png";
-const communicationImg = "/chat-katia.jpeg";
 const formationImg = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200";
 
 const faqs = [
@@ -32,13 +33,14 @@ export default function Home() {
         title="Hypnose Ericksonienne & Communication Animale en Normandie"
         description="Découvrez l'accompagnement de Katia Burgun à Fontaine-le-Dun (76). Hypnose pour le mieux-être humain et communication animale pour renforcer le lien avec vos compagnons."
         keywords="hypnose ericksonienne, communication animale normandie, katia burgun, bien-être animal, hypnothérapeute seine-maritime, fontaine-le-dun"
+        image={portraitKatia2}
       />
       <JSONLD 
         data={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": "Katia Burgun | Hypnose & Communication Animale",
-          "image": "https://votre-site.com/katia-portrait.jpeg",
+          "image": `https://votre-site.com${portraitKatia2}`,
           "@id": "https://votre-site.com",
           "url": "https://votre-site.com",
           "telephone": "NUMERO_DE_TELEPHONE",

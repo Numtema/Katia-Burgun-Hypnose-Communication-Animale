@@ -5,8 +5,8 @@ import { motion } from 'motion/react';
 import { SectionBadge, BlurText, PrimaryButton } from '../components/UI';
 import SEO from '../components/SEO';
 
-const portraitKatia = "/katia-portrait.jpeg";
-const diplomeKatia = "/katia-diplome.jpeg";
+import portraitKatia from '../assets/katia-portrait.jpeg';
+import diplomeKatia from '../assets/katia-diplome.jpeg';
 
 export default function Bio() {
   return (

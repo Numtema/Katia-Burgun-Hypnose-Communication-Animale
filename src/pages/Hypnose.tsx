@@ -6,7 +6,7 @@ import { SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
 import SEO from '../components/SEO';
 import JSONLD from '../components/JSONLD';
 
-const hypnoseImg = "/hypnose-katia.png";
+import hypnoseImg from '../assets/hypnose-katia.png';
 
 const faqs = [
   { 

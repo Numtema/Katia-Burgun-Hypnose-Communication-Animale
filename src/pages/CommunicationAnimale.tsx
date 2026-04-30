@@ -23,7 +23,7 @@ import { SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
 import SEO from '../components/SEO';
 import JSONLD from '../components/JSONLD';
 
-const commImg = "/chat-katia.jpeg";
+import commImg from '../assets/chat-katia.jpeg';
 
 const animalSpecies = [
   { name: 'Chiens', image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600' },
