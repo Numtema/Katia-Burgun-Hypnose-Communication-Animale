@@ -23,6 +23,19 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
       document.body.style.overflow = 'unset';
     }
   }, [isMobileMenuOpen]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
