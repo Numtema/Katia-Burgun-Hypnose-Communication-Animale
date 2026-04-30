@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Moon, Sun, ChevronDown } from 'lucide-react';
+import { Moon, Sun, ChevronDown, Menu, X } from 'lucide-react';
 
 interface NavigationProps {
   isLightMode: boolean;
@@ -10,6 +10,19 @@ interface NavigationProps {
 export default function Navigation({ isLightMode, onToggleTheme }: NavigationProps) {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,7 +105,77 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
             {isLightMode ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
           
-          <a href="#contact" className="xl:hidden bg-[#8ba394] px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff]">Contact</a>
+          <a href="#contact" className="hidden sm:inline-flex xl:hidden bg-[#8ba394] px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff]">Contact</a>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full border border-site bg-[var(--site-surface)] text-site transition-transform hover:scale-110"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Drawer */}
+      <div 
+        className={`fixed inset-0 z-40 bg-[var(--site-bg)] transition-transform duration-500 xl:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col h-full pt-32 pb-12 px-8 overflow-y-auto">
+          <nav className="flex flex-col gap-6">
+            {[...navItems, ...rightNavItems].map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-2xl font-heading italic transition-colors ${
+                  isActive(item.href) ? 'text-[#8ba394]' : 'text-site'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+            
+            <div className="mt-4 pt-6 border-t border-site/10">
+              <span className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] mb-4 block">Nos Services</span>
+              <div className="flex flex-col gap-4">
+                <Link 
+                  to="/hypnose-ericksonienne-houdetot" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-xl font-heading italic text-site hover:text-[#8ba394] transition-colors"
+                >
+                  Hypnose Ericksonienne
+                </Link>
+                <Link 
+                  to="/communication-animale" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-xl font-heading italic text-site hover:text-[#8ba394] transition-colors"
+                >
+                  Communication animale
+                </Link>
+                <Link 
+                  to="/formation-initiation-communication-animale" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-xl font-heading italic text-site hover:text-[#8ba394] transition-colors"
+                >
+                  Formation
+                </Link>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <a 
+                href="#contact" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex w-full items-center justify-center bg-[#8ba394] py-4 rounded-2xl text-[11px] font-bold uppercase tracking-widest text-[#ffffff]"
+              >
+                Prendre rendez-vous
+              </a>
+            </div>
+          </nav>
         </div>
       </div>
     </header>

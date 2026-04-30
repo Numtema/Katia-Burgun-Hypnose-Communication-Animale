@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Sparkles, MessageCircle, GraduationCap, Plus, Star } from 'lucide-react';
 import { HlsBackgroundVideo, SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
+import SEO from '../components/SEO';
+import JSONLD from '../components/JSONLD';
 
 const HERO_VIDEO = "/hero-video.mp4";
 const STATS_VIDEO = "https://stream.mux.com/NcU3HlHeF7CUL86azTTzpy3Tlb00d6iF3BmCdFslMJYM.m3u8";
@@ -26,6 +28,66 @@ export default function Home() {
 
   return (
     <div className="bg-site transition-colors duration-500">
+      <SEO 
+        title="Hypnose Ericksonienne & Communication Animale en Normandie"
+        description="Découvrez l'accompagnement de Katia Burgun à Fontaine-le-Dun (76). Hypnose pour le mieux-être humain et communication animale pour renforcer le lien avec vos compagnons."
+        keywords="hypnose ericksonienne, communication animale normandie, katia burgun, bien-être animal, hypnothérapeute seine-maritime, fontaine-le-dun"
+      />
+      <JSONLD 
+        data={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Katia Burgun | Hypnose & Communication Animale",
+          "image": "https://votre-site.com/katia-portrait.jpeg",
+          "@id": "https://votre-site.com",
+          "url": "https://votre-site.com",
+          "telephone": "NUMERO_DE_TELEPHONE",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ADRESSE_DU_CABINET",
+            "addressLocality": "Fontaine-le-Dun",
+            "postalCode": "76740",
+            "addressRegion": "Normandie",
+            "addressCountry": "FR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 49.8519,
+            "longitude": 0.8351
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "19:00"
+          },
+          "sameAs": [
+            "URL_FACEBOOK",
+            "URL_INSTAGRAM"
+          ]
+        }}
+      />
+      <JSONLD 
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a
+            }
+          }))
+        }}
+      />
       {/* Hero */}
       <section id="home" className="relative min-h-[100dvh] pt-32 pb-16 bg-site flex items-center overflow-hidden transition-colors duration-500">
         <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-70 md:opacity-80 object-cover" />

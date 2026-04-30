@@ -3,16 +3,9 @@ import { motion } from 'motion/react';
 import { CheckCircle, CreditCard, Landmark, Banknote, Receipt, ArrowLeft, ExternalLink, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
+import SEO from '../components/SEO';
 
 export default function Tarifs() {
-  useEffect(() => {
-    document.title = "Tarifs hypnose, communication animale et formation | Katia Burgun";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Découvrez les tarifs des séances d’hypnose Ericksonienne, de communication animale et des formations proposées par Katia Burgun. Paiement, annulation et informations sur la facture mutuelle.");
-    }
-  }, []);
-
   const mutuelles = [
     { name: "Harmonie Mutuelle", url: "https://www.harmonie-mutuelle.fr/" },
     { name: "MGEN", url: "https://www.mgen.fr/" },
@@ -72,6 +65,11 @@ export default function Tarifs() {
 
   return (
     <div className="pt-32 min-h-screen bg-site transition-colors duration-500 pb-24">
+      <SEO 
+        title="Tarifs et Modalités | Hypnose & Communication Animale"
+        description="Retrouvez les tarifs des consultations en hypnose Ericksonienne (Houdetot / Visio) et en communication animale, ainsi que les modalités de paiement et de remboursement mutuelle."
+        keywords="tarifs hypnose, prix communication animale, remboursement mutuelle hypnose, prix formation intuition"
+      />
       <div className="px-6 lg:px-16 mb-8 mx-auto max-w-7xl">
         <Link to="/" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-site transition-colors">
           <ArrowLeft className="h-3 w-3" /> Retour à l'accueil

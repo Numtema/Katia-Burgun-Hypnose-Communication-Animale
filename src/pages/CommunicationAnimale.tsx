@@ -20,6 +20,8 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
+import SEO from '../components/SEO';
+import JSONLD from '../components/JSONLD';
 
 const commImg = "/chat-katia.jpeg";
 
@@ -67,16 +69,27 @@ const faqs = [
 export default function CommunicationAnimale() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  useEffect(() => {
-    document.title = "Communication animale intuitive à distance | Katia Burgun";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Communication animale intuitive avec Katia Burgun. Comprenez mieux les émotions, besoins et comportements de votre animal grâce à une consultation à distance, en complément d’un suivi vétérinaire.");
-    }
-  }, []);
-
   return (
     <div className="pt-32 min-h-screen bg-site transition-colors duration-500 pb-16">
+      <SEO 
+        title="Communication Animale Intuitive | Mieux comprendre votre animal"
+        description="Dialogue intuitif pour comprendre les émotions, comportements et besoins de votre compagnon (chien, chat, cheval…). Consultation à distance par Katia Burgun."
+        keywords="communication animale, dialogue animal, interprète animalier, comprendre son chat, comportement chien, normandie"
+      />
+      <JSONLD 
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a
+            }
+          }))
+        }}
+      />
       <div className="px-6 lg:px-16 mb-8 mx-auto max-w-7xl">
         <Link to="/" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-site transition-colors">
           <ArrowLeft className="h-3 w-3" /> Retour à l'accueil

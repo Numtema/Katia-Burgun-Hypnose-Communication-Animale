@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Moon, Sun, Heart, RefreshCw, Shield, Zap, CheckCircle, ArrowLeft, Brain, Plus, Compass, Anchor, Cloud, ShieldCheck, MessageCircle } from 'lucide-react';
 import { SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
+import SEO from '../components/SEO';
+import JSONLD from '../components/JSONLD';
 
 const hypnoseImg = "/hypnose-katia.png";
 
@@ -36,16 +38,27 @@ const faqs = [
 export default function Hypnose() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  useEffect(() => {
-    document.title = "Hypnose Ericksonienne à Houdetot | Stress, sommeil, confiance, addictions";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Séances d’hypnose Ericksonienne à Houdetot et en visio. Accompagnement doux pour stress, sommeil, confiance en soi, phobies, addictions et blocages émotionnels.");
-    }
-  }, []);
-
   return (
     <div className="pt-32 min-h-screen bg-site transition-colors duration-500 pb-16">
+      <SEO 
+        title="Hypnose Ericksonienne à Houdetot | Stress, sommeil, addictions"
+        description="Séances d’hypnose Ericksonienne en Normandie (Houdetot) et en visio. Retrouvez l'équilibre : gestion du stress, troubles du sommeil, addictions, phobies et confiance en soi."
+        keywords="hypnose ericksonienne, hypnothérapeute houdetot, hypnose normandie, arrêt tabac hypnose, gestion stress hypnose"
+      />
+      <JSONLD 
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a
+            }
+          }))
+        }}
+      />
       <div className="px-6 lg:px-16 mb-8 mx-auto max-w-7xl">
         <Link to="/" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-site transition-colors">
           <ArrowLeft className="h-3 w-3" /> Retour à l'accueil

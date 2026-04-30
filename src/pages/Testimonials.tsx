@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Star, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SectionBadge, BlurText, PrimaryButton } from '../components/UI';
+import SEO from '../components/SEO';
 
 export default function Testimonials() {
   const testimonials = [
@@ -27,6 +28,11 @@ export default function Testimonials() {
 
   return (
     <div className="pt-32 min-h-screen bg-site transition-colors duration-500 pb-24">
+      <SEO 
+        title="Témoignages et Avis clients | Katia Burgun"
+        description="Découvrez les retours d'expérience et témoignages de mes clients en hypnose Ericksonienne et communication animale en Normandie."
+        keywords="témoignages hypnose, avis communication animale, retours clients katia burgun"
+      />
       <div className="px-6 lg:px-16 mb-8 mx-auto max-w-7xl">
         <Link to="/" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-site transition-colors">
           <ArrowLeft className="h-3 w-3" /> Retour à l'accueil

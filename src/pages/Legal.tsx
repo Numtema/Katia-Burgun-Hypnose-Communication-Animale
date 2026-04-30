@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { BlurText } from '../components/UI';
 import { ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function Legal() {
   const { type } = useParams();
@@ -11,6 +12,7 @@ export default function Legal() {
       case 'mentions-legales':
         return {
           title: 'Mentions Légales',
+          description: 'Informations légales concernant l\'entreprise Katia Burgun.',
           content: (
             <div className="space-y-12">
               <section>
@@ -48,6 +50,7 @@ export default function Legal() {
       case 'confidentialite':
         return {
           title: 'Politique de confidentialité',
+          description: 'Comment Katia Burgun protège vos données personnelles et respecte le RGPD.',
           content: (
             <div className="space-y-12">
                <p className="text-lg italic text-[#8ba394]">Vos données personnelles, comment nous les traitons, et vos droits.</p>
@@ -119,6 +122,7 @@ export default function Legal() {
       case 'cookies':
         return {
           title: 'Politique cookies',
+          description: 'Informations sur l\'utilisation des cookies sur le site katiaburgun.fr.',
           content: (
             <div className="space-y-12">
                <p className="text-lg italic">Ce que sont les cookies, comment nous les utilisons, et comment les gérer.</p>
@@ -196,6 +200,7 @@ export default function Legal() {
       case 'cgv':
         return {
           title: 'Conditions générales',
+          description: 'Conditions générales de vente et de prestation de services de Katia Burgun.',
           content: (
             <div className="space-y-12">
                <p className="text-lg italic text-[#8ba394]">Les règles qui régissent nos prestations et votre réservation.</p>
@@ -267,15 +272,17 @@ export default function Legal() {
       default:
         return {
           title: 'Page Juridique',
+          description: 'Pages juridiques et légales.',
           content: <p>Sélectionnez une page légale dans le pied de page.</p>
         };
     }
   };
 
-  const { title, content } = getContent();
+  const { title, content, description } = getContent();
 
   return (
     <div className="pt-32 min-h-screen bg-site transition-colors duration-500 pb-24 px-6 lg:px-16">
+      <SEO title={`${title} | Katia Burgun`} description={description} />
       <div className="mx-auto max-w-4xl">
         <div className="mb-12">
           <Link to="/" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-site transition-colors">

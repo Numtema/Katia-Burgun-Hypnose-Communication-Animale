@@ -3,18 +3,16 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { GraduationCap, Users, Clock, MapPin, CheckCircle, BookOpen, Star, Shield, HandHeart, Sparkles, ArrowLeft, Heart, Zap, Coffee, ScrollText } from 'lucide-react';
 import { SectionBadge, BlurText, PrimaryButton, cn } from '../components/UI';
+import SEO from '../components/SEO';
 
 export default function Formation() {
-  useEffect(() => {
-    document.title = "Formation initiation à la communication animale | Katia Burgun";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Découvrez une journée d’initiation à la communication animale à Fontaine-le-Dun. Petit groupe, théorie, pratique, supports fournis et accompagnement personnalisé.");
-    }
-  }, []);
-
   return (
     <div className="pt-32 min-h-screen bg-site transition-colors duration-500 pb-16">
+      <SEO 
+        title="Formation Initiation Communication Animale | Apprendre l'Intuition"
+        description="Participez à une journée d’initiation à la communication animale en Normandie. Petit groupe, pratique sur photos et bases éthiques pour apprendre à écouter vos animaux."
+        keywords="formation communication animale, stage communication animale, apprendre parler animaux, stage intuition normandie"
+      />
       <div className="px-6 lg:px-16 mb-8 mx-auto max-w-7xl">
         <Link to="/" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-site transition-colors">
           <ArrowLeft className="h-3 w-3" /> Retour à l'accueil

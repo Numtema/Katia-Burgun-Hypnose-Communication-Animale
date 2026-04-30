@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { motion } from 'motion/react';
 import { SectionBadge, BlurText, PrimaryButton } from '../components/UI';
+import SEO from '../components/SEO';
 
 const portraitKatia = "/katia-portrait.jpeg";
 const diplomeKatia = "/katia-diplome.jpeg";
@@ -10,6 +11,11 @@ const diplomeKatia = "/katia-diplome.jpeg";
 export default function Bio() {
   return (
     <div className="pt-32 min-h-screen bg-site transition-colors duration-500 pb-16">
+      <SEO 
+        title="Qui suis-je ? Katia Burgun"
+        description="Faites connaissance avec Katia Burgun, hypnothérapeute certifiée et communicante animale en Normandie. Découvrez mon parcours, mes formations et mes valeurs."
+        keywords="katia burgun, bio, parcours hypnose, formation communication animale, fontaine-le-dun, normandie"
+      />
       <div className="px-6 lg:px-16 mb-8 mx-auto max-w-7xl">
         <Link to="/" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-site transition-colors">
           <ArrowLeft className="h-3 w-3" /> Retour à l'accueil
