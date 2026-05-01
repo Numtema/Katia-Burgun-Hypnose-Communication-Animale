@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Sparkles, Heart } from 'lucide-react';
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
           <div className="md:col-span-2">
-            <Link to="/" className="text-site text-2xl font-heading italic block mb-6 hover:text-[#8ba394] transition-colors">Katia Burgun</Link>
+            <Link href="/" className="text-site text-2xl font-heading italic block mb-6 hover:text-[#8ba394] transition-colors">Katia Burgun</Link>
             <p className="text-[var(--site-muted)] font-light text-sm max-w-md leading-relaxed mb-4">
               KB Hypnose Ericksonienne & Mieux-être, Communication intuitive animaux, Consultations en cabinet (76740 Fontaine-le-Dun, proche St-Valery-en-Caux, Dieppe) et à distance.
             </p>
@@ -30,7 +30,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {['Accueil', 'Qui suis-je', 'Hypnose', 'Communication animale', 'Formation', 'Tarifs', 'Témoignages'].map((item) => (
                 <li key={item}>
-                  <Link to={item === 'Accueil' ? '/' : `/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-')}`} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{item}</Link>
+                  <Link href={item === 'Accueil' ? '/' : `/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-')}`} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>
@@ -46,7 +46,7 @@ export default function Footer() {
                 { l: 'Gestion des cookies', h: '/legal/cookies' }
               ].map((link) => (
                 <li key={link.l}>
-                  <Link to={link.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{link.l}</Link>
+                  <Link href={link.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{link.l}</Link>
                 </li>
               ))}
             </ul>

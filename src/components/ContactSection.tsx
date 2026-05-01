@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Phone, MapPin, Calendar, ChevronRight, MessageSquare } from 'lucide-react';
 import { SectionBadge } from './UI';

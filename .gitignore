@@ -6,3 +6,12 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# Apple Double files
+._*
+.npm-cache/

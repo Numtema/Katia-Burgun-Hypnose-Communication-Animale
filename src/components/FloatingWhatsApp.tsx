@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { MessageCircle, X, MessageSquare, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';

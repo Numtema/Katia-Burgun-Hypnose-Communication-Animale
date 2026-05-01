@@ -1,20 +1,21 @@
+"use client";
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Moon, Sun, ChevronDown, Menu, X } from 'lucide-react';
 
-interface NavigationProps {
-  isLightMode: boolean;
-  onToggleTheme: () => void;
-}
+import { useTheme } from '../context/ThemeContext';
 
-export default function Navigation({ isLightMode, onToggleTheme }: NavigationProps) {
-  const location = useLocation();
+export default function Navigation() {
+  const { isLightMode, toggleTheme } = useTheme();
+  const onToggleTheme = toggleTheme;
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -43,12 +44,12 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
     { label: "FAQ", href: "/#faq" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <header className={`fixed left-0 right-0 top-0 z-50 px-6 sm:px-16 transition-all duration-300 ${isScrolled ? 'py-4 bg-[var(--site-surface)]/90 backdrop-blur-md border-b border-site shadow-sm' : 'py-6 pt-8'}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="flex flex-col">
             <span className="font-heading text-xl sm:text-2xl italic text-site leading-none transition-transform group-hover:scale-[1.02]">Katia Burgun</span>
             <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#6d8b7a] dark:text-[#8ba394] mt-0.5">Hypnose - Communication Animale</span>
@@ -59,7 +60,7 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                to={item.href}
+                href={item.href}
                 className={`px-4 py-2 text-[10px] uppercase tracking-widest transition-all ${
                   isActive(item.href) ? 'text-[#8ba394] font-bold' : 'text-[var(--site-muted)] hover:text-site'
                 }`}
@@ -75,9 +76,9 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
               </button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                 <div className="bg-[var(--site-surface-solid)] border border-site rounded-2xl shadow-xl flex flex-col p-2">
-                  <Link to="/hypnose-ericksonienne-houdetot" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Hypnose</Link>
-                  <Link to="/communication-animale" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Communication animale</Link>
-                  <Link to="/formation-initiation-communication-animale" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Formation</Link>
+                  <Link href="/hypnose" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Hypnose</Link>
+                  <Link href="/communication-animale" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Communication animale</Link>
+                  <Link href="/formation" className="px-4 py-3 text-xs text-site hover:bg-[#8ba394]/20 rounded-xl transition-colors font-medium">Formation</Link>
                 </div>
               </div>
             </div>
@@ -85,7 +86,7 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
             {rightNavItems.map((item) => (
               <Link
                 key={item.label}
-                to={item.href}
+                href={item.href}
                 className={`px-4 py-2 text-[10px] uppercase tracking-widest transition-all ${
                   isActive(item.href) ? 'text-[#8ba394] font-bold' : 'text-[var(--site-muted)] hover:text-site'
                 }`}
@@ -129,7 +130,7 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
             {[...navItems, ...rightNavItems].map((item) => (
               <Link
                 key={item.label}
-                to={item.href}
+                href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`text-2xl font-heading italic transition-colors ${
                   isActive(item.href) ? 'text-[#8ba394]' : 'text-site'
@@ -143,21 +144,21 @@ export default function Navigation({ isLightMode, onToggleTheme }: NavigationPro
               <span className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] mb-4 block">Nos Services</span>
               <div className="flex flex-col gap-4">
                 <Link 
-                  to="/hypnose-ericksonienne-houdetot" 
+                  href="/hypnose" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-xl font-heading italic text-site hover:text-[#8ba394] transition-colors"
                 >
                   Hypnose Ericksonienne
                 </Link>
                 <Link 
-                  to="/communication-animale" 
+                  href="/communication-animale" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-xl font-heading italic text-site hover:text-[#8ba394] transition-colors"
                 >
                   Communication animale
                 </Link>
                 <Link 
-                  to="/formation-initiation-communication-animale" 
+                  href="/formation" 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-xl font-heading italic text-site hover:text-[#8ba394] transition-colors"
                 >
