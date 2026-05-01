@@ -8,14 +8,14 @@ import { SectionBadge, BlurText, PrimaryButton, cn } from '../../components/UI';
 
 export default function Tarifs() {
   const mutuelles = [
-    { name: "Harmonie Mutuelle", url: "https://www.harmonie-mutuelle.fr/" },
-    { name: "MGEN", url: "https://www.mgen.fr/" },
-    { name: "Malakoff Humanis", url: "https://www.malakoffhumanis.com/" },
-    { name: "Alan", url: "https://alan.com/" },
-    { name: "AXA", url: "https://www.axa.fr/mutuelle-sante.html" },
-    { name: "Allianz", url: "https://www.allianz.fr/assurance-sante.html" },
-    { name: "SwissLife", url: "https://www.swisslife.fr/" },
-    { name: "Mutuelle Bleue", url: "https://www.mutuellebleue.fr/" }
+    { name: "Harmonie Mutuelle", url: "https://www.harmonie-mutuelle.fr/", domain: "harmonie-mutuelle.fr" },
+    { name: "MGEN", url: "https://www.mgen.fr/", domain: "mgen.fr" },
+    { name: "Malakoff Humanis", url: "https://www.malakoffhumanis.com/", domain: "malakoffhumanis.com" },
+    { name: "Alan", url: "https://alan.com/", domain: "alan.com" },
+    { name: "AXA", url: "https://www.axa.fr/mutuelle-sante.html", domain: "axa.fr" },
+    { name: "Allianz", url: "https://www.allianz.fr/assurance-sante.html", domain: "allianz.fr" },
+    { name: "SwissLife", url: "https://www.swisslife.fr/", domain: "swisslife.fr" },
+    { name: "Mutuelle Bleue", url: "https://www.mutuellebleue.fr/", domain: "mutuellebleue.fr" }
   ];
 
   const pricing = [
@@ -152,7 +152,14 @@ export default function Tarifs() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-between p-4 rounded-2xl border border-site bg-[var(--site-bg)] hover:border-[#8ba394]/50 hover:bg-[var(--site-surface)] transition-all group"
                   >
-                    <span className="text-[11px] uppercase tracking-widest font-bold text-site opacity-80">{m.name}</span>
+                    <div className="flex items-center gap-3">
+                      <img 
+                        src={`https://www.google.com/s2/favicons?domain=${m.domain}&sz=128`} 
+                        alt={`Logo ${m.name}`} 
+                        className="w-6 h-6 object-contain rounded bg-white p-0.5"
+                      />
+                      <span className="text-[11px] uppercase tracking-widest font-bold text-site opacity-80">{m.name}</span>
+                    </div>
                     <ExternalLink className="h-3 w-3 text-[#8ba394] opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 ))}
