@@ -27,13 +27,13 @@ import Script from 'next/script';
 const commImg = "/assets/chat-katia-burgun.jpeg";
 
 const animalSpecies = [
-  { name: 'Chiens', image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600' },
+  { name: 'Chiens', image: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=600' },
   { name: 'Chats', image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=600' },
   { name: 'Chevaux', image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=600' },
   { name: 'Lapins', image: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&q=80&w=600' },
   { name: 'Oiseaux', image: 'https://images.unsplash.com/photo-1552504443-bd215eb309e4?auto=format&fit=crop&q=80&w=600' },
   { name: 'Reptiles', image: 'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?auto=format&fit=crop&q=80&w=600' },
-  { name: 'NAC', image: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=80&w=600' }
+  { name: 'NAC', image: 'https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&q=80&w=600' }
 ];
 
 const faqs = [
