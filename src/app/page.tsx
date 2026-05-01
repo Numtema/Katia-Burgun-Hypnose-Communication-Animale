@@ -104,7 +104,7 @@ export default function Home() {
             <Link href="/hypnose" className="rounded-[2.5rem] bg-[var(--site-bg)] border border-site flex flex-col h-full hover:border-[#8ba394]/50 transition-all duration-500 overflow-hidden group shadow-lg hover:shadow-xl">
                <div className="h-56 relative overflow-hidden">
                  <img 
-                   src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2620&auto=format&fit=crop" 
+                   src={hypnoseImg} 
                    alt="Apaisement et relaxation" 
                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
                  />
@@ -124,7 +124,7 @@ export default function Home() {
             <Link href="/communication-animale" className="rounded-[2.5rem] bg-[var(--site-bg)] border border-site flex flex-col h-full hover:border-[#8ba394]/50 transition-all duration-500 overflow-hidden group shadow-lg hover:shadow-xl">
                <div className="h-56 relative overflow-hidden">
                  <img 
-                   src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=2574&auto=format&fit=crop" 
+                   src={communicationImg} 
                    alt="Chien et humain" 
                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
                  />
