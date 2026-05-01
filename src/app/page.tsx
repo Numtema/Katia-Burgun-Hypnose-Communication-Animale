@@ -300,9 +300,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { t: "L'approche de Katia a transformé ma façon de gérer le stress. Ses séances d'hypnose m'apportent un vrai espace d'apaisement.", r: "Hypnose Ericksonienne" },
-              { t: "Grâce à Katia, j'ai mieux compris ce que vivait mon chien. Cela a changé ma manière de l'accompagner au quotidien.", r: "Communication animale" },
-              { t: "Une journée riche, claire et profondément humaine. Katia transmet avec beaucoup de générosité.", r: "Formation en communication animale" }
+              { t: "Souffrant d’une phobie en voiture, mon quotidien était devenu très contraignant. Grâce à la séance d’hypnose, j’ai ressenti une libération impressionnante. Tout s’est fait avec douceur et justesse. Aujourd’hui, je me sens apaisée.", r: "Véronique - Hypnose Ericksonienne" },
+              { t: "J’étais un peu dubitatif au départ, mais Katia m’a révélé une situation familiale que très peu de personnes connaissaient. Je suis impressionné qu’elle ait pu voir cela à travers ce que lui a dit mon chat. Bravo à elle !", r: "Michel - Communication animale" },
+              { t: "Katia est très à l'écoute de toutes nos remarques et questions. Cette journée de formation a été très intéressante et enrichissante. Merci à elle. Je vous la recommande !", r: "Inès - Formation" }
             ].map((it, i) => (
               <motion.div key={i} whileHover={{ y: -5 }} className="p-10 rounded-[2.5rem] bg-[var(--site-surface)] border border-site backdrop-blur-sm relative flex flex-col h-full">
                 <div className="flex gap-0.5 mb-6">{[1,2,3,4,5].map(s => <Star key={s} className="h-3 w-3 text-[#8ba394] fill-[#8ba394]" />)}</div>
