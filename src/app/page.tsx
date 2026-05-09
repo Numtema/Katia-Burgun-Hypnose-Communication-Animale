@@ -14,6 +14,24 @@ const communicationImg = "/assets/chat-katia-burgun.jpeg";
 const HERO_VIDEO = "/assets/katia-hypnotherapeute-normandie.mp4";
 const formationImg = "/assets/formation-groupe-katia.png";
 
+const LeafDecorator = ({ side }: { side: 'left' | 'right' }) => (
+  <svg 
+    viewBox="0 0 60 20" 
+    className={cn(
+      "w-8 h-3 sm:w-12 sm:h-4 text-[#8ba394] opacity-40",
+      side === 'right' ? "scale-x-[-1]" : ""
+    )} 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="1.5"
+  >
+    <path d="M0 10C15 10 25 5 30 0" strokeLinecap="round" />
+    <path d="M30 0C35 5 45 10 60 10" strokeLinecap="round" opacity="0.5" />
+    <path d="M15 8C18 6 22 5 25 4" strokeLinecap="round" opacity="0.7" />
+    <path d="M45 8C42 6 38 5 35 4" strokeLinecap="round" opacity="0.3" />
+  </svg>
+);
+
 const faqs = [
   { q: "Quelle est la différence entre l'hypnose Ericksonienne et la communication animale ?", a: "L'hypnose Ericksonienne s'adresse à l'humain. Elle vise à mobiliser vos ressources intérieures pour retrouver un mieux-être, dépasser certains blocages ou apaiser le stress.\nLa communication animale s'adresse à la compréhension de l'animal, de ses émotions, de ses besoins et de la relation que vous vivez avec lui." },
   { q: "Comment savoir quel accompagnement choisir ?", a: "Si votre besoin concerne votre état émotionnel, votre stress, votre sommeil ou un blocage personnel, l'hypnose est la voie la plus adaptée.\nSi vous cherchez à mieux comprendre votre animal, un comportement ou une situation que vous vivez avec lui, la communication animale est la bonne porte d'entrée." },
@@ -71,57 +89,65 @@ export default function Home() {
       />
       
       {/* Hero */}
-      <section id="home" className="relative min-h-[100dvh] pt-32 pb-16 bg-site flex items-center overflow-hidden transition-colors duration-500">
-        <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-90 md:opacity-100 object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/40 via-transparent to-[var(--site-bg)]/80" />
-        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-6">
-          <div className="mt-16 mb-12 flex flex-col items-center gap-4">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="group flex items-baseline gap-4 text-site text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading italic leading-none"
-            >
-              <span>Hypnose</span>
-              <span className="text-[10px] sm:text-[12px] not-italic font-bold uppercase tracking-[0.4em] opacity-40 translate-y-[-1em]">pour vous</span>
-            </motion.div>
+      <section id="home" className="relative h-[90dvh] min-h-[700px] flex items-center justify-center overflow-hidden bg-site transition-colors duration-500">
+        {/* Animated Background */}
+        <div className="absolute inset-[-5%] z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2000&auto=format&fit=crop" 
+            alt="Fleurs fond" 
+            className="w-full h-full object-cover animate-roses opacity-60 dark:opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/20 via-transparent to-[var(--site-bg)]/60" />
+          <div className="absolute inset-0 bg-[var(--site-bg)]/10 backdrop-brightness-110" />
+        </div>
+
+        <div className="relative z-10 w-[min(88%,1050px)] mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="hero-title-card p-8 sm:p-16 rounded-[3rem] text-center"
+          >
+            <h1 className="flex flex-col items-center">
+              <span className="hero-main-text italic text-site">Hypnose</span>
+              
+              <div className="flex items-center gap-4 sm:gap-8 my-4">
+                <LeafDecorator side="left" />
+                <span className="hero-sub-text">pour vous</span>
+                <LeafDecorator side="right" />
+              </div>
+
+              <span className="text-4xl sm:text-6xl text-[#8ba394] font-heading my-2">&</span>
+
+              <span className="hero-main-text italic text-site">Communication animale</span>
+
+              <div className="flex items-center gap-4 sm:gap-8 mt-4">
+                <LeafDecorator side="left" />
+                <span className="hero-sub-text">pour votre compagnon</span>
+                <LeafDecorator side="right" />
+              </div>
+            </h1>
 
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 1 }}
-              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-site text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading italic leading-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 1 }}
+              className="mt-12 flex flex-col items-center gap-8"
             >
-              <div className="flex items-center gap-4">
-                <span className="text-[#8ba394] font-light not-italic text-4xl sm:text-6xl">&</span>
-                <span className="relative">
-                  communication animale
-                  <span className="absolute -bottom-2 left-0 right-0 h-[1px] bg-[#8ba394]/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-                </span>
+              <div className="h-px w-24 bg-[#8ba394]/30" />
+              <p className="text-sm sm:text-base font-light text-site leading-relaxed max-w-2xl opacity-80">
+                À Houdetot, en Normandie et à distance, Katia Burgun vous accompagne en hypnose ericksonienne et en communication animale pour remettre de l'écoute, du sens et de l'apaisement dans votre vie.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <PrimaryButton href="#contact">Prendre rendez-vous</PrimaryButton>
+                <a href="#services" className="inline-flex items-center gap-2 rounded-full border border-[#8ba394]/30 px-8 py-3.5 text-[10px] uppercase tracking-widest font-bold text-site hover:bg-[#8ba394]/10 transition-all">Découvrir les services</a>
               </div>
-              <span className="text-[10px] sm:text-[12px] not-italic font-bold uppercase tracking-[0.4em] opacity-40">pour votre compagnon</span>
             </motion.div>
-          </div>
-          
-          <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            transition={{ delay: 1.2, duration: 1 }} 
-            className="mt-12 max-w-4xl mx-auto p-8 rounded-[2.5rem] bg-[var(--site-surface)]/40 backdrop-blur-md border border-site/30 shadow-xl"
-          >
-            <p className="text-sm sm:text-lg font-light text-site leading-relaxed font-body opacity-90">
-              À Houdetot, en Normandie et à distance, Katia Burgun vous accompagne en hypnose ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
-            </p>
-            <p className="mt-4 text-sm sm:text-base font-semibold text-[#5a6e62] dark:text-[#8ba394] italic">
-              Deux accompagnements distincts, une même intention : remettre de l’écoute, du sens et de l’apaisement dans votre vie et dans votre lien avec votre animal.
-            </p>
           </motion.div>
-          
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
-            <PrimaryButton href="#contact">Prendre rendez-vous</PrimaryButton>
-            <a href="#services" className="inline-flex items-center gap-2 rounded-full border border-[var(--site-border)] px-8 py-3.5 text-[11px] uppercase tracking-widest font-bold text-site transition-all hover:bg-[var(--site-surface)]">Découvrir les accompagnements</a>
-          </div>
         </div>
+        
+        {/* Bottom Fade */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[var(--site-bg)] to-transparent z-20" />
       </section>
 
       {/* Services Orientation */}
