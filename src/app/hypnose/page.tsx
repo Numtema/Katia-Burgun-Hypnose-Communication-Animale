@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Moon, Heart, RefreshCw, Shield, Zap, CheckCircle, ArrowLeft, Brain, Plus, Compass, Anchor, Cloud, ShieldCheck, MessageCircle } from 'lucide-react';
+import { Sparkles, Moon, Heart, RefreshCw, Shield, Zap, CheckCircle, ArrowLeft, Brain, Plus, Compass, Anchor, Cloud, ShieldCheck, MessageCircle, MapPin, Receipt, Wallet } from 'lucide-react';
 import { SectionBadge, BlurText, PrimaryButton, cn } from '../../components/UI';
 import Script from 'next/script';
 
@@ -11,28 +11,32 @@ const hypnoseImg = "/assets/hypnose-katia-burgun-houdetot-normandie.png";
 
 const faqs = [
   { 
-    q: "Qu'est-ce que l'hypnose Ericksonienne ?", 
-    a: "Contrairement à l'hypnose de spectacle, c'est une méthode douce et respectueuse où l'inconscient est considéré comme un réservoir de ressources. Le praticien utilise des métaphores et des suggestions indirectes pour aider le patient à trouver ses propres solutions." 
+    q: "Qu’est-ce que l’hypnose ericksonienne ?", 
+    a: "L’hypnose ericksonienne est une approche d’accompagnement qui utilise un état naturel de concentration intérieure pour faciliter l’accès à vos ressources inconscientes. Elle repose sur des suggestions, des images, des métaphores et des protocoles adaptés à votre situation personnelle." 
   },
   { 
     q: "Vais-je perdre le contrôle ?", 
-    a: "Pas du tout. Vous restez conscient(e) pendant toute la séance. Vous ne ferez rien qui aille à l'encontre de vos valeurs. C'est un état de relaxation profonde, un peu comme lorsque vous êtes 'dans la lune' ou absorbé par un bon film." 
+    a: "Non. Pendant une séance d’hypnose, vous ne perdez pas le contrôle. Vous restez conscient de ce qui se passe, vous entendez ma voix, vous pouvez parler, bouger ou interrompre la séance si vous en ressentez le besoin. L’hypnose ericksonienne respecte votre rythme, votre sécurité intérieure et votre liberté." 
   },
   { 
-    q: "L'hypnose fonctionne-t-elle sur tout le monde ?", 
-    a: "Chaque personne est hypnotisable, car l'état de transe est un état naturel que nous expérimentons tous plusieurs fois par jour sans le savoir. La seule condition est d'être volontaire et d'avoir envie de vivre l'expérience." 
+    q: "L’hypnose fonctionne-t-elle sur tout le monde ?", 
+    a: "Chaque personne est différente. Certaines entrent facilement dans l’expérience hypnotique, d’autres ont besoin de plus de temps pour se sentir en confiance. L’hypnose n’est pas une question de performance. Elle repose surtout sur l’alliance, la disponibilité intérieure et le respect du rythme de chacun." 
   },
   { 
     q: "Combien de séances sont nécessaires ?", 
-    a: "L'hypnose fait partie des thérapies brèves. Parfois, un déclic se produit en une seule séance. Cependant, pour ancrer un changement profond et durable, un accompagnement de 3 à 5 séances est souvent recommandé." 
+    a: "Le nombre de séances dépend de votre objectif, de votre rythme et de ce qui émerge au fil de l’accompagnement. Certaines problématiques peuvent évoluer en une séance, tandis que d’autres demandent plusieurs rendez-vous. Il arrive aussi qu’au cours d’une séance, une autre problématique apparaisse ou soit abordée, car l’inconscient amène parfois ce qui est le plus juste à travailler à ce moment-là. Nous avançons donc pas à pas, en respectant votre rythme et vos besoins." 
   },
   { 
     q: "Proposez-vous des séances en ligne ?", 
-    a: "Oui, les séances en visio sont tout aussi efficaces qu'en cabinet. L'essentiel est que vous soyez dans un environnement calme et confortable où vous ne serez pas dérangé." 
+    a: "Oui. Les séances peuvent avoir lieu en cabinet à Houdetot ou à distance, en visioconférence. La séance en ligne se déroule dans les mêmes conditions d’écoute, de confidentialité et d’accompagnement. Il est simplement important de vous installer dans un endroit calme, où vous ne serez pas dérangé." 
   },
   { 
     q: "Est-ce remboursé ?", 
-    a: "L'hypnose n'est pas remboursée par la Sécurité Sociale, mais de nombreuses mutuelles le font. Je vous remets une facture à la fin de chaque séance pour vos démarches." 
+    a: "Certaines mutuelles peuvent prendre en charge une partie des séances d’hypnose selon les garanties prévues dans votre contrat. Une facture vous est remise à l’issue de la séance. Je vous invite à vous rapprocher directement de votre mutuelle pour connaître vos conditions de prise en charge. L’hypnose gagne en reconnaissance auprès des organismes de santé, qui valorisent de plus en plus les approches complémentaires du mieux-être." 
+  },
+  {
+    q: "L’hypnose remplace-t-elle un suivi médical ?",
+    a: "Non. L’hypnose ericksonienne est une approche complémentaire du mieux-être. Elle ne se substitue jamais à un avis médical, un diagnostic, un traitement ou un suivi par un professionnel de santé. En cas de trouble important, de douleur, de symptôme ou de traitement en cours, il est essentiel de consulter un médecin ou un professionnel compétent."
   }
 ];
 
@@ -70,17 +74,19 @@ export default function Hypnose() {
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <SectionBadge>Accompagnement doux</SectionBadge>
-            <BlurText text="Hypnose Ericksonienne" delay={50} className="mt-8 text-4xl sm:text-6xl italic font-heading text-site" />
-            <h1 className="mt-4 text-3xl sm:text-5xl italic font-heading text-[#8ba394] leading-tight opacity-90">Hypnose Ericksonienne à Houdetot</h1>
+            <BlurText text="Hypnose ericksonienne à Houdetot" delay={50} className="mt-8 text-4xl sm:text-6xl italic font-heading text-site" />
+            <h1 className="mt-4 text-xl sm:text-2xl font-light text-[var(--site-muted)] leading-relaxed opacity-90 max-w-xl">
+              Un accompagnement bienveillant pour apaiser votre mental, dépasser certains blocages et retrouver un meilleur équilibre intérieur.
+            </h1>
             
             <p className="mt-8 text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed max-w-lg">
-              Un voyage intérieur bienveillant pour libérer vos blocages, apaiser votre mental et retrouver votre équilibre. Une approche respectueuse qui s'appuie sur vos propres ressources inconscientes.
+              L’hypnose ericksonienne est une approche respectueuse qui s’appuie sur vos propres ressources inconscientes. Elle vous accompagne dans un état de détente et de disponibilité intérieure, afin de favoriser le changement, à votre rythme.
             </p>
 
             <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-6 text-site opacity-90 font-medium text-[10px] uppercase tracking-widest">
                <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">60 €</div> Par séance</div>
-               <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">1h30</div> Durée moyenne</div>
-               <div><div className="text-xl text-nowrap font-heading italic text-[#8ba394] mb-1">Houdetot / Visio</div> Lieux</div>
+               <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">1h à 1h30</div> Durée moyenne</div>
+               <div><div className="text-xl text-nowrap font-heading italic text-[#8ba394] mb-1">Houdetot / Visio</div> Lieux de consultation</div>
             </div>
 
             <div className="mt-12 flex flex-wrap items-center gap-6">
@@ -89,20 +95,32 @@ export default function Hypnose() {
             </div>
           </div>
           <div className="relative aspect-video rounded-[3rem] overflow-hidden border border-site shadow-2xl">
-            <img src={hypnoseImg} alt="Séance d'hypnose apaisante" className="w-full h-full object-cover" />
+            <img src={hypnoseImg} alt="Séance d'hypnose apaisante à Houdetot" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
 
-      {/* Citation */}
+      {/* Intro Section */}
       <section className="py-24 px-6 lg:px-16 text-center mx-auto max-w-4xl">
-        <h2 className="text-3xl sm:text-5xl font-heading italic text-[#8ba394] mb-8 leading-tight">
-          « L'inconscient est un puissant allié. L'hypnose lui parle sa langue. »
+        <SectionBadge>Hypnose ericksonienne</SectionBadge>
+        <h2 className="mt-8 text-3xl sm:text-5xl font-heading italic text-site mb-8 leading-tight">
+          Une approche douce du changement intérieur
         </h2>
-        <div className="mx-auto w-16 h-px bg-[#8ba394]/30 mb-8" />
-        <p className="text-[var(--site-muted)] font-light leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
-          L'hypnose Ericksonienne, développée par Milton Erickson, est une approche humaine et personnalisée. L'état de transe hypnotique est un état naturel de relaxation profonde qui permet de communiquer avec vos ressources intérieures pour initier le changement.
-        </p>
+        <div className="text-2xl sm:text-3xl font-heading italic text-[#8ba394] mb-8">
+          « L’hypnose travaille avec son allié : l’inconscient. »
+        </div>
+        <div className="mx-auto w-16 h-px bg-[#8ba394]/30 mb-12" />
+        <div className="space-y-6 text-[var(--site-muted)] font-light leading-relaxed text-sm sm:text-base max-w-3xl mx-auto text-left sm:text-center">
+          <p>
+            L’hypnose ericksonienne, développée par Milton Erickson, est une approche humaine, souple et personnalisée.
+          </p>
+          <p>
+            L’état hypnotique est un état naturel de concentration intérieure. Il ne s’agit pas de dormir, ni de perdre le contrôle, mais d’entrer dans une forme de présence différente, plus tournée vers vos ressentis, vos images intérieures et vos ressources profondes.
+          </p>
+          <p>
+            Dans cet état, le mental peut relâcher une partie de ses résistances habituelles. Cela permet d’ouvrir un espace de travail avec l’inconscient, afin d’accompagner certains changements, apaisements ou prises de recul.
+          </p>
+        </div>
       </section>
 
       {/* Domaines d'application */}
@@ -111,35 +129,27 @@ export default function Hypnose() {
           <div className="text-center mb-20">
             <SectionBadge>Mieux-être</SectionBadge>
             <h2 className="mt-8 text-4xl sm:text-6xl text-site font-heading italic">Pourquoi consulter <span className="text-[#8ba394]">en hypnose ?</span></h2>
-            <p className="mt-6 text-[var(--site-muted)] font-light max-w-2xl mx-auto italic">Un accompagnement doux pour dépasser vos blocages et retrouver un équilibre intérieur.</p>
+            <p className="mt-6 text-[var(--site-muted)] font-light max-w-2xl mx-auto italic">L’hypnose peut vous accompagner lorsque vous ressentez le besoin de dépasser un blocage, de traverser une période difficile ou de retrouver un meilleur équilibre intérieur.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 mt-12">
             {[
-              { image: 'https://images.unsplash.com/photo-1511295742362-92c96b124e4d?auto=format&fit=crop&q=80&w=800', icon: Moon, title: 'Sommeil & Stress', desc: 'Retrouver un sommeil profond, apaiser l\'anxiété, calmer les ruminations et les pensées incessantes.' },
-              { image: 'https://images.unsplash.com/photo-1542598953-41525a720dc5?auto=format&fit=crop&q=80&w=800', icon: Zap, title: 'Confiance en soi', desc: 'Affirmer sa valeur, oser prendre sa place, se libérer du regard des autres et du doute de soi.' },
-              { image: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&q=80&w=800', icon: RefreshCw, title: 'Bloquages émotionnels', desc: 'Traverser une séparation, un changement de vie ou un bouleversement avec sérénité.' },
-              { image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800', icon: Anchor, title: 'Addictions & Habitudes', desc: 'Arrêter de fumer, se libérer du grignotage, sortir de comportements automatiques néfastes.' },
-              { image: 'https://images.unsplash.com/photo-1454486847846-928ef231b25f?auto=format&fit=crop&q=80&w=800', icon: Shield, title: 'Phobies & Peurs', desc: 'Dompter ses phobies (avion, insectes, etc.), apprivoiser ses peurs et retrouver sa liberté d\'agir.' },
-              { image: 'https://images.unsplash.com/photo-1515377905703-c47fea345719?auto=format&fit=crop&q=80&w=800', icon: Cloud, title: 'Mieux-être durable', desc: 'Retrouver de l\'énergie, une clarté mentale et une relation plus sereine avec soi-même.' },
+              { icon: Moon, title: 'Sommeil & stress', desc: 'Retrouver un sommeil plus apaisé, calmer les ruminations, apaiser l’anxiété et relâcher les tensions mentales ou émotionnelles.' },
+              { icon: Zap, title: 'Confiance en soi', desc: 'Affirmer sa valeur, oser prendre sa place, se libérer progressivement du regard des autres et retrouver davantage de sécurité intérieure.' },
+              { icon: RefreshCw, title: 'Blocages émotionnels & deuil', desc: 'Traverser une séparation, un deuil, un changement de vie ou un bouleversement avec plus de sérénité, en retrouvant progressivement des ressources intérieures.' },
+              { icon: Anchor, title: 'Addictions & habitudes', desc: 'Accompagner l’arrêt du tabac, apaiser les comportements automatiques, le grignotage ou certaines habitudes devenues pesantes dans le quotidien.' },
+              { icon: Shield, title: 'Phobies & peurs', desc: 'Apprivoiser certaines peurs, phobies ou réactions disproportionnées afin de retrouver davantage de liberté dans vos choix et vos actions.' },
+              { icon: Cloud, title: 'Mieux-être durable', desc: 'Retrouver de l’énergie, de la clarté mentale, une relation plus sereine avec soi-même et une meilleure capacité à avancer.' },
             ].map((item, idx) => (
               <div key={idx} className="relative pt-12 group">
-                <div className="absolute inset-x-0 bottom-0 top-12 border border-[#8ba394]/30 rounded-[2.5rem] bg-[var(--site-bg)] translate-x-3 translate-y-3 -z-10 transition-transform duration-500 group-hover:translate-x-4 group-hover:translate-y-4 group-hover:border-[#8ba394]/50" />
-                <div className="bg-[var(--site-surface-solid)] rounded-[2.5rem] border border-site p-8 sm:p-10 relative z-10 flex flex-col h-full shadow-xl">
-                  <div className="absolute -top-10 left-8">
-                    <div className="relative">
-                      <img src={item.image} alt={item.title} className="w-20 h-20 rounded-[1.5rem] object-cover border-4 border-[var(--site-surface-solid)] shadow-md grayscale opacity-90 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100" />
-                      <div className="absolute -bottom-3 -left-3 bg-[#8ba394] text-[var(--site-bg)] p-2 rounded-xl border-[4px] border-[var(--site-surface-solid)]">
-                        <item.icon className="w-4 h-4" />
-                      </div>
-                    </div>
+                <div className="absolute inset-0 top-16 bg-[#8ba394]/5 dark:bg-[#8ba394]/10 rounded-[3rem] transform transition-transform duration-500 group-hover:rotate-3 group-hover:scale-[1.02] border border-[#8ba394]/20" />
+                
+                <div className="bg-[var(--site-surface-solid)] rounded-[2.5rem] border border-site p-8 sm:p-10 relative z-10 flex flex-col h-full shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-[#8ba394]/50 text-left">
+                  <div className="absolute -top-4 left-8 bg-[#8ba394] text-[#ffffff] p-3 rounded-xl shadow-lg z-30 transform -rotate-3 group-hover:rotate-0 transition-transform border-2 border-[var(--site-surface-solid)]">
+                    <item.icon className="w-5 h-5" />
                   </div>
-                  <div className="absolute top-8 right-8">
-                     <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-site text-[9px] uppercase tracking-widest text-[var(--site-muted)] font-medium">
-                       <CheckCircle className="w-3 h-3 text-[#8ba394]" /> Objectif
-                     </div>
-                  </div>
-                  <div className="mt-12 flex-1">
+
+                  <div className="mt-8 flex-1">
                     <p className="text-xl sm:text-2xl text-site font-heading italic leading-relaxed">
                       "{item.desc}"
                     </p>
@@ -156,23 +166,26 @@ export default function Hypnose() {
         </div>
       </section>
 
-      {/* Language Section */}
+      {/* Language Section / Approche */}
       <section className="py-24 px-6 lg:px-16 overflow-hidden relative">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="lg:order-2">
             <SectionBadge>Approche</SectionBadge>
             <h2 className="mt-8 text-4xl sm:text-6xl text-site font-heading italic mb-8">Le langage de <span className="text-[#8ba394]">votre inconscient</span></h2>
             <div className="space-y-6 text-[var(--site-muted)] font-light leading-relaxed text-sm sm:text-base">
-              <p>Contrairement aux idées reçues, vous restez maître de vous-même pendant une séance d'hypnose. Vous entendez ma voix, vous pouvez bouger, parler. L'état hypnotique est simplement une focalisation étroite de l'attention qui permet au mental de lâcher prise.</p>
-              <p>C'est à ce moment que nous pouvons travailler ensemble avec votre inconscient, en utilisant des suggestions bienveillantes, des histoires et des images qui feront écho à vos propres solutions intérieures.</p>
-              <p>Je vous accompagne pas à pas, sans jugement, dans un cadre sécurisant à Houdetot ou depuis le confort de votre domicile en visio.</p>
+              <p>Contrairement aux idées reçues, vous restez maître de vous-même pendant une séance d’hypnose.</p>
+              <p>Vous entendez ma voix, vous pouvez bouger, parler, exprimer un besoin ou interrompre l’expérience si nécessaire. L’état hypnotique est simplement une focalisation particulière de l’attention, qui permet au mental de se déposer et à l’inconscient de devenir plus disponible.</p>
+              <p>Avant le travail hypnotique, nous prenons un temps d’échange, aussi appelé anamnèse, afin de faire connaissance, clarifier votre demande, comprendre votre contexte et cerner votre objectif.</p>
+              <p>Cet échange permet d’adapter l’accompagnement à votre situation. Le travail se fait ensuite à travers des protocoles, des images et des suggestions adaptés à votre propre solution intérieure.</p>
+              <p>Je vous accompagne pas à pas, sans jugement, dans un cadre sécurisant, que la séance ait lieu au cabinet à Houdetot ou à distance en visioconférence.</p>
+              <p>L’hypnose ne force rien. Elle ouvre un espace dans lequel vos ressources peuvent se remettre en mouvement, à votre rythme.</p>
             </div>
           </div>
           <div className="lg:order-1 relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden border border-site">
-               <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200" alt="Méditation et calme intérieur" className="w-full h-full object-cover" />
+            <div className="aspect-square rounded-[3rem] overflow-hidden border border-site shadow-2xl">
+               <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200" alt="Méditation et calme intérieur" className="w-full h-full object-cover grayscale opacity-90 transition-all hover:grayscale-0 hover:opacity-100 duration-1000" />
             </div>
-            <div className="absolute -bottom-6 -right-6 h-32 w-32 bg-[var(--site-surface)] border border-site rounded-3xl p-6 flex flex-col items-center justify-center text-center">
+            <div className="absolute -bottom-6 -right-6 h-32 w-32 bg-[var(--site-surface)] border border-site rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl">
               <div className="text-2xl font-heading italic text-[#8ba394]">100%</div>
               <div className="text-[8px] uppercase tracking-widest font-bold text-site">Naturel</div>
             </div>
@@ -180,19 +193,19 @@ export default function Hypnose() {
         </div>
       </section>
 
-      {/* Session Progress */}
+      {/* Session Progress / Processus */}
       <section className="bg-[var(--site-surface)] py-24 px-6 lg:px-16 border-y border-site">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-20">
             <SectionBadge>Processus</SectionBadge>
-            <h2 className="text-4xl text-site font-heading italic mt-8 mb-8">Comment se passe <span className="text-[#8ba394]">une séance ?</span></h2>
+            <h2 className="text-4xl sm:text-6xl text-site font-heading italic mt-8 mb-8">Comment se passe <span className="text-[#8ba394]">une séance ?</span></h2>
           </div>
           <div className="space-y-12">
             {[
-              { i: MessageCircle, t: '1. Échange initial', d: 'Un temps pour faire connaissance et cerner votre objectif. Vos attentes, votre histoire, votre besoin.' },
-              { i: Compass, t: '2. Installation', d: 'Vous vous installez confortablement. Je vous guide dans une relaxation douce et progressive.' },
-              { i: Brain, t: '3. Travail hypnotique', d: 'Votre inconscient explore de nouvelles pistes via des métaphores. Vous restez toujours aux commandes.' },
-              { i: Heart, t: '4. Retour et ancrage', d: 'Un retour en douceur ici et maintenant, avec des clés pour ancrer les changements durablement.' }
+              { i: MessageCircle, t: '1. Échange initial — anamnèse', d: 'Nous prenons un temps pour faire connaissance, clarifier votre besoin, comprendre votre contexte et cerner votre objectif. Cette première étape, appelée anamnèse, permet de poser un cadre clair et d’adapter l’accompagnement à ce que vous vivez.' },
+              { i: Compass, t: '2. Installation', d: 'Vous vous installez confortablement. Je vous guide progressivement vers un état de détente, d’écoute intérieure et de disponibilité, dans le respect de votre rythme.' },
+              { i: Brain, t: '3. Travail hypnotique', d: 'Votre inconscient peut alors explorer de nouvelles pistes à travers des protocoles, des métaphores, des images et des suggestions adaptées. Vous restez toujours présent, libre et aux commandes de votre expérience.' },
+              { i: Heart, t: '4. Retour et intégration', d: 'La séance se termine par un retour progressif ici et maintenant. Nous prenons ensuite un court temps pour accueillir ce qui s’est présenté et permettre à l’expérience de commencer à s’intégrer.' }
             ].map((step, idx) => (
               <div key={idx} className="flex gap-8 group">
                 <div className="text-5xl font-heading italic text-[#8ba394]/20 group-hover:text-[#8ba394]/50 transition-colors shrink-0">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</div>
@@ -206,26 +219,72 @@ export default function Hypnose() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section / Accompagnement */}
       <section className="py-24 px-6 lg:px-16">
-        <div className="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-[var(--site-surface)] border border-site rounded-[3rem] p-8 sm:p-12 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#8ba394]/5 rounded-full blur-3xl group-hover:bg-[#8ba394]/10 transition-colors" />
+        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-[var(--site-surface)] border border-site rounded-[3rem] p-8 sm:p-12 relative overflow-hidden group shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#8ba394]/5 rounded-full blur-3xl group-hover:bg-[#8ba394]/10 transition-colors" />
           
           <div className="relative z-10">
-            <SectionBadge>Séance individuelle</SectionBadge>
-            <h2 className="mt-6 text-3xl font-heading italic text-site mb-2">Hypnose Ericksonienne</h2>
+            <SectionBadge>Accompagnement individuel</SectionBadge>
+            <h2 className="mt-6 text-3xl sm:text-4xl font-heading italic text-site mb-2">Hypnose ericksonienne</h2>
             <p className="text-[var(--site-muted)] text-sm font-light mb-8 italic">Un espace de calme pour votre évolution personnelle.</p>
-            <div className="text-5xl font-heading italic text-[#8ba394] mb-4">60 €</div>
-            <Link href="/tarifs" className="text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-[#7a9283] transition-colors border-b border-[#8ba394]/20 pb-1">Toutes les mutuelles — voir la liste</Link>
+            <div className="text-6xl font-heading italic text-[#8ba394] mb-4">60 €</div>
+            <p className="text-[10px] uppercase tracking-widest font-bold text-[var(--site-muted)] mb-8">
+              Les effets d’un accompagnement hypnotique peuvent continuer à se déployer après le rendez-vous, selon votre rythme et ce qui a été travaillé pendant la séance.
+            </p>
+            <Link href="/tarifs" className="text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-[#7a9283] transition-colors border-b border-[#8ba394]/20 pb-1">Voir tous les tarifs & mutuelles</Link>
           </div>
           <div className="space-y-6 relative z-10">
-            <ul className="space-y-4">
-              {['Échange préalable complet', 'Séance personnalisée (1h à 1h30)', 'Outils pratiques pour le quotidien', 'En cabinet à Houdetot ou en visioconférence', 'Accompagnement bienveillant et discret'].map(item => (
-                <li key={item} className="flex gap-4 text-site text-sm font-light"><CheckCircle className="h-5 w-5 text-[#8ba394] shrink-0" /> {item}</li>
+            <ul className="space-y-6 mb-12 border-t border-site/50 pt-8">
+              {[
+                { label: 'L’approche', items: ['Échange préalable complet', 'Accompagnement personnalisé'] },
+                { label: 'La séance', items: ['Durée : 1h à 1h30', 'Facture pour mutuelle'] },
+                { label: 'Lieux', items: ['Cabinet (Houdetot) ou Visio'] }
+              ].map((section) => (
+                <div key={section.label}>
+                  <h4 className="text-[10px] uppercase tracking-[0.1em] font-bold text-site opacity-40 mb-3">{section.label}</h4>
+                  <ul className="space-y-3">
+                    {section.items.map((i) => (
+                      <li key={i} className="flex gap-3 text-site text-[12px] font-light leading-relaxed">
+                        <CheckCircle className="h-4 w-4 text-[#8ba394] shrink-0 translate-y-0.5" /> 
+                        {i}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </ul>
             <div className="pt-6">
                <PrimaryButton href="#contact" className="w-full justify-center">Réserver une séance</PrimaryButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Informations Pratiques Section */}
+      <section className="pb-24 px-6 lg:px-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-8 rounded-[2rem] border border-site bg-[var(--site-surface)] hover:border-[#8ba394]/30 transition-colors shadow-sm">
+              <MapPin className="h-6 w-6 text-[#8ba394] mb-4" />
+              <h3 className="text-site font-heading italic text-xl mb-2">Lieu de consultation</h3>
+              <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed">
+                Les séances peuvent avoir lieu en cabinet à Houdetot ou à distance, en visioconférence.
+              </p>
+            </div>
+            <div className="p-8 rounded-[2rem] border border-site bg-[var(--site-surface)] hover:border-[#8ba394]/30 transition-colors shadow-sm">
+              <Receipt className="h-6 w-6 text-[#8ba394] mb-4" />
+              <h3 className="text-site font-heading italic text-xl mb-2">Facture</h3>
+              <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed">
+                Une facture vous est remise à l’issue de la séance.
+              </p>
+            </div>
+            <div className="p-8 rounded-[2rem] border border-site bg-[var(--site-surface)] hover:border-[#8ba394]/30 transition-colors shadow-sm">
+              <Wallet className="h-6 w-6 text-[#8ba394] mb-4" />
+              <h3 className="text-site font-heading italic text-xl mb-2">Moyens de paiement</h3>
+              <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed">
+                PayPal, chèque, virement bancaire et espèces.
+              </p>
             </div>
           </div>
         </div>
@@ -236,7 +295,7 @@ export default function Hypnose() {
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-20">
             <SectionBadge>FAQ</SectionBadge>
-            <h2 className="mt-8 text-4xl sm:text-6xl text-site font-heading italic">Questions <span className="text-[#8ba394]">Fréquentes</span></h2>
+            <h2 className="mt-8 text-4xl sm:text-6xl text-site font-heading italic">Questions <span className="text-[#8ba394]">fréquentes</span></h2>
           </div>
           
           <div className="space-y-4">
@@ -259,7 +318,7 @@ export default function Hypnose() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-8 pb-8 text-[var(--site-muted)] text-sm font-light leading-relaxed border-t border-site pt-6 mx-8">
+                      <div className="px-8 pb-8 text-[var(--site-muted)] text-sm font-light leading-relaxed border-t border-site pt-6 mx-8 text-pretty">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -275,9 +334,9 @@ export default function Hypnose() {
       <section className="py-24 px-6 text-center">
         <div className="mx-auto max-w-2xl">
           <SectionBadge>Premier pas</SectionBadge>
-          <h2 className="mt-8 text-4xl sm:text-5xl text-site font-heading italic mb-8">Prêt(e) à retrouver <span className="text-[#8ba394]">votre paix intérieure ?</span></h2>
+          <h2 className="mt-8 text-4xl sm:text-5xl text-site font-heading italic mb-8">Prêt(e) à retrouver un espace <span className="text-[#8ba394]">d’apaisement intérieur ?</span></h2>
           <p className="text-[var(--site-muted)] font-light leading-relaxed mb-10 text-sm sm:text-base">
-            Vous avez encore des questions ? N'hésitez pas à me contacter directement par téléphone pour un premier échange gratuit et sans engagement.
+            Vous avez encore des questions ? Vous pouvez me contacter directement pour un premier échange gratuit et sans engagement, afin de voir si l’hypnose ericksonienne correspond à votre besoin.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
              <PrimaryButton href="#contact">Prendre rendez-vous</PrimaryButton>
@@ -286,11 +345,12 @@ export default function Hypnose() {
         </div>
       </section>
 
+      {/* Disclaimer */}
       <div className="px-6 lg:px-16 pb-16 mx-auto max-w-4xl text-center">
-         <div className="p-8 rounded-[2rem] border border-site bg-[var(--site-surface)] flex flex-col sm:flex-row items-center gap-6 text-left opacity-80">
+         <div className="p-8 rounded-[2rem] border border-site bg-[var(--site-surface)] flex flex-col sm:flex-row items-center gap-6 text-left opacity-80 shadow-sm">
             <ShieldCheck className="h-8 w-8 text-[#8ba394] shrink-0" />
             <p className="text-[var(--site-muted)] text-xs font-light leading-relaxed">
-              <strong>Disclaimer :</strong> L'hypnose Ericksonienne est une approche complémentaire de mieux-être. Elle ne se substitue en aucun cas à un avis, un diagnostic ou un traitement médical professionnel.
+              <strong>Disclaimer :</strong> L’hypnose ericksonienne est une approche complémentaire du mieux-être. Elle ne se substitue en aucun cas à un avis, un diagnostic ou un traitement médical professionnel.
             </p>
          </div>
       </div>

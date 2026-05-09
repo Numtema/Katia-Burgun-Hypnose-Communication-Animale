@@ -8,19 +8,19 @@ import { SectionBadge, BlurText, PrimaryButton, cn } from '../../components/UI';
 
 export default function Testimonials() {
   const testimonials = [
-    { t: "Katia est très à l'écoute de toutes nos remarques et questions. Cette journée de formation a été très intéressante et enrichissante. Merci à elle. Je vous la recommande !", n: "Inès", r: "Formation", c: "form", cat: "Formation", img: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=200&h=200&fit=crop" },
-    { t: "Je recommande Madame Burgun qui est très professionnelle, extrêmement bienveillante ; on se sent apaisée dès son accueil tout en douceur.", n: "Sandra C.", r: "Hypnothérapie", c: "hypno", cat: "Hypnose", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop" },
-    { t: "La formation proposée par Madame Burgun est enrichissante. Cette professionnelle possède une grande capacité intuitive avec les animaux, et ses analyses sont tout en finesse et pertinentes.", n: "Sandra C.", r: "Communication Animale", c: "form", cat: "Formation", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop" },
-    { t: "Katia a effectué deux communications animales. Une pour ma minette qui est partie et une autre pour mon chat qui est toujours auprès de moi. Elle a pu obtenir une véritable communication avec eux. J’ai été époustouflée par les informations transmises, leur rôle et leur place dans ma vie. Je conseille fortement Katia pour la qualité de son travail et la douceur de la transmission.", n: "Cindy", r: "Pour ses chats", c: "anim", cat: "Animal", img: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=200&h=200&fit=crop" },
-    { t: "J’ai bénéficié d’une communication avec Katia et même si j’étais un peu dubitatif au départ, elle m’a révélé une situation familiale que très peu de personnes connaissaient. Je suis impressionné qu’elle ait pu voir cela à travers ce que lui a dit mon chat. Bravo à elle. Cela laisse réfléchir.", n: "Michel", r: "Pour son chat", c: "anim", cat: "Animal", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop" },
-    { t: "J’étais inquiète concernant mon cheval blessé à l’œil. Grâce à cette communication, j’ai pu comprendre l’origine du problème et réussir à le soigner alors qu’il refusait qu’on l’approche. La communication animale nous a vraiment aidés. Merci à Katia.", n: "Pauline et Simon", r: "Pour leur cheval", c: "anim", cat: "Animal", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" },
-    { t: "Au top ! Katia est une personne bienveillante. Nous avons appris et découvert la communication animale, travaillé sur nos ressentis et réussi à pratiquer nous-mêmes. Nous recommandons Katia, une très belle personne.", n: "Romuald", r: "Formation", c: "form", cat: "Formation", img: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop" },
-    { t: "Pour l'hypnose nous avions fait un léger pont somatique sur un retour de grossesse difficile. Le travail a été très juste.", n: "Romuald", r: "Consultation", c: "hypno", cat: "Hypnose", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" },
-    { t: "J’ai eu la chance de suivre une formation en communication animale avec Katia. C’est une formatrice bienveillante, à l’écoute et passionnée. Elle transmet son savoir avec simplicité, authenticité et respect. Grâce à elle, j’ai développé ma sensibilité, affiné mes ressentis et gagné en confiance. Je recommande cette formation dans un cadre sérieux, humain et inspirant.", n: "Participante", r: "Formation", c: "form", cat: "Formation", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop" },
-    { t: "Je ne savais pas trop à quoi m’attendre et j’ai été agréablement surpris par la douceur de la séance. Tout s’est fait naturellement. J’ai même pu mettre en lumière une origine de stress oubliée. J’ai ressenti un réel apaisement. Une expérience vraiment bénéfique que je recommande.", n: "Pascal", r: "Consultation", c: "hypno", cat: "Hypnose", img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop" },
-    { t: "Souffrant depuis longtemps d’une phobie en voiture, mon quotidien était devenu très contraignant. Grâce à la séance d’hypnose, j’ai ressenti une libération impressionnante et retrouvé l’origine de cette peur. Tout s’est fait avec douceur et justesse. Aujourd’hui, je me sens apaisée et sereine. Un immense merci à Madame Burgun pour son professionnalisme.", n: "Véronique", r: "Consultation", c: "hypno", cat: "Hypnose", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop" },
-    { t: "Merci à Katia pour les deux communications avec notre chat. Nous avons été impressionnés : tout correspondait parfaitement à notre animal. Cela nous a aidés à mieux le comprendre. Je recommande à 1000 % !", n: "Laureline", r: "Pour son chat", c: "anim", cat: "Animal", img: "https://images.unsplash.com/photo-1537151608804-ea2f1423f8c8?w=200&h=200&fit=crop" },
-    { t: "Merci encore pour ce que tu nous as apporté sur l’état d’esprit de notre chien Seven après son accident. Tout était cohérent. Technique impressionnante ! Katia est une excellente praticienne.", n: "Romuald", r: "Pour Seven", c: "anim", cat: "Animal", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop" }
+    { t: "Katia est très à l'écoute de toutes nos remarques et questions. Cette journée de formation a été très intéressante et enrichissante. Merci à elle. Je vous la recommande !", n: "Inès", r: "Formation", c: "form", cat: "Formation" },
+    { t: "Je recommande Madame Burgun qui est très professionnelle, extrêmement bienveillante ; on se sent apaisée dès son accueil tout en douceur.", n: "Sandra C.", r: "Hypnothérapie", c: "hypno", cat: "Hypnose" },
+    { t: "La formation proposée par Madame Burgun est enrichissante. Cette professionnelle possède une grande capacité intuitive avec les animaux, et ses analyses sont tout en finesse et pertinentes.", n: "Sandra C.", r: "Communication Animale", c: "form", cat: "Formation" },
+    { t: "Katia a effectué deux communications animales. Une pour ma minette qui est partie et une autre pour mon chat qui est toujours auprès de moi. Elle a pu obtenir une véritable communication avec eux. J’ai été époustouflée par les informations transmises, leur rôle et leur place dans ma vie. Je conseille fortement Katia pour la qualité de son travail et la douceur de la transmission.", n: "Cindy", r: "Pour ses chats", c: "anim", cat: "Animal" },
+    { t: "J’ai bénéficié d’une communication avec Katia et même si j’étais un peu dubitatif au départ, elle m’a révélé une situation familiale que très peu de personnes connaissaient. Je suis impressionné qu’elle ait pu voir cela à travers ce que lui a dit mon chat. Bravo à elle. Cela laisse réfléchir.", n: "Michel", r: "Pour son chat", c: "anim", cat: "Animal" },
+    { t: "J’étais inquiète concernant mon cheval blessé à l’œil. Grâce à cette communication, j’ai pu comprendre l’origine du problème et réussir à le soigner alors qu’il refusait qu’on l’approche. La communication animale nous a vraiment aidés. Merci à Katia.", n: "Pauline et Simon", r: "Pour leur cheval", c: "anim", cat: "Animal" },
+    { t: "Au top ! Katia est une personne bienveillante. Nous avons appris et découvert la communication animale, travaillé sur nos ressentis et réussi à pratiquer nous-mêmes. Nous recommandons Katia, une très belle personne.", n: "Romuald", r: "Formation", c: "form", cat: "Formation" },
+    { t: "Pour l'hypnose nous avions fait un léger pont somatique sur un retour de grossesse difficile. Le travail a été très juste.", n: "Romuald", r: "Consultation", c: "hypno", cat: "Hypnose" },
+    { t: "J’ai eu la chance de suivre une formation en communication animale avec Katia. C’est une formatrice bienveillante, à l’écoute et passionnée. Elle transmet son savoir avec simplicité, authenticité et respect. Grâce à elle, j’ai développé ma sensibilité, affiné mes ressentis et gagné en confiance. Je recommande cette formation dans un cadre sérieux, humain et inspirant.", n: "Participante", r: "Formation", c: "form", cat: "Formation" },
+    { t: "Je ne savais pas trop à quoi m’attendre et j’ai été agréablement surpris par la douceur de la séance. Tout s’est fait naturellement. J’ai même pu mettre en lumière une origine de stress oubliée. J’ai ressenti un réel apaisement. Une expérience vraiment bénéfique que je recommande.", n: "Pascal", r: "Consultation", c: "hypno", cat: "Hypnose" },
+    { t: "Souffrant depuis longtemps d’une phobie en voiture, mon quotidien était devenu très contraignant. Grâce à la séance d’hypnose, j’ai ressenti une libération impressionnante et retrouvé l’origine de cette peur. Tout s’est fait avec douceur et justesse. Aujourd’hui, je me sens apaisée et sereine. Un immense merci à Madame Burgun pour son professionnalisme.", n: "Véronique", r: "Consultation", c: "hypno", cat: "Hypnose" },
+    { t: "Merci à Katia pour les deux communications avec notre chat. Nous avons été impressionnés : tout correspondait parfaitement à notre animal. Cela nous a aidés à mieux le comprendre. Je recommande à 1000 % !", n: "Laureline", r: "Pour son chat", c: "anim", cat: "Animal" },
+    { t: "Merci encore pour ce que tu nous as apporté sur l’état d’esprit de notre chien Seven après son accident. Tout était cohérent. Technique impressionnante ! Katia est une excellente praticienne.", n: "Romuald", r: "Pour Seven", c: "anim", cat: "Animal" }
   ];
 
   const [filter, setFilter] = useState('all');
@@ -67,11 +67,8 @@ export default function Testimonials() {
                 
                 <div className="relative p-8 sm:p-10 rounded-[2.5rem] bg-[var(--site-surface-solid)] border border-site shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-[#8ba394]/50 z-10 flex flex-col h-full text-left">
                   
-                  <div className="absolute -top-12 left-8 w-24 h-24 rounded-3xl overflow-hidden border-4 border-[var(--site-surface-solid)] shadow-xl rotate-[-3deg] group-hover:rotate-0 group-hover:scale-110 transition-all duration-500 z-20">
-                    <img src={item.img} alt={item.n} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                  </div>
 
-                  <div className="absolute top-2 left-6 bg-[#8ba394] text-[#ffffff] text-[11px] font-bold px-3 py-1.5 rounded-xl shadow-lg z-30 transform -rotate-12 group-hover:-rotate-6 transition-transform">
+                  <div className="absolute -top-4 left-8 bg-[#8ba394] text-[#ffffff] text-[11px] font-bold px-4 py-2 rounded-xl shadow-lg z-30 transform -rotate-3 group-hover:rotate-0 transition-transform border-2 border-[var(--site-surface-solid)]">
                     5/5
                   </div>
 
@@ -93,6 +90,31 @@ export default function Testimonials() {
               </motion.div>
             ))}
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="bg-[var(--site-surface-solid)] py-24 px-6 lg:px-16 border-y border-site">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <SectionBadge>Ma Philosophie</SectionBadge>
+            <h2 className="mt-8 text-4xl sm:text-5xl text-site font-heading italic">Une pratique guidée par <span className="text-[#8ba394]">des valeurs fortes</span></h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-8">
+            {[
+              { t: 'Respect', d: 'Respecter votre rythme, votre histoire, votre sensibilité, mais aussi celle de l’animal.' },
+              { t: 'Écoute', d: 'Prendre le temps d’entendre ce qui se dit, mais aussi ce qui se ressent, ce qui se répète ou ce qui reste silencieux.' },
+              { t: 'Délicatesse', d: 'Avancer avec prudence, sans jugement, sans brusquer ce qui demande à être accueilli.' },
+              { t: 'Clarté', d: 'Mettre des mots simples sur ce qui émerge, afin que chacun puisse mieux comprendre ce qu’il vit.' },
+              { t: 'Humilité', d: 'Je ne prétends pas tout savoir ni tout résoudre. J’accompagne avec sincérité, dans le respect de mes compétences et de mes limites.' }
+            ].map(item => (
+              <div key={item.t} className="space-y-4 text-center">
+                 <div className="h-px w-12 bg-[#8ba394]/30 mx-auto" />
+                 <h3 className="text-site text-lg font-medium tracking-wide">{item.t}</h3>
+                 <p className="text-[var(--site-muted)] text-[11px] font-light leading-relaxed">{item.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

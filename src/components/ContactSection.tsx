@@ -1,9 +1,11 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Phone, MapPin, Calendar, ChevronRight, MessageSquare } from 'lucide-react';
 import { SectionBadge } from './UI';
 
 export default function ContactSection() {
+  const pathname = usePathname();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +13,16 @@ export default function ContactSection() {
     service: 'Hypnose Ericksonienne',
     message: ''
   });
+
+  useEffect(() => {
+    if (pathname.includes('communication-animale')) {
+      setFormData(prev => ({ ...prev, service: 'Communication Animale' }));
+    } else if (pathname.includes('formation')) {
+      setFormData(prev => ({ ...prev, service: 'Formation Initiation' }));
+    } else {
+      setFormData(prev => ({ ...prev, service: 'Hypnose Ericksonienne' }));
+    }
+  }, [pathname]);
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +55,7 @@ export default function ContactSection() {
               <div className="h-14 w-14 rounded-2xl bg-[#b5a496]/10 border border-[#b5a496]/20 flex items-center justify-center transition-all group-hover:scale-110"><MapPin className="h-6 w-6 text-[#b5a496]" /></div>
               <div>
                 <div className="text-[9px] uppercase tracking-widest text-[var(--site-muted)] font-bold mb-1 font-body">Adresse</div>
-                <div className="text-site text-xl font-heading italic tracking-wide">5 route de Bourville, 76740 Fontaine-le-Dun</div>
+                <div className="text-site text-xl font-heading italic tracking-wide">5 route de Bourville, 76740 Houdetot</div>
               </div>
             </div>
             <div className="flex items-center gap-6 group">
@@ -62,7 +74,7 @@ export default function ContactSection() {
                 <span key={city} className="text-xs text-[var(--site-muted)] font-light flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-[#8ba394]/60" /> {city}</span>
               ))}
             </div>
-            <p className="mt-4 text-[9px] text-[#8ba394]/80 uppercase tracking-widest font-medium italic">Cabinet à Fontaine-le-Dun (76) & À distance</p>
+            <p className="mt-4 text-[9px] text-[#8ba394]/80 uppercase tracking-widest font-medium italic">Cabinet à Houdetot (76) & à distance</p>
           </div>
         </div>
 

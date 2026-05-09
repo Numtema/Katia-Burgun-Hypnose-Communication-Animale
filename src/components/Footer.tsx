@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="text-site text-2xl font-heading italic block mb-6 hover:text-[#8ba394] transition-colors">Katia Burgun</Link>
             <p className="text-[var(--site-muted)] font-light text-sm max-w-md leading-relaxed mb-4">
-              KB Hypnose Ericksonienne & Mieux-être, Communication intuitive animaux, Consultations en cabinet (76740 Fontaine-le-Dun, proche St-Valery-en-Caux, Dieppe) et à distance.
+              KB Hypnose Ericksonienne & Mieux-être, communication intuitive avec les animaux, consultations en cabinet à Houdetot et à distance.
             </p>
             <div className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest mb-8">
-              5 route de Bourville, 76740 Fontaine-le-Dun
+              5 route de Bourville, 76740 Houdetot
             </div>
             <div className="flex gap-4">
                <div className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[#8ba394] transition-all cursor-pointer">

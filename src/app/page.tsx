@@ -36,8 +36,8 @@ export default function Home() {
     "telephone": "0600000000",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Fontaine-le-Dun",
-      "addressLocality": "Fontaine-le-Dun",
+      "streetAddress": "5 route de Bourville",
+      "addressLocality": "Houdetot",
       "postalCode": "76740",
       "addressRegion": "Normandie",
       "addressCountry": "FR"
@@ -75,12 +75,12 @@ export default function Home() {
         <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-70 md:opacity-80 object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/80 via-[var(--site-bg)]/30 to-[var(--site-bg)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-6">
-          <SectionBadge>Hypnose Ericksonienne & Communication animale</SectionBadge>
+          <SectionBadge>Hypnose ericksonienne & Communication animale</SectionBadge>
           <BlurText text="Hypnose pour vous," delay={40} className="justify-center mt-8 text-4xl sm:text-6xl md:text-7xl italic font-heading text-site" />
           <BlurText text="communication animale pour votre compagnon" delay={60} className="justify-center mt-2 text-3xl sm:text-5xl md:text-6xl italic font-heading text-[#6d8b7a] dark:text-[#8ba394]" />
           
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="mt-8 max-w-4xl mx-auto text-sm sm:text-lg font-light text-[var(--site-fg)] opacity-80 leading-relaxed font-body">
-            À Fontaine-le-Dun, en Normandie et à distance, Katia Burgun vous accompagne en hypnose Ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
+            À Houdetot, en Normandie et à distance, Katia Burgun vous accompagne en hypnose ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
           </motion.p>
           
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4, duration: 1 }} className="mt-4 max-w-2xl mx-auto text-sm sm:text-base font-medium text-site italic">
@@ -170,8 +170,8 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Une approche sensible du vivant, au service de <span className="text-[#8ba394]">l'humain et de l'animal</span></h2>
             <div className="mt-8 space-y-6 text-[var(--site-muted)] font-light text-sm sm:text-base max-w-xl leading-relaxed">
               <p>Depuis toujours, je ressens un lien profond avec les animaux et une attention particulière à ce qui ne se dit pas toujours avec des mots. Avec le temps, une évidence s'est imposée : le bien-être de l'animal et celui de son humain sont souvent intimement liés.</p>
-              <p>C'est cette compréhension qui m'a conduite à développer une double approche. D'un côté, la communication animale me permet d'explorer les ressentis, les besoins et les messages de l'animal. De l'autre, l'hypnose Ericksonienne m'offre un cadre d'accompagnement pour aider l'humain à retrouver de l'apaisement, du recul et un nouvel équilibre intérieur.</p>
-              <p>Aujourd'hui, j'accompagne chacun avec bienveillance, en cabinet à Fontaine-le-Dun et à distance, dans le respect de son rythme, de sa sensibilité et de son histoire.</p>
+              <p>C'est cette compréhension qui m'a conduite à développer une double approche. D'un côté, la communication animale me permet d'explorer les ressentis, les besoins et les messages de l'animal. De l'autre, l'hypnose ericksonienne m'offre un cadre d'accompagnement pour aider l'humain à retrouver de l'apaisement, du recul et un nouvel équilibre intérieur.</p>
+              <p>Aujourd'hui, j'accompagne chacun avec bienveillance, en cabinet à Houdetot et à distance, dans le respect de son rythme, de sa sensibilité et de son histoire.</p>
             </div>
             
             <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-8 w-full border-t border-site pt-10">
@@ -223,9 +223,9 @@ export default function Home() {
                 <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><Sparkles className="h-5 w-5 text-[#6d8b7a] dark:text-[#8ba394]" /></div>
               </div>
               <div className="flex flex-col items-start px-2 lg:order-1">
-                <SectionBadge className="mb-6">Hypnose Ericksonienne</SectionBadge>
+                <SectionBadge className="mb-6">Hypnose ericksonienne</SectionBadge>
                 <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">Retrouver un mieux-être intérieur durable</h3>
-                <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">L'hypnose Ericksonienne est un accompagnement centré sur vos ressources intérieures. Elle peut vous aider à apaiser le stress, retrouver un sommeil plus serein, traverser une période difficile, dépasser certains blocages et avancer avec plus de clarté.</p>
+                <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">L'hypnose ericksonienne est un accompagnement centré sur vos ressources intérieures. Elle peut vous aider à apaiser le stress, retrouver un sommeil plus serein, traverser une période difficile, dépasser certains blocages et avancer avec plus de clarté.</p>
                 <div className="mb-10 text-sm">
                    <strong className="text-site font-medium block mb-2">Cas fréquents :</strong>
                    <span className="text-[var(--site-muted)] font-light leading-relaxed">Stress, anxiété, sommeil, surcharge émotionnelle, manque de confiance, schémas répétitifs, besoin de recentrage.</span>

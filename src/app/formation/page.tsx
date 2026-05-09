@@ -32,8 +32,8 @@ export default function Formation() {
             
             <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 text-site opacity-90 font-medium text-[10px] uppercase tracking-widest">
                <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">150 €</div> Par personne</div>
+               <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">Le Dimanche</div> Journée complète</div>
                <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">9h à 17h</div> Horaires</div>
-               <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">1 journée</div> Durée</div>
                <div><div className="text-xl text-nowrap font-heading italic text-[#8ba394] mb-1">4 à 6</div> Participants</div>
             </div>
             <div className="mt-12">
@@ -101,7 +101,6 @@ export default function Formation() {
 
           <div className="space-y-16">
             <ProgramItem 
-              time="09h00"
               title="Accueil, présentations et mise en présence"
               desc="La journée commence dans un cadre convivial, à mon domicile. Nous prenons le temps de nous rencontrer, de poser l’intention de la journée et d’entrer progressivement dans une qualité de présence plus fine. J’introduis dès le départ quelques exercices simples de centrage, d’ancrage et d’apaisement du mental."
               icon={Users}
@@ -119,9 +118,9 @@ export default function Formation() {
               ]}
             />
             <ProgramItem 
-              time="12h30 — 14h00"
-              title="Déjeuner partagé"
-              desc="Un moment convivial pris sur place pour échanger librement et intégrer les notions du matin dans une atmosphère détendue."
+              time="12h30 — 13h30"
+              title="Pause méridienne"
+              desc="Un temps de pause pour échanger librement et intégrer les notions du matin dans une atmosphère détendue."
               icon={Coffee}
             />
             <ProgramItem 
@@ -181,7 +180,7 @@ export default function Formation() {
                 { t: 'Repères intuitifs', d: 'Reconnaître vos propres perceptions et signaux.' },
                 { t: 'Exercices concrets', d: 'Des outils simples pour continuer de vous entraîner.' },
                 { t: 'Vision juste', d: 'Savoir ce que la pratique permet et ses limites.' },
-                { t: 'Support écrit', d: 'Un livret récapitulatif pour prolonger le travail.' }
+                { t: 'Certificat', d: 'Un certificat de participation remis en fin de journée.' }
               ].map((item, i) => (
                 <div key={i} className="group relative overflow-hidden rounded-[2.5rem] border border-site bg-[var(--site-surface)] hover:bg-[var(--site-surface-solid)] hover:border-[#8ba394]/40 transition-all duration-500 p-8 sm:p-10 shadow-sm hover:shadow-xl">
                   <div className="absolute -right-6 -bottom-6 text-[10rem] font-heading font-black italic text-[#8ba394] opacity-[0.03] group-hover:opacity-10 group-hover:-translate-y-2 group-hover:-translate-x-2 transition-all duration-700 pointer-events-none select-none leading-none z-0">
@@ -213,19 +212,20 @@ export default function Formation() {
               <h2 className="mt-8 text-4xl text-site font-heading italic mb-12">Préparer votre venue</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                  {[
-                   { i: MapPin, t: "Lieu", d: "À mon domicile : 5 route de Bourville, 76740 Fontaine-le-Dun" },
-                   { i: Clock, t: "Horaires", d: "De 9h à 17h" },
-                   { i: Users, t: "Effectif", d: "4 à 6 personnes maximum" },
-                   { i: GraduationCap, t: "Tarif", d: "150 € par personne" }
-                 ].map(item => (
-                   <div key={item.t} className="flex gap-4">
-                     <div className="h-10 w-10 shrink-0 rounded-xl bg-[#8ba394]/10 border border-[#8ba394]/20 flex items-center justify-center text-[#8ba394]">
-                       <item.i className="h-5 w-5" />
-                     </div>
-                     <div>
-                       <h3 className="text-site font-medium text-sm mb-1">{item.t}</h3>
-                       <p className="text-[var(--site-muted)] text-sm font-light">{item.d}</p>
-                     </div>
+                   { label: 'Le programme', items: ['Théorie & Pratique intensive', 'Le Dimanche (9h-17h)'] },
+                   { label: 'Le cadre', items: ['Petit groupe (4-6 pers.)', 'Accueil à domicile'] },
+                   { label: 'Validation', items: ['Certificat de participation'] }
+                 ].map((section) => (
+                   <div key={section.label}>
+                     <h4 className="text-[10px] uppercase tracking-[0.1em] font-bold text-site opacity-40 mb-3">{section.label}</h4>
+                     <ul className="space-y-3">
+                       {section.items.map((i) => (
+                         <li key={i} className="flex gap-3 text-site text-[12px] font-light leading-relaxed">
+                           <CheckCircle className="h-4 w-4 text-[#8ba394] shrink-0 translate-y-0.5" /> 
+                           {i}
+                         </li>
+                       ))}
+                     </ul>
                    </div>
                  ))}
               </div>
@@ -234,7 +234,7 @@ export default function Formation() {
                 <div>
                    <h3 className="text-site font-body font-medium mb-6 flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#8ba394]" /> Ce qui est inclus</h3>
                    <ul className="space-y-3">
-                     {["La journée complète de formation", "Les temps de pratique guidée", "Le déjeuner partagé", "Le support récapitulatif"].map(i => (
+                     {["La journée complète de formation", "Les temps de pratique guidée", "Échanges et partages", "Le certificat de participation"].map(i => (
                        <li key={i} className="flex gap-3 text-sm text-[var(--site-muted)] font-light"><CheckCircle className="h-4 w-4 text-[#8ba394] shrink-0 translate-y-0.5" /> {i}</li>
                      ))}
                    </ul>
@@ -254,11 +254,27 @@ export default function Formation() {
               <div>
                 <SectionBadge>Réservation</SectionBadge>
                 <div className="mt-8 text-4xl font-heading italic text-[#8ba394] mb-4">150 €</div>
-                <p className="text-[var(--site-muted)] text-sm font-light mb-6">Un acompte de 50 € est demandé pour confirmer l’inscription.</p>
+                <p className="text-[var(--site-muted)] text-sm font-light mb-6">Formation organisée le dimanche pour s’adapter à votre emploi du temps.</p>
               </div>
               <div className="space-y-6">
-                <div className="p-6 rounded-2xl bg-[var(--site-bg)] border border-site text-xs text-[var(--site-muted)] font-light leading-relaxed">
-                  Cette journée est idéale si vous cherchez une formation sérieuse, en petit groupe, mêlant théorie, pratique et éthique.
+                <div className="border-t border-site/50 pt-8 space-y-6 mb-8">
+                  {[
+                    { label: 'Le programme', items: ['Théorie & Pratique intensive', 'Sessions le Dimanche'] },
+                    { label: 'Le cadre', items: ['Petit groupe (4-6 pers.)', 'Accueil à domicile'] },
+                    { label: 'Validation', items: ['Certificat de participation'] }
+                  ].map((section) => (
+                    <div key={section.label}>
+                      <h4 className="text-[10px] uppercase tracking-[0.1em] font-bold text-site opacity-40 mb-3">{section.label}</h4>
+                      <ul className="space-y-3">
+                        {section.items.map((i) => (
+                          <li key={i} className="flex gap-3 text-site text-[12px] font-light leading-relaxed">
+                            <CheckCircle className="h-4 w-4 text-[#8ba394] shrink-0 translate-y-0.5" /> 
+                            {i}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
                 <PrimaryButton href="#contact" className="w-full justify-center">Réserver ma place</PrimaryButton>
               </div>

@@ -24,41 +24,35 @@ export default function Tarifs() {
       price: '80 €',
       duration: 'Séance à distance',
       desc: 'Une consultation complète pour mieux comprendre votre animal, ses ressentis, ses comportements et ses messages.',
-      items: [
-        'Une connexion intuitive approfondie',
-        'Jusqu’à 5 questions',
-        'Une restitution écrite détaillée',
-        'Un échange téléphonique ou visio',
-        'Consultation à distance accessible partout'
+      sections: [
+        { label: 'L’expérience', items: ['Connexion intuitive approfondie', 'Jusqu’à 5 questions'] },
+        { label: 'Restitution', items: ['Compte-rendu écrit détaillé', 'Échange téléphonique ou visio'] },
+        { label: 'Modalités', items: ['Consultation à distance partout'] }
       ],
       cta: '/communication-animale#contact'
     },
     {
-      title: 'Hypnose Ericksonienne',
+      title: 'Hypnose ericksonienne',
       price: '60 €',
-      duration: 'Durée : 1h30',
-      desc: 'Un accompagnement personnalisé pour avancer à votre rythme, dans un cadre bienveillant et confidentiel.',
-      items: [
-        'Entretien préalable approfondi',
-        'Une séance complète d’hypnose',
-        'Outils & exercices pour le quotidien',
-        'Facture remise à l’issue de la séance',
-        'En cabinet à Houdetot ou en visioconférence'
+      duration: 'Séance individuelle',
+      desc: 'Un accompagnement bienveillant pour apaiser votre mental, dépasser certains blocages et retrouver un meilleur équilibre.',
+      sections: [
+        { label: 'L’approche', items: ['Échange préalable complet', 'Accompagnement personnalisé'] },
+        { label: 'La séance', items: ['Durée : 1h à 1h30', 'Facture pour mutuelle'] },
+        { label: 'Lieux', items: ['Cabinet (Houdetot) ou Visio'] }
       ],
       featured: true,
       cta: '/hypnose#contact'
     },
     {
-      title: 'Formation',
+      title: 'Formation Initiation',
       price: '150 €',
-      duration: 'Par personne',
-      desc: 'Une journée complète pour découvrir, comprendre et expérimenter la communication animale.',
-      items: [
-        '8 heures de formation (9h-17h)',
-        'Déjeuner inclus sur place',
-        'Livret de formation et supports fournis',
-        'Petit groupe (4 à 6 personnes)',
-        'Accompagnement personnalisé'
+      duration: 'Le Dimanche (9h-17h)',
+      desc: 'Découvrir, comprendre et expérimenter la communication animale dans un cadre bienveillant.',
+      sections: [
+        { label: 'Le programme', items: ['Théorie & Pratique intensive', 'Ouvert aux salariés (Dimanche)'] },
+        { label: 'Le cadre', items: ['Petit groupe (4-6 pers.)', 'Accompagnement de proximité'] },
+        { label: 'Validation', items: ['Certificat de participation'] }
       ],
       cta: '/formation#contact'
     }
@@ -104,14 +98,21 @@ export default function Tarifs() {
               <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed mb-10 min-h-[4rem]">
                 {p.desc}
               </p>
-              <ul className="space-y-4 mb-12 flex-1 border-t border-site/50 pt-8">
-                {p.items.map((i) => (
-                  <li key={i} className="flex gap-4 text-[var(--site-muted)] text-[13px] font-light leading-relaxed">
-                    <CheckCircle className="h-5 w-5 text-[#8ba394] shrink-0" /> 
-                    {i}
-                  </li>
+              <div className="space-y-6 mb-12 flex-1 border-t border-site/50 pt-8">
+                {p.sections.map((section) => (
+                  <div key={section.label}>
+                    <h4 className="text-[10px] uppercase tracking-[0.1em] font-bold text-site opacity-40 mb-3">{section.label}</h4>
+                    <ul className="space-y-3">
+                      {section.items.map((i) => (
+                        <li key={i} className="flex gap-3 text-[var(--site-muted)] text-[12px] font-light leading-relaxed">
+                          <CheckCircle className="h-4 w-4 text-[#8ba394] shrink-0 translate-y-0.5" /> 
+                          {i}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
               <PrimaryButton href={p.cta} className={cn("w-full justify-center", !p.featured && "bg-transparent border border-site")}>
                 Réserver
               </PrimaryButton>

@@ -22,7 +22,7 @@ export default function LegalPage() {
                 <h3 className="text-site font-body font-medium mb-4">1. Éditeur du site</h3>
                 <p>Le présent site est édité par :</p>
                 <p className="mt-2"><strong>Katia Burgun</strong></p>
-                <p>Adresse : 5 route de Bourville, 76740 Fontaine-le-Dun, France</p>
+                <p>Adresse : 5 route de Bourville, 76740 Houdetot, France</p>
                 <p>Téléphone : 06 77 49 52 88</p>
               </section>
               <section>
@@ -60,7 +60,7 @@ export default function LegalPage() {
                
                <section>
                  <h3 className="text-site font-body font-medium mb-4">1. Qui est responsable du traitement ?</h3>
-                 <p>Katia Burgun, entreprise individuelle, domiciliée 5 route de Bourville, 76740 Fontaine-le-Dun, est responsable du traitement de vos données personnelles collectées sur ce site.</p>
+                 <p>Katia Burgun, entreprise individuelle, domiciliée 5 route de Bourville, 76740 Houdetot, est responsable du traitement de vos données personnelles collectées sur ce site.</p>
                </section>
 
                <section>
@@ -217,9 +217,9 @@ export default function LegalPage() {
                  <h3 className="text-site font-body font-medium mb-4">Article 2 — Prestations</h3>
                  <p className="mb-4">Les prestations proposées sont :</p>
                  <ul className="list-disc pl-5 space-y-2 opacity-80">
-                   <li><strong>Séances d'hypnose Ericksonienne :</strong> 60€ la séance (1h à 1h30), en cabinet ou en visio</li>
+                   <li><strong>Séances d'hypnose ericksonienne :</strong> 60€ la séance (1h à 1h30), en cabinet ou en visio</li>
                    <li><strong>Consultations en communication animale :</strong> 80€ la consultation, exclusivement à distance</li>
-                   <li><strong>Formations d'initiation :</strong> 150€ par personne, journée complète à Fontaine-le-Dun</li>
+                   <li><strong>Formations d'initiation :</strong> 150€ par personne, journée complète à Houdetot</li>
                  </ul>
                </section>
 
