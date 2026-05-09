@@ -12,7 +12,7 @@ const hypnoseImg = "/assets/hypnose-katia-burgun-houdetot-normandie.png";
 const communicationImg = "/assets/chat-katia-burgun.jpeg";
 
 const HERO_VIDEO = "/assets/katia-hypnotherapeute-normandie.mp4";
-const formationImg = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200";
+const formationImg = "/assets/formation-groupe-katia.png";
 
 const faqs = [
   { q: "Quelle est la différence entre l'hypnose Ericksonienne et la communication animale ?", a: "L'hypnose Ericksonienne s'adresse à l'humain. Elle vise à mobiliser vos ressources intérieures pour retrouver un mieux-être, dépasser certains blocages ou apaiser le stress.\nLa communication animale s'adresse à la compréhension de l'animal, de ses émotions, de ses besoins et de la relation que vous vivez avec lui." },
@@ -298,11 +298,11 @@ export default function Home() {
           <div className="flex flex-col items-center mb-20 text-center">
             <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight max-w-2xl">Des accompagnements vécus avec <span className="text-[#8ba394]">confiance</span></h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { t: "Souffrant d’une phobie en voiture, mon quotidien était devenu très contraignant. Grâce à la séance d’hypnose, j’ai ressenti une libération impressionnante. Tout s’est fait avec douceur et justesse. Aujourd’hui, je me sens apaisée.", r: "Véronique - Hypnose Ericksonienne" },
-              { t: "J’étais un peu dubitatif au départ, mais Katia m’a révélé une situation familiale que très peu de personnes connaissaient. Je suis impressionné qu’elle ait pu voir cela à travers ce que lui a dit mon chat. Bravo à elle !", r: "Michel - Communication animale" },
-              { t: "Katia est très à l'écoute de toutes nos remarques et questions. Cette journée de formation a été très intéressante et enrichissante. Merci à elle. Je vous la recommande !", r: "Inès - Formation" }
+              { t: "J’ai eu la chance de faire une communication animale avec Katia pour mon cheval. L’expérience a été tellement bouleversante et juste que je vais renouveler sans hésiter. Katia est d’une finesse d’analyse absolument remarquable. Ce qu’elle transmet est d’une précision étonnante, avec des détails impossibles à inventer.", r: "Louise Q. - Communication animale" },
+              { t: "Une séance d’hypnose qui m’a énormément apporté. Un véritable voyage intérieur qui m’a permis de débloquer certaines problématiques de mon passé. Katia est d’une douceur et d’une bienveillance rares. Une approche holistique que je recommande les yeux fermés.", r: "Louise Q. - Hypnose Ericksonienne" },
+              { t: "Consultée pour des problèmes de colères, Katia a su très vite me mettre en confiance en comprenant mes besoins mieux que moi. Sa voix est rassurante et chaleureuse. Cela m’a permis d’entrer en hypnose très vite et profondément. Je recommande vivement !", r: "Jérémie - Hypnose Ericksonienne" }
             ].map((it, i) => (
               <motion.div key={i} whileHover={{ y: -5 }} className="p-10 rounded-[2.5rem] bg-[var(--site-surface)] border border-site backdrop-blur-sm relative flex flex-col h-full">
                 <div className="flex gap-0.5 mb-6">{[1,2,3,4,5].map(s => <Star key={s} className="h-3 w-3 text-[#8ba394] fill-[#8ba394]" />)}</div>
