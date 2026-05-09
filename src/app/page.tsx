@@ -92,12 +92,12 @@ export default function Home() {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ delay: 1.2, duration: 1 }} 
-            className="mt-12 max-w-4xl mx-auto p-8 rounded-[2.5rem] bg-[var(--site-surface)]/20 backdrop-blur-md border border-site/30 shadow-xl"
+            className="mt-12 max-w-4xl mx-auto p-8 rounded-[2.5rem] bg-[var(--site-surface)]/40 backdrop-blur-md border border-site/30 shadow-xl"
           >
-            <p className="text-sm sm:text-lg font-light text-site leading-relaxed font-body">
+            <p className="text-sm sm:text-lg font-light text-site leading-relaxed font-body opacity-90">
               À Houdetot, en Normandie et à distance, Katia Burgun vous accompagne en hypnose ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
             </p>
-            <p className="mt-4 text-sm sm:text-base font-medium text-[#8ba394] italic">
+            <p className="mt-4 text-sm sm:text-base font-semibold text-[#5a6e62] dark:text-[#8ba394] italic">
               Deux accompagnements distincts, une même intention : remettre de l’écoute, du sens et de l’apaisement dans votre vie et dans votre lien avec votre animal.
             </p>
           </motion.div>
