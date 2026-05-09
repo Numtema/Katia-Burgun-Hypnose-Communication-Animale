@@ -72,8 +72,8 @@ export default function Home() {
       
       {/* Hero */}
       <section id="home" className="relative min-h-[100dvh] pt-32 pb-16 bg-site flex items-center overflow-hidden transition-colors duration-500">
-        <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-70 md:opacity-80 object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/80 via-[var(--site-bg)]/30 to-[var(--site-bg)]" />
+        <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-90 md:opacity-100 object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/40 via-transparent to-[var(--site-bg)]/80" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-6">
           <SectionBadge>Hypnose ericksonienne & Communication animale</SectionBadge>
           <BlurText text="Hypnose pour vous," delay={40} className="justify-center mt-8 text-4xl sm:text-6xl md:text-7xl italic font-heading text-site" />
