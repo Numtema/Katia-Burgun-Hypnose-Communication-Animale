@@ -75,18 +75,33 @@ export default function Home() {
         <HlsBackgroundVideo src={HERO_VIDEO} className="opacity-90 md:opacity-100 object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/40 via-transparent to-[var(--site-bg)]/80" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-6">
-          <SectionBadge>Hypnose ericksonienne & Communication animale</SectionBadge>
-          <BlurText text="Hypnose pour vous," delay={40} className="justify-center mt-8 text-4xl sm:text-6xl md:text-7xl italic font-heading text-site" />
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mt-4 text-3xl sm:text-5xl md:text-6xl italic font-heading"
-          >
-            <span className="bg-[#8ba394] text-[#ffffff] px-6 py-2 rounded-full shadow-lg shadow-[#8ba394]/20 border border-[#8ba394]/30">communication animale</span>
-            <span className="text-site opacity-80">pour votre compagnon</span>
-          </motion.div>
+          <div className="mt-16 mb-12 flex flex-col items-center gap-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="group flex items-baseline gap-4 text-site text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading italic leading-none"
+            >
+              <span>Hypnose</span>
+              <span className="text-[10px] sm:text-[12px] not-italic font-bold uppercase tracking-[0.4em] opacity-40 translate-y-[-1em]">pour vous</span>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 1 }}
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-site text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading italic leading-none"
+            >
+              <div className="flex items-center gap-4">
+                <span className="text-[#8ba394] font-light not-italic text-4xl sm:text-6xl">&</span>
+                <span className="relative">
+                  communication animale
+                  <span className="absolute -bottom-2 left-0 right-0 h-[1px] bg-[#8ba394]/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                </span>
+              </div>
+              <span className="text-[10px] sm:text-[12px] not-italic font-bold uppercase tracking-[0.4em] opacity-40">pour votre compagnon</span>
+            </motion.div>
+          </div>
           
           <motion.div 
             initial={{ opacity: 0 }} 
