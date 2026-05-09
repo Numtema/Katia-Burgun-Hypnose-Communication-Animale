@@ -77,15 +77,30 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center mt-6">
           <SectionBadge>Hypnose ericksonienne & Communication animale</SectionBadge>
           <BlurText text="Hypnose pour vous," delay={40} className="justify-center mt-8 text-4xl sm:text-6xl md:text-7xl italic font-heading text-site" />
-          <BlurText text="communication animale pour votre compagnon" delay={60} className="justify-center mt-2 text-3xl sm:text-5xl md:text-6xl italic font-heading text-[#6d8b7a] dark:text-[#8ba394]" />
           
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 1 }} className="mt-8 max-w-4xl mx-auto text-sm sm:text-lg font-light text-[var(--site-fg)] opacity-80 leading-relaxed font-body">
-            À Houdetot, en Normandie et à distance, Katia Burgun vous accompagne en hypnose ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
-          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mt-4 text-3xl sm:text-5xl md:text-6xl italic font-heading"
+          >
+            <span className="bg-[#8ba394] text-[#ffffff] px-6 py-2 rounded-full shadow-lg shadow-[#8ba394]/20 border border-[#8ba394]/30">communication animale</span>
+            <span className="text-site opacity-80">pour votre compagnon</span>
+          </motion.div>
           
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4, duration: 1 }} className="mt-4 max-w-2xl mx-auto text-sm sm:text-base font-medium text-site italic">
-            Deux accompagnements distincts, une même intention : remettre de l’écoute, du sens et de l’apaisement dans votre vie et dans votre lien avec votre animal.
-          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ delay: 1.2, duration: 1 }} 
+            className="mt-12 max-w-4xl mx-auto p-8 rounded-[2.5rem] bg-[var(--site-surface)]/20 backdrop-blur-md border border-site/30 shadow-xl"
+          >
+            <p className="text-sm sm:text-lg font-light text-site leading-relaxed font-body">
+              À Houdetot, en Normandie et à distance, Katia Burgun vous accompagne en hypnose ericksonienne pour apaiser le stress, les blocages et la surcharge émotionnelle, et propose des séances de communication animale pour mieux comprendre les émotions, les besoins et les comportements de votre animal.
+            </p>
+            <p className="mt-4 text-sm sm:text-base font-medium text-[#8ba394] italic">
+              Deux accompagnements distincts, une même intention : remettre de l’écoute, du sens et de l’apaisement dans votre vie et dans votre lien avec votre animal.
+            </p>
+          </motion.div>
           
           <div className="mt-12 flex flex-wrap justify-center gap-6">
             <PrimaryButton href="#contact">Prendre rendez-vous</PrimaryButton>
