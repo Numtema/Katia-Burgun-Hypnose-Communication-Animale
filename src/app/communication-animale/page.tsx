@@ -220,7 +220,7 @@ export default function CommunicationAnimale() {
               { icon: Search, t: 'Animal perdu ou en fugue', d: 'Tenter de capter des indices sur son état ou son environnement (sans garantie).' },
               { icon: Users, t: 'Adoption & transition', d: 'Arrivée dans un nouveau foyer, séparation, voyage ou déménagement.' },
               { icon: Heart, t: 'Fin de vie', d: 'Entendre son ressenti et accompagner ce moment délicat avec douceur et paix.' },
-              { icon: Sparkles, t: 'Mieux le connaître', d: 'Connaître ses goûts, ce qu’il cherche à vous faire comprendre et ses souhaits.' }
+              { icon: Sparkles, t: 'Découvrir sa personnalité', d: 'Connaître ses goûts, ce qu’il cherche à vous faire comprendre et ses souhaits.' }
             ].map((item, idx) => (
               <div key={idx} className="relative pt-12 group">
                 <div className="absolute inset-0 top-16 bg-[#8ba394]/5 dark:bg-[#8ba394]/10 rounded-[3rem] transform transition-transform duration-500 group-hover:rotate-3 group-hover:scale-[1.02] border border-[#8ba394]/20" />
@@ -290,10 +290,10 @@ export default function CommunicationAnimale() {
             <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-12">Je pratique exclusivement à distance, ce qui permet à l'animal de rester dans son cadre habituel sans le stress d'une présence étrangère.</p>
             <div className="space-y-12">
                {[
-                 { i: Camera, t: '1. Prise de contact', d: 'Vous m’envoyez une photo récente, son nom, son âge et vos questions.' },
+                 { i: Camera, t: '1. Prise de contact', d: 'Vous m’envoyez une photo où l’on voit distinctement son visage et ses yeux, son nom et vos questions.' },
                  { i: Sparkles, t: '2. Connexion à distance', d: 'Je me relie à votre animal dans un temps de connexion intérieure et d’écoute.' },
-                 { i: MessageCircle, t: '3. Restitution', d: 'Je vous transmets ressentis, émotions, messages et pistes d’apaisement.' },
-                 { i: Phone, t: '4. Échange', d: 'Nous reprenons ensemble les points importants pour répondre à vos questions.' }
+                 { i: Phone, t: '3. Échange', d: 'Nous échangeons ensemble sur vos questions et les points importants de la communication.' },
+                 { i: MessageCircle, t: '4. Restitution', d: 'Je vous transmets l’ensemble des ressentis, émotions, messages et pistes d’apaisement.' }
                ].map((step, i) => (
                  <div key={i} className="flex gap-6">
                     <div className="h-12 w-12 shrink-0 rounded-full border border-site flex items-center justify-center text-[#8ba394]">
