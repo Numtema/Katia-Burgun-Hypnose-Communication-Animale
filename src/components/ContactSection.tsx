@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Phone, MapPin, Calendar, ChevronRight, MessageSquare } from 'lucide-react';
-import { SectionBadge } from './UI';
+import { Phone, MapPin, Calendar, MessageSquare, Zap, Heart, GraduationCap } from 'lucide-react';
+import { SectionBadge, cn } from './UI';
 
 export default function ContactSection() {
   const pathname = usePathname();
@@ -114,17 +114,30 @@ export default function ContactSection() {
                   />
                 </div>
              </div>
-             <div className="space-y-2">
-               <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Service</label>
-               <select 
-                 value={formData.service}
-                 onChange={e => setFormData({...formData, service: e.target.value})}
-                 className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors appearance-none"
-               >
-                  <option className="bg-[var(--site-bg)] text-site">Hypnose Ericksonienne</option>
-                  <option className="bg-[var(--site-bg)] text-site">Communication Animale</option>
-                  <option className="bg-[var(--site-bg)] text-site">Formation Initiation</option>
-               </select>
+             <div className="space-y-4">
+               <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Service souhaité</label>
+               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                 {[
+                   { id: 'Hypnose Ericksonienne', icon: Zap, label: 'Hypnose' },
+                   { id: 'Communication Animale', icon: Heart, label: 'Com. Animale' },
+                   { id: 'Formation Initiation', icon: GraduationCap, label: 'Formation' }
+                 ].map((s) => (
+                   <button
+                     key={s.id}
+                     type="button"
+                     onClick={() => setFormData({ ...formData, service: s.id })}
+                     className={cn(
+                       "flex flex-col items-center justify-center gap-3 p-4 rounded-2xl border transition-all duration-300",
+                       formData.service === s.id 
+                        ? "bg-[#8ba394] border-[#8ba394] text-white shadow-lg shadow-[#8ba394]/20" 
+                        : "bg-[var(--site-bg)] border-site text-[var(--site-muted)] hover:border-[#8ba394]/50 hover:text-site"
+                     )}
+                   >
+                     <s.icon className={cn("h-5 w-5", formData.service === s.id ? "text-white" : "text-[#8ba394]")} />
+                     <span className="text-[10px] font-bold uppercase tracking-widest text-center">{s.label}</span>
+                   </button>
+                 ))}
+               </div>
              </div>
              <div className="space-y-2">
                <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Votre message</label>
