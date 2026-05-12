@@ -1,7 +1,7 @@
 import React from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import ContactSection from '@/components/ContactSection';
+import Navigation from '../../components/Navigation';
+import Footer from '../../components/Footer';
+import ContactSection from '../../components/ContactSection';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 export const metadata = {
