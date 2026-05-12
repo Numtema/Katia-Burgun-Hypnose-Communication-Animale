@@ -14,6 +14,7 @@
   /* Brand Colors */
   --accent-sage: #8ba394;
   --text-sage: #8ba394; /* Fallback for dark mode where contrast is fine */
+  --primary-btn-bg: #8ba394;
   --accent-taupe: #b5a496;
   --bg-cream: #f9f8f6;
   
@@ -45,6 +46,7 @@
   --site-surface: #ffffff;
   --site-surface-solid: #ffffff;
   --text-sage: #526659;
+  --primary-btn-bg: #526659;
   --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(0, 0, 0, 0.08);
   --glass-blend: normal;

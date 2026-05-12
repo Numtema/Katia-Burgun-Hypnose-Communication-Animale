@@ -90,8 +90,6 @@ export default function ServicesDetails() {
               />
               <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><GraduationCap className="h-5 w-5 text-[var(--text-sage)]" /></div>
             </div>
-#8ba394]" /></div>
-            </div>
             <div className="flex flex-col items-start px-2">
               <SectionBadge className="mb-6">Formation en communication animale</SectionBadge>
               <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">Développer votre sensibilité et votre écoute intuitive</h3>

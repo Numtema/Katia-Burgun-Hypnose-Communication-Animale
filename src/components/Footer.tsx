@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
           <div className="md:col-span-2">
-            <Link href="/" className="text-site text-2xl font-heading italic block mb-6 hover:text-[#8ba394] transition-colors">Katia Burgun</Link>
+            <Link href="/" className="text-site text-2xl font-heading italic block mb-6 hover:text-[var(--text-sage)] transition-colors">Katia Burgun</Link>
             <p className="text-[var(--site-muted)] font-light text-sm max-w-md leading-relaxed mb-4">
               KB Hypnose Ericksonienne & Mieux-être, communication intuitive avec les animaux, consultations en cabinet à Houdetot et à distance.
             </p>
@@ -16,17 +16,17 @@ export default function Footer() {
               5 route de Bourville, 76740 Houdetot
             </div>
             <div className="flex gap-4">
-               <div className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[#8ba394] transition-all cursor-pointer">
+               <div className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[var(--text-sage)] transition-all cursor-pointer">
                  <Sparkles className="h-4 w-4" />
                </div>
-               <div className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[#8ba394] transition-all cursor-pointer">
+               <div className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[var(--text-sage)] transition-all cursor-pointer">
                  <Heart className="h-4 w-4" />
                </div>
             </div>
           </div>
           
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Navigation</h4>
+            <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Navigation</h3>
             <ul className="space-y-4">
               {[
                 { l: 'Accueil', h: '/' },
@@ -37,14 +37,14 @@ export default function Footer() {
                 { l: 'Contact', h: '/contact' }
               ].map((item) => (
                 <li key={item.l}>
-                  <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{item.l}</Link>
+                  <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[var(--text-sage)] transition-colors">{item.l}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Nos Services</h4>
+            <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Nos Services</h3>
             <ul className="space-y-4">
               {[
                 { l: 'Hypnose Ericksonienne', h: '/hypnose' },
@@ -54,14 +54,14 @@ export default function Footer() {
                 { l: 'Formation Initiation', h: '/formation' }
               ].map((item) => (
                 <li key={item.l}>
-                  <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{item.l}</Link>
+                  <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[var(--text-sage)] transition-colors">{item.l}</Link>
                 </li>
               ))}
             </ul>
           </div>
           
           <div>
-            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Légal</h4>
+            <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Légal</h3>
             <ul className="space-y-4">
               {[
                 { l: 'Mentions légales', h: '/legal/mentions-legales' },
@@ -69,7 +69,7 @@ export default function Footer() {
                 { l: 'Conditions générales', h: '/legal/cgv' }
               ].map((link) => (
                 <li key={link.l}>
-                  <Link href={link.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{link.l}</Link>
+                  <Link href={link.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[var(--text-sage)] transition-colors">{link.l}</Link>
                 </li>
               ))}
             </ul>

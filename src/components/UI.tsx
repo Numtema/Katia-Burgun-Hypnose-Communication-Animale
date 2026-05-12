@@ -62,7 +62,7 @@ export function PrimaryButton({ children, className = "", href = "#contact" }: {
   
   if (isExternal || href.startsWith('#')) {
     return (
-      <a href={href} className={baseClassName} style={{ backgroundColor: "#8ba394" }}>
+      <a href={href} className={baseClassName} style={{ backgroundColor: "var(--primary-btn-bg)" }}>
         {children}
         <ArrowUpRight className="h-4 w-4" />
       </a>
@@ -70,7 +70,7 @@ export function PrimaryButton({ children, className = "", href = "#contact" }: {
   }
 
   return (
-    <Link href={href} className={baseClassName} style={{ backgroundColor: "#8ba394" }}>
+    <Link href={href} className={baseClassName} style={{ backgroundColor: "var(--primary-btn-bg)" }}>
       {children}
       <ArrowUpRight className="h-4 w-4" />
     </Link>

@@ -80,7 +80,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center gap-3 group relative z-[70]">
             <div className="flex flex-col">
               <span className="font-heading text-xl sm:text-2xl italic text-site leading-none transition-all group-hover:tracking-wider">Katia Burgun</span>
-              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-[#6d8b7a] dark:text-[#8ba394] mt-1 font-medium">Hypnose • Communication Animale</span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-[var(--text-sage)] mt-1 font-medium">Hypnose • Communication Animale</span>
             </div>
           </Link>
 
@@ -101,7 +101,7 @@ export default function Navigation() {
                 >
                   {item.label}
                   <span className={cn(
-                    "absolute bottom-0 left-4 right-4 h-0.5 bg-[#8ba394] transition-transform duration-300",
+                    "absolute bottom-0 left-4 right-4 h-0.5 bg-[var(--text-sage)] transition-transform duration-300",
                     isActive(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'
                   )} />
                 </Link>
@@ -123,7 +123,7 @@ export default function Navigation() {
                         href={service.href} 
                         className="group/item flex flex-col px-5 py-4 hover:bg-[#8ba394]/10 rounded-2xl transition-all"
                       >
-                        <span className="text-[11px] uppercase tracking-widest text-site font-bold group-hover/item:text-[#8ba394] transition-colors">{service.label}</span>
+                        <span className="text-[11px] uppercase tracking-widest text-site font-bold group-hover/item:text-[var(--text-sage)] transition-colors">{service.label}</span>
                         <span className="text-[9px] uppercase tracking-wider text-[var(--site-muted)] mt-1">{service.desc}</span>
                       </Link>
                     ))}
@@ -142,13 +142,13 @@ export default function Navigation() {
                 >
                   {item.label}
                   <span className={cn(
-                    "absolute bottom-0 left-4 right-4 h-0.5 bg-[#8ba394] transition-transform duration-300",
+                    "absolute bottom-0 left-4 right-4 h-0.5 bg-[var(--text-sage)] transition-transform duration-300",
                     isActive(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'
                   )} />
                 </Link>
               ))}
               <div className="w-px h-4 bg-site opacity-10 mx-2" />
-              <Link href="/prendre-rendez-vous" className="bg-[#8ba394] hover:bg-site px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-[#ffffff] transition-all hover:scale-105 active:scale-95 shadow-md">
+              <Link href="/prendre-rendez-vous" className="bg-[var(--primary-btn-bg)] hover:bg-site px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-[#ffffff] transition-all hover:scale-105 active:scale-95 shadow-md">
                 Rendez-vous
               </Link>
             </nav>
@@ -163,7 +163,7 @@ export default function Navigation() {
                 {isLightMode ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
               </button>
               
-              <Link href="/contact" className="hidden sm:inline-flex xl:hidden bg-[#8ba394] px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff] shadow-md hover:scale-105 active:scale-95 transition-all">
+              <Link href="/contact" className="hidden sm:inline-flex xl:hidden bg-[var(--primary-btn-bg)] px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff] shadow-md hover:scale-105 active:scale-95 transition-all">
                 Contact
               </Link>
 
@@ -218,7 +218,7 @@ export default function Navigation() {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={cn(
                           "flex items-center justify-between py-3 text-xl font-heading italic transition-all group",
-                          isActive(item.href) ? 'text-[#8ba394]' : 'text-site hover:text-[#8ba394]'
+                          isActive(item.href) ? 'text-[var(--text-sage)]' : 'text-site hover:text-[var(--text-sage)]'
                         )}
                       >
                         {item.label}
@@ -263,7 +263,7 @@ export default function Navigation() {
                     <Link 
                       href="/prendre-rendez-vous" 
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="bg-[#8ba394] hover:bg-site text-white py-4 rounded-2xl text-[11px] font-bold uppercase tracking-[0.2em] text-center shadow-lg transition-all active:scale-95"
+                      className="bg-[var(--primary-btn-bg)] hover:bg-site text-white py-4 rounded-2xl text-[11px] font-bold uppercase tracking-[0.2em] text-center shadow-lg transition-all active:scale-95"
                     >
                       Prendre rendez-vous
                     </Link>

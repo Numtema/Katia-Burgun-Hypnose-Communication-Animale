@@ -99,7 +99,7 @@ export default function ContactSection() {
                     placeholder="vous@exemple.fr" 
                     value={formData.email}
                     onChange={e => setFormData({...formData, email: e.target.value})}
-                    className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors" 
+                    className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[var(--text-sage)] outline-none transition-colors" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -110,7 +110,7 @@ export default function ContactSection() {
                     placeholder="06 00 00 00 00" 
                     value={formData.phone}
                     onChange={e => setFormData({...formData, phone: e.target.value})}
-                    className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[#8ba394] outline-none transition-colors" 
+                    className="w-full bg-[var(--site-bg)] border border-site rounded-2xl px-6 py-4 text-site text-sm focus:border-[var(--text-sage)] outline-none transition-colors" 
                   />
                 </div>
              </div>
@@ -129,11 +129,11 @@ export default function ContactSection() {
                      className={cn(
                        "flex flex-col items-center justify-center gap-3 p-4 rounded-2xl border transition-all duration-300",
                        formData.service === s.id 
-                        ? "bg-[#8ba394] border-[#8ba394] text-white shadow-lg shadow-[#8ba394]/20" 
-                        : "bg-[var(--site-bg)] border-site text-[var(--site-muted)] hover:border-[#8ba394]/50 hover:text-site"
+                        ? "bg-[var(--primary-btn-bg)] border-[var(--primary-btn-bg)] text-white shadow-lg shadow-[#8ba394]/20" 
+                        : "bg-[var(--site-bg)] border-site text-[var(--site-muted)] hover:border-[var(--text-sage)]/50 hover:text-site"
                      )}
                    >
-                     <s.icon className={cn("h-5 w-5", formData.service === s.id ? "text-white" : "text-[#8ba394]")} />
+                     <s.icon className={cn("h-5 w-5", formData.service === s.id ? "text-white" : "text-[var(--text-sage)]")} />
                      <span className="text-[10px] font-bold uppercase tracking-widest text-center">{s.label}</span>
                    </button>
                  ))}
