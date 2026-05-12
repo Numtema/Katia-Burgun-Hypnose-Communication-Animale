@@ -65,23 +65,23 @@ export default function Bio() {
           <SectionBadge>Mon parcours</SectionBadge>
           <h2 className="mt-8 text-4xl sm:text-5xl text-site font-heading italic mb-12">Deux approches, une même <span className="text-[#8ba394]">attention au vivant</span></h2>
           <div className="space-y-8 text-[var(--site-muted)] font-light leading-relaxed text-sm sm:text-base">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-               <div className="space-y-6">
-                  <p>Depuis l’enfance, j’ai un lien particulier avec les animaux. Je les ressens, je capte leurs émotions, parfois avant même de les observer longuement. Pendant longtemps, j’ai pensé qu’il s’agissait simplement de ma sensibilité.</p>
-                  <p>Puis j’ai découvert la communication intuitive animale, et beaucoup de choses se sont éclairées.</p>
-                  <p>En accompagnant mes premiers “clients” animaux, j’ai compris qu’un animal stressé peut souvent être en miroir avec son humain. En transmettant ce que je perçois, les messages reçus peuvent entrer en résonance avec leurs gardiens et ouvrir une compréhension plus fine du lien qui les unit.</p>
-               </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-balance">
                <div className="space-y-6">
                   <p>Par ailleurs, mon désir d’aider l’humain m’a conduite à me former à l’hypnose ericksonienne.</p>
                   <p>Au départ, j’étais attirée par l’hypnose régressive, avec cette envie d’explorer des dimensions plus profondes de l’histoire personnelle. Une amie hypnothérapeute m’a alors conseillé de commencer par l’hypnose ericksonienne, une approche déjà très complète, capable d’accompagner de nombreuses problématiques avec douceur et profondeur.</p>
                   <p>Cette formation m’a permis d’ouvrir un autre espace d’accompagnement, cette fois directement tourné vers l’humain : ses émotions, ses blocages, ses ressources, son besoin d’apaisement ou de changement.</p>
+               </div>
+               <div className="space-y-6">
+                  <p>Depuis l’enfance, j’ai un lien particulier avec les animaux. Je les ressens, je capte leurs émotions, parfois avant même de les observer longuement. Pendant longtemps, j’ai pensé qu’il s’agissait simplement de ma sensibilité.</p>
+                  <p>Puis j’ai découvert la communication intuitive animale, et beaucoup de choses se sont éclairées.</p>
+                  <p>En accompagnant mes premiers “clients” animaux, j’ai compris qu’un animal stressé peut souvent être en miroir avec son humain. En transmettant ce que je perçois, les messages reçus peuvent entrer en résonance avec leurs gardiens et ouvrir une compréhension plus fine du lien qui les unit.</p>
                </div>
             </div>
             
             <div className="p-8 sm:p-12 rounded-[2.5rem] border border-[#8ba394]/20 bg-[var(--site-bg)] relative overflow-hidden group">
                <div className="absolute top-0 right-0 w-32 h-32 bg-[#8ba394]/5 rounded-full blur-2xl transition-all group-hover:scale-150" />
                <p className="relative z-10 text-lg sm:text-xl text-site font-heading italic text-center max-w-2xl mx-auto leading-relaxed">
-                Aujourd’hui, ces deux pratiques cohabitent dans mon parcours : l’une tournée vers l’écoute de l’animal et du lien avec son gardien, l’autre vers l’accompagnement de l’humain dans ses propres mouvements intérieurs.
+                Aujourd’hui, ces deux pratiques cohabitent dans mon parcours : l’une tournée vers l’accompagnement de l’humain dans ses propres mouvements intérieurs, l’autre vers l’écoute de l’animal et du lien avec son gardien.
                </p>
                <p className="relative z-10 text-center mt-6 text-[#8ba394] font-medium uppercase tracking-[0.2em] text-[10px]">Dans les deux cas, mon intention reste la même : accueillir avec sérieux, respect et délicatesse ce qui cherche à être entendu.</p>
             </div>
@@ -151,7 +151,7 @@ export default function Bio() {
                 { 
                   year: '2022', 
                   title: 'Hypnose Ericksonienne & Communication Intuitive',
-                  desc: "Cursus complet de 800 heures en hypnose et thérapie brève. En parallèle, consolidation de ma pratique en communication animale avec supervision clinique." 
+                  desc: "Cursus complet de 800 heures en hypnose et thérapie brève, sanctionné par un brevet délivré par la Fédération française d'hypnose et de thérapie brève (FFHTB). En parallèle, consolidation de ma pratique en communication animale avec supervision clinique." 
                 },
                 { 
                   year: '2023', 

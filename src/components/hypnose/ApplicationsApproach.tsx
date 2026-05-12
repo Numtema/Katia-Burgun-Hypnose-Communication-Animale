@@ -59,7 +59,7 @@ export const Approach = () => (
           <p>Contrairement aux idées reçues, vous restez maître de vous-même pendant une séance d’hypnose.</p>
           <p>Vous entendez ma voix, vous pouvez bouger, parler, exprimer un besoin ou interrompre l’expérience si nécessaire. L’état hypnotique est simplement une focalisation particulière de l’attention, qui permet au mental de se déposer et à l’inconscient de devenir plus disponible.</p>
           <p>Avant le travail hypnotique, nous prenons un temps d’échange, aussi appelé anamnèse, afin de faire connaissance, clarifier votre demande, comprendre votre contexte et cerner votre objectif.</p>
-          <p>Cet échange permet d’adapter l’accompagnement à votre situation. Le travail se fait ensuite à travers des protocoles, des images et des suggestions adaptés à votre propre solution intérieure.</p>
+          <p>Cet échange permet d’adapter l’accompagnement à votre situation. Le travail se fait ensuite à travers des protocoles, des images et des suggestions adaptées à votre propre solution intérieure.</p>
           <p>Je vous accompagne pas à pas, sans jugement, dans un cadre sécurisant, que la séance ait lieu au cabinet à Houdetot ou à distance en visioconférence.</p>
           <p>L’hypnose ne force rien. Elle ouvre un espace dans lequel vos ressources peuvent se remettre en mouvement, à votre rythme.</p>
         </div>

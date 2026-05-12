@@ -27,7 +27,7 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Une approche sensible du vivant, au service de <span className="text-[#8ba394]">l'humain et de l'animal</span></h2>
           <div className="mt-8 space-y-6 text-[var(--site-muted)] font-light text-sm sm:text-base max-w-xl leading-relaxed">
             <p>Depuis toujours, je ressens un lien profond avec les animaux et une attention particulière à ce qui ne se dit pas toujours avec des mots. Avec le temps, une évidence s'est imposée : le bien-être de l'animal et celui de son humain sont souvent intimement liés.</p>
-            <p>C'est cette compréhension qui m'a conduite à développer une double approche. D'un côté, la communication animale me permet d'explorer les ressentis, les besoins et les messages de l'animal. De l'autre, l'hypnose ericksonienne m'offre un cadre d'accompagnement pour aider l'humain à retrouver de l'apaisement, du recul et un nouvel équilibre intérieur.</p>
+            <p>C'est cette compréhension qui m'a conduite à développer une double approche. D'un côté, l'hypnose ericksonienne m'offre un cadre d'accompagnement pour aider l'humain à retrouver de l'apaisement, du recul et un nouvel équilibre intérieur. De l'autre, la communication animale me permet d'explorer les ressentis, les besoins et les messages de l'animal.</p>
             <p>Aujourd'hui, j'accompagne chacun avec bienveillance, en cabinet à Houdetot et à distance, dans le respect de son rythme, de sa sensibilité et de son histoire.</p>
           </div>
           

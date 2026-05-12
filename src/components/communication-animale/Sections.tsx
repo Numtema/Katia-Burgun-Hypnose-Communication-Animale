@@ -54,7 +54,7 @@ export const Mirror = () => (
 // --- Applications ---
 const appItems = [
   { icon: Zap, t: 'Comportements inexpliqués', d: 'Agressivité, stress, agitation, destruction, malpropreté, peur ou tristesse.' },
-  { icon: Activity, t: 'Difficultés physiques', d: 'En complément vétérinaire, pour comprendre le ressenti physique de l’animal.' },
+  { icon: Activity, t: 'Difficultés physiques et morales', d: 'En complément vétérinaire, pour comprendre le ressenti physique et moral de l’animal.' },
   { icon: Search, t: 'Animal perdu ou en fugue', d: 'Tenter de capter des indices sur son état ou son environnement (sans garantie).' },
   { icon: Users, t: 'Adoption & transition', d: 'Arrivée dans un nouveau foyer, séparation, voyage ou déménagement.' },
   { icon: Heart, t: 'Fin de vie', d: 'Entendre son ressenti et accompagner ce moment délicat avec douceur et paix.' },

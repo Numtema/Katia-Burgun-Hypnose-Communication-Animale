@@ -41,7 +41,7 @@ const faqs = [
   },
   { 
     q: "Est-ce possible pour un animal en fin de vie ?", 
-    a: "Oui. C’est même une demande fréquente, lorsque la relation a besoin d’être accompagnée avec douceur dans un moment délicat." 
+    a: "Oui. C’est même une demande fréquente, lorsque la relation a besoin d’être accompagnée avec douceur dans un moment délicat. Il est également possible de communiquer avec un animal décédé." 
   }
 ];
 

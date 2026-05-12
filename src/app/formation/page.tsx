@@ -126,7 +126,7 @@ export default function Formation() {
             <ProgramItem 
               time="14h00 — 16h30"
               title="Mise en pratique et expérimentations"
-              desc="L’après-midi est dédié à la pratique sur photos de mes propres animaux pour un accompagnement précis et validé. Nous explorons les signaux subtils, le décodage des ressentis et l'effet miroir quand le groupe est prêt."
+              desc="L’après-midi est dédié à la pratique sur photos de mes propres animaux, mais également sur les photos que les stagiaires apportent et échangent entre eux, pour un accompagnement précis et validé. Nous explorons les signaux subtils, le décodage des ressentis et l'effet miroir quand le groupe est prêt."
               icon={Zap}
               details={[
                 "Techniques de concentration et ancrage",
