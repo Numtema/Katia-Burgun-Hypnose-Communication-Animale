@@ -1,10 +1,24 @@
-import type { Metadata } from "next";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import ContactSection from "../components/ContactSection";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import { ThemeProvider } from "../context/ThemeContext";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://katia-burgun.fr"),
@@ -117,14 +131,16 @@ const jsonLd = [
   }
 ];
 
+import type { Metadata } from "next";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <body className="antialiased" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning className={`${instrumentSerif.variable} ${inter.variable}`}>
+      <body className="antialiased font-body" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

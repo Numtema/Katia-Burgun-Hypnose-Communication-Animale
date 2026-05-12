@@ -10,7 +10,7 @@ export default function Testimonials() {
     <section id="testimonials" className="bg-site py-24 sm:py-32 px-6 lg:px-16 transition-colors duration-500">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center mb-20 text-center">
-          <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight max-w-2xl">Des accompagnements vécus avec <span className="text-[#8ba394]">confiance</span></h2>
+          <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight max-w-2xl">Des accompagnements vécus avec <span className="text-[var(--text-sage)]">confiance</span></h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
@@ -22,7 +22,7 @@ export default function Testimonials() {
               <div className="flex gap-0.5 mb-6">{[1,2,3,4,5].map(s => <Star key={s} className="h-3 w-3 text-[#8ba394] fill-[#8ba394]" />)}</div>
               <p className="text-base text-site opacity-90 font-heading italic leading-relaxed mb-10 flex-1">“{it.t}”</p>
               <div className="mt-auto border-t border-site pt-6">
-                <div className="mt-1 text-[10px] text-[#8ba394] uppercase tracking-widest font-bold font-body">{it.r}</div>
+                <div className="mt-1 text-[10px] text-[var(--text-sage)] uppercase tracking-widest font-bold font-body">{it.r}</div>
               </div>
             </motion.div>
           ))}

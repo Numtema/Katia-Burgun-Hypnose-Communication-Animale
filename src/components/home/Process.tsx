@@ -6,7 +6,7 @@ export default function Process() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-4 lg:sticky lg:top-32">
-            <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Comment se déroule <span className="text-[#8ba394]">l'accompagnement&nbsp;?</span></h2>
+            <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Comment se déroule <span className="text-[var(--text-sage)]">l'accompagnement&nbsp;?</span></h2>
             <p className="mt-8 text-[var(--site-muted)] font-light leading-relaxed">Chaque séance est personnalisée. Le déroulement varie selon qu'il s'agit d'une séance d'hypnose ou d'une communication animale, mais l'intention reste la même : vous accueillir avec clarté, douceur et sérieux.</p>
           </div>
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">

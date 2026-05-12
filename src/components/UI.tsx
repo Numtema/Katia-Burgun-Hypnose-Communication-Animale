@@ -39,11 +39,11 @@ export function useHlsVideo(videoRef: React.RefObject<HTMLVideoElement | null>, 
   }, [videoRef, src]);
 }
 
-export function HlsBackgroundVideo({ src, className = "", style = {} }: { src: string; className?: string; style?: React.CSSProperties }) {
+export function HlsBackgroundVideo({ src, className = "", style = {}, poster = "" }: { src: string; className?: string; style?: React.CSSProperties; poster?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
   useHlsVideo(ref, src);
   return (
-    <video ref={ref} autoPlay loop muted playsInline className={cn("absolute inset-0 h-full w-full object-cover", className)} style={style} />
+    <video ref={ref} autoPlay loop muted playsInline poster={poster} className={cn("absolute inset-0 h-full w-full object-cover", className)} style={style} />
   );
 }
 

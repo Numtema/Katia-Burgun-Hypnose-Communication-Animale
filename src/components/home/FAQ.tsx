@@ -21,7 +21,7 @@ export default function FAQ() {
     <section id="faq" className="bg-[var(--site-surface)] py-24 sm:py-32 px-6 lg:px-16 border-t border-site transition-colors duration-500">
       <div className="mx-auto max-w-5xl">
         <div className="text-center mb-20">
-           <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Questions <span className="text-[#8ba394]">fréquentes</span></h2>
+           <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Questions <span className="text-[var(--text-sage)]">fréquentes</span></h2>
         </div>
         
         <div className="space-y-4">

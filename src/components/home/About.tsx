@@ -24,7 +24,7 @@ export default function About() {
           </div>
         </div>
         <div className="lg:col-span-7 flex flex-col items-start">
-          <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Une approche sensible du vivant, au service de <span className="text-[#8ba394]">l'humain et de l'animal</span></h2>
+          <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Une approche sensible du vivant, au service de <span className="text-[var(--text-sage)]">l'humain et de l'animal</span></h2>
           <div className="mt-8 space-y-6 text-[var(--site-muted)] font-light text-sm sm:text-base max-w-xl leading-relaxed">
             <p>Depuis toujours, je ressens un lien profond avec les animaux et une attention particulière à ce qui ne se dit pas toujours avec des mots. Avec le temps, une évidence s'est imposée : le bien-être de l'animal et celui de son humain sont souvent intimement liés.</p>
             <p>C'est cette compréhension qui m'a conduite à développer une double approche. D'un côté, l'hypnose ericksonienne m'offre un cadre d'accompagnement pour aider l'humain à retrouver de l'apaisement, du recul et un nouvel équilibre intérieur. De l'autre, la communication animale me permet d'explorer les ressentis, les besoins et les messages de l'animal.</p>
@@ -38,7 +38,7 @@ export default function About() {
               ['2', 'Spécialités complémentaires']
             ].map(([v, l]) => (
               <div key={l}>
-                <div className="text-3xl font-heading italic text-[#6d8b7a] dark:text-[#8ba394]">{v}</div>
+                <div className="text-3xl font-heading italic text-[var(--text-sage)]">{v}</div>
                 <div className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-medium leading-tight mt-1">{l}</div>
               </div>
             ))}

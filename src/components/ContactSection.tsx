@@ -40,7 +40,7 @@ export default function ContactSection() {
         {/* ... existing left column ... */}
         <div>
           <SectionBadge>Contact</SectionBadge>
-          <h2 className="mt-8 text-5xl sm:text-6xl text-site font-heading italic leading-tight">Prenons <span className="text-[#8ba394]">rendez-vous</span></h2>
+          <h2 className="mt-8 text-5xl sm:text-6xl text-site font-heading italic leading-tight">Prenons <span className="text-[var(--text-sage)]">rendez-vous</span></h2>
           <p className="mt-6 text-[var(--site-muted)] font-light leading-relaxed max-w-md">Une question, un besoin, une envie d'explorer ? Écrivez-moi, appelez-moi, ou prenez rendez-vous directement. Je réponds personnellement à chaque message sous 48h.</p>
           
           <div className="mt-12 space-y-10">
@@ -74,7 +74,7 @@ export default function ContactSection() {
                 <span key={city} className="text-xs text-[var(--site-muted)] font-light flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-[#8ba394]/60" /> {city}</span>
               ))}
             </div>
-            <p className="mt-4 text-[9px] text-[#8ba394]/80 uppercase tracking-widest font-medium italic">Cabinet à Houdetot (76) & à distance</p>
+            <p className="mt-4 text-[9px] text-[var(--text-sage)] opacity-80 uppercase tracking-widest font-medium italic">Cabinet à Houdetot (76) & à distance</p>
           </div>
         </div>
 
