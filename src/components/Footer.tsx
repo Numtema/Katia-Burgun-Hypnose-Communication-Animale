@@ -28,9 +28,33 @@ export default function Footer() {
           <div>
             <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Navigation</h4>
             <ul className="space-y-4">
-              {['Accueil', 'Qui suis-je', 'Hypnose', 'Communication animale', 'Formation', 'Tarifs', 'Témoignages'].map((item) => (
-                <li key={item}>
-                  <Link href={item === 'Accueil' ? '/' : `/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, '-')}`} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{item}</Link>
+              {[
+                { l: 'Accueil', h: '/' },
+                { l: 'Qui suis-je', h: '/qui-suis-je' },
+                { l: 'Services', h: '/services' },
+                { l: 'Tarifs', h: '/tarifs' },
+                { l: 'Témoignages', h: '/temoignages' },
+                { l: 'Contact', h: '/contact' }
+              ].map((item) => (
+                <li key={item.l}>
+                  <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{item.l}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Nos Services</h4>
+            <ul className="space-y-4">
+              {[
+                { l: 'Hypnose Ericksonienne', h: '/hypnose' },
+                { l: 'Communication Animale', h: '/communication-animale' },
+                { l: 'Mieux-être & Libération', h: '/mieux-etre-liberation' },
+                { l: 'Écoute Intuitive', h: '/ecoute-intuitive' },
+                { l: 'Formation Initiation', h: '/formation' }
+              ].map((item) => (
+                <li key={item.l}>
+                  <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{item.l}</Link>
                 </li>
               ))}
             </ul>
@@ -41,9 +65,8 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { l: 'Mentions légales', h: '/legal/mentions-legales' },
-                { l: 'Politique de confidentialité', h: '/legal/confidentialite' },
-                { l: 'Conditions générales', h: '/legal/cgv' },
-                { l: 'Gestion des cookies', h: '/legal/cookies' }
+                { l: 'Politique de confidentialité', h: '/legal/politique-confidentialite' },
+                { l: 'Conditions générales', h: '/legal/cgv' }
               ].map((link) => (
                 <li key={link.l}>
                   <Link href={link.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[#8ba394] transition-colors">{link.l}</Link>

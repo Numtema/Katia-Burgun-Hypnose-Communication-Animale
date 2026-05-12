@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle, Heart, MessageSquare, Phone, MapPin, Calendar, Star, ShieldCheck, Zap, Users } from 'lucide-react';
+import Image from 'next/image';
 import { SectionBadge, BlurText, PrimaryButton } from '../../components/UI';
 import ContactSection from '../../components/ContactSection';
 
@@ -22,8 +23,15 @@ export default function Bio() {
       <section className="px-6 lg:px-16 py-12">
         <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
           <div className="relative rounded-[3rem] overflow-hidden border border-site group shadow-2xl h-full min-h-[500px]">
-            <img src={portraitKatia} alt="Portrait Katia Burgun" className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <Image 
+              src={portraitKatia} 
+              alt="Portrait Katia Burgun" 
+              fill
+              className="object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" 
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
           </div>
           <div className="flex flex-col items-start">
             <SectionBadge>Qui suis-je ?</SectionBadge>
@@ -195,7 +203,13 @@ export default function Bio() {
                  </div>
               </div>
               <div className="order-1 lg:order-2 relative aspect-video rounded-[3rem] overflow-hidden border border-site shadow-xl group">
-                 <img src={diplomeKatia} alt="Formation Hypnose" className="w-full h-full object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" />
+                 <Image 
+                   src={diplomeKatia} 
+                   alt="Formation Hypnose" 
+                   fill
+                   className="object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" 
+                   sizes="(max-width: 1024px) 100vw, 50vw"
+                 />
                  <div className="absolute inset-0 bg-[#8ba394]/5 pointer-events-none" />
               </div>
            </div>
@@ -203,7 +217,13 @@ export default function Bio() {
            {/* Communication Animale */}
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="relative aspect-video rounded-[3rem] overflow-hidden border border-site shadow-xl group">
-                 <img src="/assets/chat-katia-burgun.jpeg" alt="Communication Animale" className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" />
+                 <Image 
+                   src="/assets/chat-katia-burgun.jpeg" 
+                   alt="Communication Animale" 
+                   fill
+                   className="object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" 
+                   sizes="(max-width: 1024px) 100vw, 50vw"
+                 />
                  <div className="absolute inset-0 bg-[#8ba394]/5 pointer-events-none" />
               </div>
               <div>

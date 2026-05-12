@@ -26,8 +26,8 @@ export default function Tarifs() {
       desc: 'Une consultation complète pour mieux comprendre votre animal, ses ressentis, ses comportements et ses messages.',
       sections: [
         { label: 'L’expérience', items: ['Connexion intuitive approfondie', 'Jusqu’à 5 questions'] },
-        { label: 'Restitution', items: ['Compte-rendu écrit détaillé', 'Échange téléphonique ou visio'] },
-        { label: 'Modalités', items: ['Consultation à distance partout'] }
+        { label: 'Restitution', items: ['Échange téléphonique ou visio', 'Compte-rendu écrit détaillé'] },
+        { label: 'Modalités', items: ['Consultation à distance partout dans le monde'] }
       ],
       cta: '/communication-animale#contact'
     },
@@ -181,7 +181,7 @@ export default function Tarifs() {
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                {[
                  { i: CreditCard, t: 'Carte bancaire', d: 'En cabinet ou via lien sécurisé Stripe pour la visio.' },
-                 { i: Landmark, t: 'Virement bancaire', d: 'Préféré pour les formations et forfaits.' },
+                 { i: Landmark, t: 'Virement bancaire', d: 'Préféré pour les formations et forfaits (Paypal et Wero acceptés).' },
                  { i: Banknote, t: 'Espèces', d: 'Accepté en séance présentielle.' },
                  { i: Receipt, t: 'Chèque', d: 'À l’ordre de Katia Burgun.' }
                ].map((item, idx) => (

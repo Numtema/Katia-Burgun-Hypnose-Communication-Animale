@@ -52,11 +52,14 @@ export default function Navigation() {
     { label: "Qui suis-je", href: "/qui-suis-je" },
     { label: "Tarifs", href: "/tarifs" },
     { label: "Témoignages", href: "/temoignages" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const services = [
     { label: "Hypnose ericksonienne", href: "/hypnose", desc: "Mieux-être et libération" },
     { label: "Communication animale", href: "/communication-animale", desc: "Écoute intuitive" },
+    { label: "Mieux-être & Libération", href: "/mieux-etre-liberation", desc: "Équilibre intérieur" },
+    { label: "Écoute Intuitive", href: "/ecoute-intuitive", desc: "Connexion profonde" },
     { label: "Formation initiation", href: "/formation", desc: "Apprendre et ressentir" },
   ];
 
@@ -106,9 +109,12 @@ export default function Navigation() {
 
               {/* Desktop Dropdown */}
               <div className="relative group/dropdown">
-                <button className="px-4 py-2 text-[10px] uppercase tracking-widest text-[var(--site-muted)] hover:text-site flex items-center gap-1.5 transition-all">
+                <Link 
+                  href="/services"
+                  className="px-4 py-2 text-[10px] uppercase tracking-widest text-[var(--site-muted)] hover:text-site flex items-center gap-1.5 transition-all"
+                >
                   Services <ChevronDown className="w-3 h-3 opacity-50 group-hover/dropdown:rotate-180 transition-transform duration-500" />
-                </button>
+                </Link>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-72 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-500 scale-95 group-hover/dropdown:scale-100 origin-top">
                   <div className="bg-[var(--site-surface-solid)] border border-site rounded-[2rem] shadow-2xl p-3 flex flex-col gap-1 overflow-hidden">
                     {services.map((service) => (
@@ -142,7 +148,7 @@ export default function Navigation() {
                 </Link>
               ))}
               <div className="w-px h-4 bg-site opacity-10 mx-2" />
-              <Link href="/tarifs#contact" className="bg-[#8ba394] hover:bg-site px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-[#ffffff] transition-all hover:scale-105 active:scale-95 shadow-md">
+              <Link href="/prendre-rendez-vous" className="bg-[#8ba394] hover:bg-site px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-[#ffffff] transition-all hover:scale-105 active:scale-95 shadow-md">
                 Rendez-vous
               </Link>
             </nav>
@@ -157,7 +163,7 @@ export default function Navigation() {
                 {isLightMode ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
               </button>
               
-              <Link href="/tarifs#contact" className="hidden sm:inline-flex xl:hidden bg-[#8ba394] px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff] shadow-md hover:scale-105 active:scale-95 transition-all">
+              <Link href="/contact" className="hidden sm:inline-flex xl:hidden bg-[#8ba394] px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#ffffff] shadow-md hover:scale-105 active:scale-95 transition-all">
                 Contact
               </Link>
 
@@ -255,7 +261,7 @@ export default function Navigation() {
                     className="flex flex-col gap-6"
                   >
                     <Link 
-                      href="/tarifs#contact" 
+                      href="/prendre-rendez-vous" 
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="bg-[#8ba394] hover:bg-site text-white py-4 rounded-2xl text-[11px] font-bold uppercase tracking-[0.2em] text-center shadow-lg transition-all active:scale-95"
                     >

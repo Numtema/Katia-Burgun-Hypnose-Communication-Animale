@@ -51,6 +51,7 @@ export default function LegalPage() {
           )
         };
       case 'confidentialite':
+      case 'politique-confidentialite':
         return {
           title: 'Politique de confidentialité',
           description: 'Comment Katia Burgun protège vos données personnelles et respecte le RGPD.',
