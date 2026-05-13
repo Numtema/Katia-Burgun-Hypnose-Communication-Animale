@@ -188,7 +188,7 @@ body {
 
 .hero-main-text {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
   line-height: 0.95;
 }
 
