@@ -50,7 +50,7 @@ export function HlsBackgroundVideo({ src, className = "", style = {}, poster = "
       <div 
         className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
         style={{ 
-          backgroundImage: `url(${poster})`,
+          backgroundImage: poster ? `url(${poster})` : 'none',
           opacity: isPlaying ? 0 : 1
         }}
       />

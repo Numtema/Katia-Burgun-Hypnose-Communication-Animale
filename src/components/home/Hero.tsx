@@ -11,7 +11,6 @@ export default function Hero() {
     <section id="home" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-site transition-colors duration-500">
       <HlsBackgroundVideo 
         src={HERO_VIDEO} 
-        poster="/assets/katia-burgun-hypnotherapeute-normandie.jpeg"
         className="opacity-80 md:opacity-100 object-cover" 
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--site-bg)]/40 via-transparent to-[var(--site-bg)]/80 z-[1]" />
@@ -24,20 +23,20 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="flex flex-col items-center mb-16"
         >
-          <span className="hero-main-text italic text-site text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Hypnose</span>
+          <span className="hero-main-text italic text-site text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Hypnose</span>
           
           <div className="my-4">
-            <span className="px-5 py-1.5 rounded-full bg-white/5 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg text-[9px] sm:text-[11px] uppercase tracking-[0.3em] font-bold text-white">
+            <span className="px-5 py-1.5 rounded-full bg-white/5 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg text-[9px] sm:text-[11px] uppercase tracking-[0.3em] font-bold text-white text-center">
               pour vous
             </span>
           </div>
 
           <span className="text-2xl sm:text-4xl text-[var(--text-sage)] font-heading my-2">&</span>
 
-          <span className="hero-main-text italic text-site text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Communication animale</span>
+          <span className="hero-main-text italic text-site text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Communication animale</span>
 
           <div className="mt-4">
-            <span className="px-5 py-1.5 rounded-full bg-white/5 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg text-[9px] sm:text-[11px] uppercase tracking-[0.3em] font-bold text-white">
+            <span className="px-5 py-1.5 rounded-full bg-white/5 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg text-[9px] sm:text-[11px] uppercase tracking-[0.3em] font-bold text-white text-center">
               pour votre compagnon
             </span>
           </div>
