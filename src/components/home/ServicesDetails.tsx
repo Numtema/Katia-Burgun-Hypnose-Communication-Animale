@@ -14,42 +14,10 @@ export default function ServicesDetails() {
           <h2 className="text-3xl sm:text-4xl text-site font-heading italic leading-tight">Des accompagnements adaptés à <span className="text-[var(--text-sage)]">votre besoin</span></h2>
           <p className="mt-6 text-[var(--site-muted)] max-w-2xl mx-auto font-light leading-relaxed">Vous pouvez consulter pour vous-même, pour votre animal, ou pour avancer plus sereinement dans la relation que vous partagez.</p>
         </div>
-        
-        <div className="space-y-32">
-          {/* Service 1 */}
+              <div className="space-y-32">
+          {/* Service 1: Hypnose */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-site group">
-              <Image 
-                src={communicationImg} 
-                alt="Communication animale"
-                fill
-                className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><MessageCircle className="h-5 w-5 text-[var(--text-sage)]" /></div>
-            </div>
-            <div className="flex flex-col items-start px-2">
-              <SectionBadge className="mb-6">Communication animale</SectionBadge>
-              <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">Mieux comprendre ce que votre animal exprime</h3>
-              <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">La communication animale permet d'explorer les ressentis, les émotions et les besoins de votre compagnon. Elle peut vous aider à mettre du sens sur certains comportements, à mieux vivre une période de changement, ou à renforcer votre lien avec lui.</p>
-              <div className="mb-10 text-sm">
-                 <strong className="text-site font-medium block mb-2">Cas fréquents :</strong>
-                 <span className="text-[var(--site-muted)] font-light leading-relaxed">Changement de comportement, stress, incompréhension, séparation, arrivée d'un nouvel animal, déménagement, fin de vie, besoin de mieux comprendre ce que vit votre compagnon.</span>
-              </div>
-              <div className="flex items-center gap-3 mb-8 bg-[var(--site-surface)] px-6 py-3 rounded-full border border-site">
-                <span className="text-[var(--text-sage)] font-heading italic text-xl">80 €</span>
-                <span className="text-[10px] uppercase tracking-widest font-bold text-[var(--site-muted)]">La consultation</span>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                 <PrimaryButton href="/communication-animale" className="bg-[var(--site-surface)] border border-site px-6 py-3 text-xs sm:text-sm">Découvrir la communication animale</PrimaryButton>
-                 <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-[#8ba394]/40 px-6 py-3 text-[10px] uppercase tracking-widest font-bold text-[var(--text-sage)] hover:bg-[#8ba394]/10 transition-all">Réserver <ArrowUpRight className="h-3 w-3" /></a>
-              </div>
-            </div>
-          </div>
-
-          {/* Service 2 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:flex-row-reverse">
-            <div className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-site group lg:order-2">
               <Image 
                 src={hypnoseImg} 
                 alt="Hypnose Ericksonienne"
@@ -59,7 +27,7 @@ export default function ServicesDetails() {
               />
               <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><Sparkles className="h-5 w-5 text-[var(--text-sage)]" /></div>
             </div>
-            <div className="flex flex-col items-start px-2 lg:order-1">
+            <div className="flex flex-col items-start px-2">
               <SectionBadge className="mb-6">Hypnose ericksonienne</SectionBadge>
               <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">Retrouver un mieux-être intérieur durable</h3>
               <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">L'hypnose ericksonienne est un accompagnement centré sur vos ressources intérieures. Elle peut vous aider à apaiser le stress, retrouver un sommeil plus serein, traverser une période difficile, dépasser certains blocages et avancer avec plus de clarté.</p>
@@ -78,7 +46,38 @@ export default function ServicesDetails() {
             </div>
           </div>
 
-          {/* Service 3 */}
+          {/* Service 2: Communication Animale */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:flex-row-reverse">
+            <div className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-site group lg:order-2">
+              <Image 
+                src={communicationImg} 
+                alt="Communication animale"
+                fill
+                className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute top-8 left-8 h-12 w-12 rounded-xl bg-[var(--site-surface)] backdrop-blur-xl border border-site flex items-center justify-center"><MessageCircle className="h-5 w-5 text-[var(--text-sage)]" /></div>
+            </div>
+            <div className="flex flex-col items-start px-2 lg:order-1">
+              <SectionBadge className="mb-6">Communication animale</SectionBadge>
+              <h3 className="text-3xl sm:text-4xl text-site font-heading italic mb-6 leading-tight max-w-md">Mieux comprendre ce que votre animal exprime</h3>
+              <p className="text-[var(--site-muted)] font-light text-sm sm:text-base leading-relaxed mb-8 max-w-lg">La communication animale permet d'explorer les ressentis, les émotions et les besoins de votre compagnon. Elle peut vous aider à mettre du sens sur certains comportements, à mieux vivre une période de changement, ou à renforcer votre lien avec lui.</p>
+              <div className="mb-10 text-sm">
+                 <strong className="text-site font-medium block mb-2">Cas fréquents :</strong>
+                 <span className="text-[var(--site-muted)] font-light leading-relaxed">Difficultés physiques ou morales de l'animal, changement de comportement, stress, incompréhension, séparation, arrivée d'un nouvel animal, déménagement, fin de vie, besoin de mieux comprendre ce que vit votre compagnon.</span>
+              </div>
+              <div className="flex items-center gap-3 mb-8 bg-[var(--site-surface)] px-6 py-3 rounded-full border border-site">
+                <span className="text-[var(--text-sage)] font-heading italic text-xl">80 €</span>
+                <span className="text-[10px] uppercase tracking-widest font-bold text-[var(--site-muted)]">La consultation</span>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                 <PrimaryButton href="/communication-animale" className="bg-[var(--site-surface)] border border-site px-6 py-3 text-xs sm:text-sm">Découvrir la communication animale</PrimaryButton>
+                 <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-[#8ba394]/40 px-6 py-3 text-[10px] uppercase tracking-widest font-bold text-[var(--text-sage)] hover:bg-[#8ba394]/10 transition-all">Réserver <ArrowUpRight className="h-3 w-3" /></a>
+              </div>
+            </div>
+          </div>
+
+          {/* Service 3: Formation */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-video rounded-[2.5rem] overflow-hidden border border-site group">
               <Image 

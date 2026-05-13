@@ -98,7 +98,7 @@ export default function CommunicationAnimale() {
             Si vous ressentez le besoin de mieux comprendre votre animal, je vous accompagne dans cette rencontre sensible, profonde et respectueuse.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-             <PrimaryButton href="/prendre-rendez-vous">Réserver une consultation</PrimaryButton>
+             <PrimaryButton href="#contact">Réserver une consultation</PrimaryButton>
              <Link href="/tarifs" className="text-[10px] uppercase tracking-widest font-bold text-[#8ba394] hover:text-site transition-colors">Voir les tarifs</Link>
           </div>
         </div>

@@ -96,7 +96,7 @@ export default function Hypnose() {
             Vous avez encore des questions ? Vous pouvez me contacter directement pour un premier échange gratuit et sans engagement, afin de voir si l’hypnose ericksonienne correspond à votre besoin.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-             <PrimaryButton href="/prendre-rendez-vous">Prendre rendez-vous</PrimaryButton>
+             <PrimaryButton href="#contact">Prendre rendez-vous</PrimaryButton>
              <a href="tel:0677495288" className="px-8 py-3 rounded-full border border-site text-[10px] uppercase tracking-widest font-bold text-site hover:bg-[var(--site-surface)] transition-all">06 77 49 52 88</a>
           </div>
         </div>

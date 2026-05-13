@@ -34,7 +34,7 @@ export default function Footer() {
                 { l: 'Services', h: '/services' },
                 { l: 'Tarifs', h: '/tarifs' },
                 { l: 'Témoignages', h: '/temoignages' },
-                { l: 'Contact', h: '/contact' }
+                { l: 'Contact', h: '#contact' }
               ].map((item) => (
                 <li key={item.l}>
                   <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[var(--text-sage)] transition-colors">{item.l}</Link>

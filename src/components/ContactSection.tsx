@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Phone, MapPin, Calendar, MessageSquare, Zap, Heart, GraduationCap } from 'lucide-react';
+import { Phone, MapPin, Calendar, MessageSquare, Zap, Heart, GraduationCap, Activity } from 'lucide-react';
 import { SectionBadge, cn } from './UI';
 
 export default function ContactSection() {
@@ -116,10 +116,11 @@ export default function ContactSection() {
              </div>
              <div className="space-y-4">
                <label className="text-[10px] uppercase tracking-widest text-[var(--site-muted)] font-bold ml-1">Service souhaité</label>
-               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                  {[
                    { id: 'Hypnose Ericksonienne', icon: Zap, label: 'Hypnose' },
                    { id: 'Communication Animale', icon: Heart, label: 'Com. Animale' },
+                   { id: 'Difficultés physiques ou morales', icon: Activity, label: 'Physique & Moral' },
                    { id: 'Formation Initiation', icon: GraduationCap, label: 'Formation' }
                  ].map((s) => (
                    <button

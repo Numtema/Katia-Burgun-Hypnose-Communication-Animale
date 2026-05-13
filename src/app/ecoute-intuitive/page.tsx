@@ -1,6 +1,4 @@
 import React from 'react';
-import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
 import BreadcrumbsJsonLd from '../../components/BreadcrumbsJsonLd';
 import { Eye, MessageCircle, Heart, Star } from 'lucide-react';
 import { SectionBadge, BlurText } from '../../components/UI';
@@ -13,7 +11,6 @@ export const metadata = {
 export default function EcouteIntuitivePage() {
   return (
     <main className="min-h-screen bg-[var(--site-bg)]">
-      <Navigation />
       <BreadcrumbsJsonLd 
         items={[
           { name: "Accueil", item: "/" },
@@ -58,8 +55,6 @@ export default function EcouteIntuitivePage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

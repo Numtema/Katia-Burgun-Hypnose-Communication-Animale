@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { ArrowLeft, CheckCircle, Heart, MessageSquare, Phone, MapPin, Calendar, Star, ShieldCheck, Zap, Users } from 'lucide-react';
 import Image from 'next/image';
 import { SectionBadge, BlurText, PrimaryButton } from '../../components/UI';
-import ContactSection from '../../components/ContactSection';
 
 const portraitKatia = "/assets/katia-burgun-hypnotherapeute-normandie.jpeg";
 const diplomeKatia = "/assets/Formation katia burgun formation.png";
@@ -305,7 +304,6 @@ export default function Bio() {
         </div>
       </section>
 
-      <ContactSection />
     </div>
   );
 }

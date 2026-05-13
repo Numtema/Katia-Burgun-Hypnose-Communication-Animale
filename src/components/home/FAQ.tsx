@@ -11,7 +11,8 @@ const faqs = [
   { q: "Les séances peuvent-elles se faire à distance ?", a: "Oui. Les séances d'hypnose comme les consultations en communication animale peuvent être proposées à distance selon votre situation." },
   { q: "La communication animale remplace-t-elle un vétérinaire ?", a: "Non. La communication animale ne remplace jamais un avis, un diagnostic ou un suivi vétérinaire. Elle vient en complément d'une démarche de soin et de compréhension." },
   { q: "Combien de séances d'hypnose faut-il prévoir ?", a: "Cela dépend de votre objectif et de votre rythme. Certaines personnes ressentent un apaisement dès les premières séances, d'autres ont besoin d'un accompagnement sur plusieurs rendez-vous." },
-  { q: "Comment se passe une consultation en communication animale ?", a: "Vous m'envoyez une photo récente de votre animal ainsi que vos questions. Après la séance, je vous fais une restitution des informations perçues et nous échangeons ensemble." }
+  { q: "Comment se passe une consultation en communication animale ?", a: "Vous m'envoyez une photo récente de votre animal ainsi que vos questions. Après la séance, je vous fais une restitution des informations perçues et nous échangeons ensemble." },
+  { q: "Est-ce possible pour un animal en fin de vie ou décédé ?", a: "Oui. C’est une demande fréquente pour accompagner la relation avec douceur dans un moment délicat. Il est également possible de communiquer avec un animal décédé pour apaiser le deuil ou transmettre un dernier message." }
 ];
 
 export default function FAQ() {

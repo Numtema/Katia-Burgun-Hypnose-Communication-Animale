@@ -1,7 +1,4 @@
 import React from 'react';
-import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
-import ContactSection from '../../components/ContactSection';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 export const metadata = {
@@ -12,8 +9,6 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[var(--site-bg)]">
-      <Navigation />
-      
       <section className="pt-40 pb-20 px-6 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <span className="text-[10px] uppercase tracking-[0.3em] text-[#8ba394] font-bold mb-6 block text-center">Disponibilité & Échange</span>
@@ -48,12 +43,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* The global ContactSection is already in layout.tsx, 
-          so it will appear here as well. 
-          But we can add some specific context if needed. */}
-          
-      <Footer />
     </main>
   );
 }
