@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Sparkles, Heart } from 'lucide-react';
+import { Sparkles, Heart, Facebook, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -16,12 +16,12 @@ export default function Footer() {
               5 route de Bourville, 76740 Houdetot
             </div>
             <div className="flex gap-4">
-               <div className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[var(--text-sage)] transition-all cursor-pointer">
-                 <Sparkles className="h-4 w-4" />
-               </div>
-               <div className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[var(--text-sage)] transition-all cursor-pointer">
-                 <Heart className="h-4 w-4" />
-               </div>
+               <a href="#" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[var(--text-sage)] transition-all cursor-pointer">
+                 <Instagram className="h-4 w-4" />
+               </a>
+               <a href="https://www.facebook.com/people/KB-Hypnose-Ericksonienne-Mieux-%C3%AAtre/100083082141262/" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[var(--text-sage)] transition-all cursor-pointer">
+                 <Facebook className="h-4 w-4" />
+               </a>
             </div>
           </div>
           

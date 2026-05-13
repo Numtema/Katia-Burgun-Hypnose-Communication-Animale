@@ -318,7 +318,7 @@ export default function Navigation() {
                       <a href="#" className="p-3 rounded-full border border-site text-[var(--site-muted)] hover:text-[#8ba394] hover:border-[#8ba394] transition-all">
                         <Instagram className="w-5 h-5" />
                       </a>
-                      <a href="#" className="p-3 rounded-full border border-site text-[var(--site-muted)] hover:text-[#8ba394] hover:border-[#8ba394] transition-all">
+                      <a href="https://www.facebook.com/people/KB-Hypnose-Ericksonienne-Mieux-%C3%AAtre/100083082141262/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full border border-site text-[var(--site-muted)] hover:text-[#8ba394] hover:border-[#8ba394] transition-all">
                         <Facebook className="w-5 h-5" />
                       </a>
                     </div>
