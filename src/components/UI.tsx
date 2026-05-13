@@ -41,9 +41,32 @@ export function useHlsVideo(videoRef: React.RefObject<HTMLVideoElement | null>, 
 
 export function HlsBackgroundVideo({ src, className = "", style = {}, poster = "" }: { src: string; className?: string; style?: React.CSSProperties; poster?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   useHlsVideo(ref, src);
+  
   return (
-    <video ref={ref} autoPlay loop muted playsInline poster={poster} className={cn("absolute inset-0 h-full w-full object-cover", className)} style={style} />
+    <div className={cn("absolute inset-0 overflow-hidden", className)} style={style}>
+      {/* Poster Background for smooth transition */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+        style={{ 
+          backgroundImage: `url(${poster})`,
+          opacity: isPlaying ? 0 : 1
+        }}
+      />
+      <video 
+        ref={ref} 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        onPlaying={() => setIsPlaying(true)}
+        className={cn(
+          "absolute inset-0 h-full w-full object-cover transition-opacity duration-1000",
+          isPlaying ? "opacity-100" : "opacity-0"
+        )} 
+      />
+    </div>
   );
 }
 
