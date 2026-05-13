@@ -102,7 +102,7 @@ export const PracticalInfo = () => (
           <Wallet className="h-6 w-6 text-[#8ba394] mb-4" />
           <h3 className="text-site font-heading italic text-xl mb-2">Moyens de paiement</h3>
           <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed">
-            PayPal, chèque, virement bancaire et espèces.
+            PayPal, Weero, chèque, virement bancaire et espèces.
           </p>
         </div>
       </div>

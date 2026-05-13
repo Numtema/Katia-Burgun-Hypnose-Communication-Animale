@@ -12,7 +12,7 @@ export default function Process() {
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { n: '01', t: 'Premier échange', d: 'Nous faisons le point sur votre besoin, pour vous ou pour votre animal, afin de choisir l\'accompagnement le plus juste.' },
-              { n: '02', t: 'Préparation', d: 'Pour une communication animale, vous m\'envoyez une photo de votre animal ainsi que vos questions. Pour une séance d\'hypnose, nous clarifions votre objectif ensemble.' },
+              { n: '02', t: 'Préparation', d: 'Pour une séance d\'hypnose, nous clarifions votre objectif ensemble. Pour une communication animale, vous m\'envoyez une photo de votre animal où on peut voir son visage ainsi que vos questions.' },
               { n: '03', t: 'La séance', d: 'Je vous accompagne en hypnose Ericksonienne, ou je réalise la communication animale dans un cadre calme et concentré.' },
               { n: '04', t: 'Restitution et intégration', d: 'Nous échangeons sur ce qui a émergé pendant la séance, les ressentis, les prises de conscience et les pistes d\'apaisement.' }
             ].map(step => (
