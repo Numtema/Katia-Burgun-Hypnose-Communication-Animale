@@ -28,7 +28,7 @@ export default function About() {
           <div className="mt-8 space-y-6 text-[var(--site-muted)] font-light text-sm sm:text-base max-w-xl leading-relaxed">
             <p>Depuis toujours, je porte une attention particulière à l'humain et à ce qui ne se dit pas toujours avec des mots, tout en ressentant un lien profond avec les animaux. Avec le temps, une évidence s'est imposée : le bien-être de la personne et celui de son animal sont souvent intimement liés.</p>
             <p>C'est cette compréhension qui m'a conduite à développer une double approche. D'un côté, l'hypnose ericksonienne m'offre un cadre d'accompagnement pour aider l'humain à retrouver de l'apaisement, du recul et un nouvel équilibre intérieur. De l'autre, la communication animale me permet d'explorer les ressentis, les besoins et les messages de son compagnon.</p>
-            <p>Aujourd'hui, j'accompagne chacun avec bienveillance, en cabinet à Houdetot et à distance, dans le respect de son rythme, de sa sensibilité et de son histoire.</p>
+            <p>Aujourd'hui, après une vie professionnelle bien remplie dans le domaine de l'enseignement, j'accompagne chacun avec bienveillance, en cabinet à Houdetot et à distance, dans le respect de son rythme, de sa sensibilité et de son histoire.</p>
           </div>
           
           <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-8 w-full border-t border-site pt-10">

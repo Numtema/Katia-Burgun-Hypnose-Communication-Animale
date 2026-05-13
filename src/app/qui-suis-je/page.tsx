@@ -39,7 +39,7 @@ export default function Bio() {
             
             <div className="mt-10 space-y-6 text-[var(--site-muted)] font-light leading-relaxed text-sm sm:text-base">
               <p className="text-xl font-heading italic text-site leading-relaxed">
-                Je suis Katia Burgun, praticienne en hypnose ericksonienne et en communication intuitive avec les animaux.
+                Je suis Katia Burgun. Après une vie professionnelle bien remplie dans le domaine de l'enseignement, je suis aujourd'hui praticienne en hypnose ericksonienne et en communication intuitive avec les animaux.
               </p>
               <p>
                 J’accompagne les humains ainsi que les animaux avec écoute, respect et délicatesse. Mon approche repose sur une attention particulière à ce qui ne se dit pas toujours avec les mots : les ressentis, les émotions, les silences, les tensions, les besoins profonds.
