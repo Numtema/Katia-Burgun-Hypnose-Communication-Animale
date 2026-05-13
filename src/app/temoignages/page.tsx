@@ -94,6 +94,26 @@ export default function Testimonials() {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Google Review CTA */}
+        <div className="mt-20 mx-auto max-w-3xl p-10 sm:p-12 rounded-[3rem] bg-white/5 backdrop-blur-xl border border-[#8ba394]/20 shadow-2xl text-center relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#8ba394]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="relative z-10">
+            <h3 className="text-2xl sm:text-3xl text-site font-heading italic mb-4">Vous avez vécu une séance avec moi ?</h3>
+            <p className="text-[var(--site-muted)] font-light text-sm sm:text-base mb-10 max-w-xl mx-auto leading-relaxed">
+              Votre retour aide d’autres personnes à franchir le pas en confiance. Merci pour votre partage.
+            </p>
+            <a 
+              href="https://g.page/r/CccBc3gVxtbjEBM/review" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#8ba394] hover:bg-[#7a9283] text-white px-8 py-4 rounded-full text-[11px] uppercase tracking-widest font-bold transition-all hover:scale-105 shadow-lg shadow-[#8ba394]/20"
+            >
+              <Star className="w-4 h-4 fill-white" />
+              Laisser un avis Google
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Values Section */}

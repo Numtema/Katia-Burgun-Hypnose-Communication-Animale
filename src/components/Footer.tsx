@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Sparkles, Heart, Facebook, Instagram } from 'lucide-react';
+import { Sparkles, Heart, Facebook, Instagram, Star } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -15,13 +15,27 @@ export default function Footer() {
             <div className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest mb-8">
               5 route de Bourville, 76740 Houdetot
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-10">
                <a href="#" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[var(--text-sage)] transition-all cursor-pointer">
                  <Instagram className="h-4 w-4" />
                </a>
                <a href="https://www.facebook.com/people/KB-Hypnose-Ericksonienne-Mieux-%C3%AAtre/100083082141262/" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full border border-site flex items-center justify-center text-[var(--site-muted)] hover:text-site hover:border-[var(--text-sage)] transition-all cursor-pointer">
                  <Facebook className="h-4 w-4" />
                </a>
+            </div>
+
+            <div className="pt-8 border-t border-site/20 max-w-xs">
+              <p className="text-site font-heading italic text-lg mb-1">Votre expérience compte</p>
+              <p className="text-[var(--site-muted)] text-[11px] mb-6 opacity-70 leading-relaxed">Merci pour vos précieux retours et avis.</p>
+              <a 
+                href="https://g.page/r/CccBc3gVxtbjEBM/review" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#8ba394] hover:text-site text-[9px] uppercase tracking-[0.2em] font-bold transition-colors group"
+              >
+                <Star className="w-3.5 h-3.5 fill-[#8ba394] group-hover:fill-site group-hover:scale-110 transition-all" />
+                Donner mon avis Google
+              </a>
             </div>
           </div>
           
