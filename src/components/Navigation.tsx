@@ -58,9 +58,12 @@ export default function Navigation() {
   const services = [
     { label: "Hypnose ericksonienne", href: "/hypnose", desc: "Mieux-être et libération" },
     { label: "Communication animale", href: "/communication-animale", desc: "Écoute intuitive" },
+    { label: "Formation initiation", href: "/formation", desc: "Apprendre et ressentir" },
+  ];
+
+  const outils = [
     { label: "Mieux-être & Libération", href: "/mieux-etre-liberation", desc: "Équilibre intérieur" },
     { label: "Écoute Intuitive", href: "/ecoute-intuitive", desc: "Connexion profonde" },
-    { label: "Formation initiation", href: "/formation", desc: "Apprendre et ressentir" },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -109,24 +112,43 @@ export default function Navigation() {
 
               {/* Desktop Dropdown */}
               <div className="relative group/dropdown">
-                <Link 
-                  href="/services"
-                  className="px-4 py-2 text-[10px] uppercase tracking-widest text-[var(--site-muted)] hover:text-site flex items-center gap-1.5 transition-all"
+                <button
+                  className="px-4 py-2 text-[10px] uppercase tracking-widest text-[var(--site-muted)] hover:text-site flex items-center gap-1.5 transition-all outline-none"
                 >
-                  Services <ChevronDown className="w-3 h-3 opacity-50 group-hover/dropdown:rotate-180 transition-transform duration-500" />
-                </Link>
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-72 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-500 scale-95 group-hover/dropdown:scale-100 origin-top">
-                  <div className="bg-[var(--site-surface-solid)] border border-site rounded-[2rem] shadow-2xl p-3 flex flex-col gap-1 overflow-hidden">
-                    {services.map((service) => (
-                      <Link 
-                        key={service.href}
-                        href={service.href} 
-                        className="group/item flex flex-col px-5 py-4 hover:bg-[#8ba394]/10 rounded-2xl transition-all"
-                      >
-                        <span className="text-[11px] uppercase tracking-widest text-site font-bold group-hover/item:text-[var(--text-sage)] transition-colors">{service.label}</span>
-                        <span className="text-[9px] uppercase tracking-wider text-[var(--site-muted)] mt-1">{service.desc}</span>
-                      </Link>
-                    ))}
+                  Services & Outils <ChevronDown className="w-3 h-3 opacity-50 group-hover/dropdown:rotate-180 transition-transform duration-500" />
+                </button>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[400px] opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-500 scale-95 group-hover/dropdown:scale-100 origin-top">
+                  <div className="bg-[var(--site-surface-solid)] border border-site rounded-[2.5rem] shadow-2xl p-6 grid grid-cols-2 gap-8 overflow-hidden">
+                    <div className="space-y-4">
+                      <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--text-sage)] font-bold px-2">Services</span>
+                      <div className="flex flex-col gap-1">
+                        {services.map((service) => (
+                          <Link 
+                            key={service.href}
+                            href={service.href} 
+                            className="group/item flex flex-col px-4 py-3 hover:bg-[#8ba394]/10 rounded-2xl transition-all"
+                          >
+                            <span className="text-[10px] uppercase tracking-widest text-site font-bold group-hover/item:text-[var(--text-sage)] transition-colors">{service.label}</span>
+                            <span className="text-[8px] uppercase tracking-wider text-[var(--site-muted)] mt-1">{service.desc}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="space-y-4">
+                      <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--text-sage)] font-bold px-2">Outils</span>
+                      <div className="flex flex-col gap-1">
+                        {outils.map((outil) => (
+                          <Link 
+                            key={outil.href}
+                            href={outil.href} 
+                            className="group/item flex flex-col px-4 py-3 hover:bg-[#8ba394]/10 rounded-2xl transition-all"
+                          >
+                            <span className="text-[10px] uppercase tracking-widest text-site font-bold group-hover/item:text-[var(--text-sage)] transition-colors">{outil.label}</span>
+                            <span className="text-[8px] uppercase tracking-wider text-[var(--site-muted)] mt-1">{outil.desc}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -247,6 +269,30 @@ export default function Navigation() {
                       >
                         <span className="text-lg font-heading italic text-site group-hover:text-[#8ba394] transition-colors">{service.label}</span>
                         <span className="text-[9px] uppercase tracking-wider text-[var(--site-muted)] mt-0.5">{service.desc}</span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="h-px bg-site/10 my-6" />
+
+                {/* Outils Section */}
+                <div className="flex flex-col gap-1">
+                  <span className="text-[9px] uppercase tracking-[0.3em] text-[var(--site-muted)] mb-4 font-bold opacity-50">Nos Outils</span>
+                  {outils.map((outil, idx) => (
+                    <motion.div
+                      key={outil.href}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4 + idx * 0.05 }}
+                    >
+                      <Link
+                        href={outil.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex flex-col py-3 group"
+                      >
+                        <span className="text-lg font-heading italic text-site group-hover:text-[#8ba394] transition-colors">{outil.label}</span>
+                        <span className="text-[9px] uppercase tracking-wider text-[var(--site-muted)] mt-0.5">{outil.desc}</span>
                       </Link>
                     </motion.div>
                   ))}

@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-site pt-32 pb-16 px-6 lg:px-16 relative overflow-hidden transition-colors duration-500">
       <div className="mx-auto max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 mb-24">
+          <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="text-site text-2xl font-heading italic block mb-6 hover:text-[var(--text-sage)] transition-colors">Katia Burgun</Link>
             <p className="text-[var(--site-muted)] font-light text-sm max-w-md leading-relaxed mb-4">
               KB Hypnose Ericksonienne & Mieux-être, communication intuitive avec les animaux, consultations en cabinet à Houdetot et à distance.
@@ -25,13 +25,12 @@ export default function Footer() {
             </div>
           </div>
           
-          <div>
+          <div className="col-span-1 lg:col-span-1">
             <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Navigation</h3>
             <ul className="space-y-4">
               {[
                 { l: 'Accueil', h: '/' },
                 { l: 'Qui suis-je', h: '/qui-suis-je' },
-                { l: 'Services', h: '/services' },
                 { l: 'Tarifs', h: '/tarifs' },
                 { l: 'Témoignages', h: '/temoignages' },
                 { l: 'Contact', h: '#contact' }
@@ -43,15 +42,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Nos Services</h3>
+          <div className="col-span-1 lg:col-span-1">
+            <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Services</h3>
             <ul className="space-y-4">
               {[
-                { l: 'Hypnose Ericksonienne', h: '/hypnose' },
-                { l: 'Communication Animale', h: '/communication-animale' },
-                { l: 'Mieux-être & Libération', h: '/mieux-etre-liberation' },
-                { l: 'Écoute Intuitive', h: '/ecoute-intuitive' },
-                { l: 'Formation Initiation', h: '/formation' }
+                { l: 'Hypnose', h: '/hypnose' },
+                { l: 'Com. Animale', h: '/communication-animale' },
+                { l: 'Formation', h: '/formation' }
+              ].map((item) => (
+                <li key={item.l}>
+                  <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[var(--text-sage)] transition-colors">{item.l}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="col-span-1 lg:col-span-1">
+            <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Outils</h3>
+            <ul className="space-y-4">
+              {[
+                { l: 'Libération', h: '/mieux-etre-liberation' },
+                { l: 'Écoute Intuitive', h: '/ecoute-intuitive' }
               ].map((item) => (
                 <li key={item.l}>
                   <Link href={item.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[var(--text-sage)] transition-colors">{item.l}</Link>
@@ -60,13 +71,13 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div>
+          <div className="col-span-1 lg:col-span-1">
             <h3 className="text-[10px] uppercase tracking-[0.2em] font-bold text-site mb-8">Légal</h3>
             <ul className="space-y-4">
               {[
                 { l: 'Mentions légales', h: '/legal/mentions-legales' },
-                { l: 'Politique de confidentialité', h: '/legal/politique-confidentialite' },
-                { l: 'Conditions générales', h: '/legal/cgv' }
+                { l: 'Confidentialité', h: '/legal/politique-confidentialite' },
+                { l: 'CGV', h: '/legal/cgv' }
               ].map((link) => (
                 <li key={link.l}>
                   <Link href={link.h} className="text-[var(--site-muted)] text-[10px] uppercase tracking-widest hover:text-[var(--text-sage)] transition-colors">{link.l}</Link>
