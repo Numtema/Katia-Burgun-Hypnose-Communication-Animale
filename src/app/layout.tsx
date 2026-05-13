@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://katia-burgun.fr"),
+  metadataBase: new URL("https://www.katiaburgun.com"),
   title: {
     default: "Katia Burgun | Hypnose Ericksonienne & Communication Animale",
     template: "%s | Katia Burgun"
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Katia Burgun | Hypnose & Communication Animale",
     description: "Retrouvez équilibre et bien-être avec l'hypnose ericksonienne et la communication animale en Normandie.",
-    url: "https://katia-burgun.fr",
+    url: "https://www.katiaburgun.com",
     siteName: "Katia Burgun",
     locale: "fr_FR",
     type: "website",
@@ -75,9 +75,9 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Katia Burgun | Hypnose & Communication Animale",
-    "image": "https://katia-burgun.fr/assets/katia-burgun-hypnotherapeute-normandie.jpeg",
-    "@id": "https://katia-burgun.fr",
-    "url": "https://katia-burgun.fr",
+    "image": "https://www.katiaburgun.com/assets/katia-burgun-hypnotherapeute-normandie.jpeg",
+    "@id": "https://www.katiaburgun.com",
+    "url": "https://www.katiaburgun.com",
     "telephone": "0677495288",
     "address": {
       "@type": "PostalAddress",
@@ -108,7 +108,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Katia Burgun",
-    "url": "https://katia-burgun.fr",
+    "url": "https://www.katiaburgun.com",
     "jobTitle": "Praticienne en hypnose et communication animale",
     "knowsAbout": [
       "Hypnose ericksonienne",
@@ -126,8 +126,8 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Katia Burgun",
-    "url": "https://katia-burgun.fr",
-    "logo": "https://katia-burgun.fr/assets/katia-burgun-hypnotherapeute-normandie.jpeg"
+    "url": "https://www.katiaburgun.com",
+    "logo": "https://www.katiaburgun.com/assets/katia-burgun-hypnotherapeute-normandie.jpeg"
   }
 ];
 

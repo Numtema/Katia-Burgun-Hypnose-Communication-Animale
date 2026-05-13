@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = 'https://katia-burgun.fr';
+  const siteUrl = 'https://www.katiaburgun.com';
   const lastModified = new Date();
 
   // Define your routes and their priorities

@@ -17,7 +17,7 @@ export default function BreadcrumbsJsonLd({ items }: BreadcrumbsJsonLdProps) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `https://katia-burgun.fr${item.item}`,
+      "item": `https://www.katiaburgun.com${item.item}`,
     })),
   };
 

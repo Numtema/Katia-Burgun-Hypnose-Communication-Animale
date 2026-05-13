@@ -26,7 +26,7 @@ export default function ContactPage() {
             <div className="bg-[var(--site-surface)] p-8 rounded-[2.5rem] border border-site text-center transition-all hover:border-[#8ba394]">
               <Mail className="w-6 h-6 text-[#8ba394] mx-auto mb-4" />
               <h3 className="text-site font-bold text-[10px] uppercase tracking-widest mb-2">Email</h3>
-              <p className="text-[var(--site-muted)] text-sm font-light">contact@katia-burgun.fr</p>
+              <p className="text-[var(--site-muted)] text-sm font-light">contact@katiaburgun.com</p>
             </div>
             
             <div className="bg-[var(--site-surface)] p-8 rounded-[2.5rem] border border-site text-center transition-all hover:border-[#8ba394]">
