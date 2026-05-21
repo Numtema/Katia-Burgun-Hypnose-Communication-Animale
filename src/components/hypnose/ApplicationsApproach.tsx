@@ -6,12 +6,79 @@ import { Moon, Zap, RefreshCw, Anchor, Shield, Cloud } from 'lucide-react';
 import { SectionBadge } from '../UI';
 
 const appItems = [
-  { icon: Moon, title: 'Sommeil & stress', desc: 'Retrouver un sommeil plus apaisé, calmer les ruminations, apaiser l’anxiété et relâcher les tensions mentales ou émotionnelles.' },
-  { icon: Zap, title: 'Confiance en soi', desc: 'Affirmer sa valeur, oser prendre sa place, se libérer progressivement du regard des autres et retrouver davantage de sécurité intérieure.' },
-  { icon: RefreshCw, title: 'Blocages émotionnels & deuil', desc: 'Traverser une séparation, un deuil, un changement de vie ou un bouleversement avec plus de sérénité, en retrouvant progressivement des ressources intérieures.' },
-  { icon: Anchor, title: 'Addictions & habitudes', desc: 'Accompagner l’arrêt du tabac, apaiser les comportements automatiques, le grignotage ou certaines habitudes devenues pesantes dans le quotidien.' },
-  { icon: Shield, title: 'Phobies & peurs', desc: 'Apprivoiser certaines peurs, phobies ou réactions disproportionnées afin de retrouver davantage de liberté dans vos choix et vos actions.' },
-  { icon: Cloud, title: 'Mieux-être durable', desc: 'Retrouver de l’énergie, de la clarté mentale, une relation plus sereine avec soi-même et une meilleure capacité à avancer.' },
+  { 
+    icon: Moon, 
+    title: 'Sommeil & stress', 
+    desc: 'Retrouver un sommeil plus apaisé, calmer les ruminations, apaiser l’anxiété et relâcher les tensions mentales ou émotionnelles.',
+    bullets: [
+      'Troubles anxieux et anxiété',
+      'Surcharge mentale et ruminations',
+      'Difficultés d’endormissement et insomnies',
+      'Tensions nerveuses, stress et surmenage'
+    ]
+  },
+  { 
+    icon: Zap, 
+    title: 'Confiance en soi', 
+    desc: 'Affirmer sa valeur, oser prendre sa place, se libérer progressivement du regard des autres et retrouver davantage de sécurité intérieure.',
+    bullets: [
+      'Estime de soi et sentiment de légitimité',
+      'Prise de parole en public et timidité',
+      'S’affranchir du regard et du jugement d’autrui',
+      'Développer une sécurité et stabilité intérieure'
+    ]
+  },
+  { 
+    icon: RefreshCw, 
+    title: 'Blocages émotionnels & deuil', 
+    desc: 'Traverser une séparation, un deuil, un changement de vie ou un bouleversement avec plus de sérénité, en retrouvant progressivement des ressources intérieures.',
+    bullets: [
+      'Deuil et processus de séparation douloureux',
+      'Accompagnement dans les transitions de vie importantes',
+      'Libération de blessures émotionnelles et blocages',
+      'Apaisement de la charge émotionnelle'
+    ]
+  },
+  { 
+    icon: Anchor, 
+    title: 'Addictions & habitudes', 
+    desc: 'Apaiser les comportements automatiques, les compulsions ou certaines habitudes devenues trop pesantes dans votre quotidien.',
+    bullets: [
+      'Tabac (accompagnement à l’arrêt du tabagisme)',
+      'Alcool et jeux d’argent ou de hasard',
+      'Sucre et addiction au gras (matières grasses)',
+      'Cannabis et CBD',
+      'Écrans et téléphone (scroll compulsif)',
+      'Grignotages et comportements automatiques',
+      'La liste n’étant pas exhaustive...'
+    ]
+  },
+  { 
+    icon: Shield, 
+    title: 'Phobies & peurs', 
+    desc: 'Apprivoiser certaines peurs, phobies ou réactions disproportionnées afin de retrouver davantage de liberté dans vos choix et vos actions.',
+    bullets: [
+      'Phobies d’animaux (insectes, oiseaux et autres...)',
+      'Altitude et vertige',
+      'Avion et peur des transports',
+      'Peur du noir et de la nuit',
+      'Réactions émotionnelles disproportionnées'
+    ]
+  },
+  { 
+    icon: Cloud, 
+    title: 'Mieux-être durable', 
+    desc: 'Retrouver de l’énergie, de la clarté mentale, une relation plus sereine avec soi-même et une meilleure capacité à avancer.',
+    bullets: [
+      'Accompagnement et gestion de la douleur',
+      'Soulagement des effets secondaires de la chimiothérapie',
+      'Bruxisme (serrement involontaire des dents)',
+      'Acouphènes',
+      'Épuisement professionnel et burnout',
+      'Préparation mentale à un événement difficile',
+      'Perte de poids et rééquilibrage de vie'
+    ]
+  },
 ];
 
 export const Applications = () => (
@@ -31,10 +98,25 @@ export const Applications = () => (
               <div className="absolute -top-4 left-8 bg-[#8ba394] text-[#ffffff] p-3 rounded-xl shadow-lg z-30 transform -rotate-3 group-hover:rotate-0 transition-transform border-2 border-[var(--site-surface-solid)]">
                 <item.icon className="w-5 h-5" />
               </div>
-              <div className="mt-8 flex-1">
-                <p className="text-xl sm:text-2xl text-site font-heading italic leading-relaxed">
-                  "{item.desc}"
-                </p>
+              <div className="mt-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <p className="text-xl sm:text-2xl text-site font-heading italic leading-relaxed mb-6">
+                    "{item.desc}"
+                  </p>
+                  
+                  {item.bullets && (
+                    <div className="mt-6 pt-6 border-t border-site/10">
+                      <ul className="space-y-2.5">
+                        {item.bullets.map((bullet, bIdx) => (
+                          <li key={bIdx} className="text-xs text-[var(--site-muted)] flex items-start gap-2.5 leading-relaxed">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#8ba394] mt-1.5 shrink-0 opacity-70" />
+                            <span className="font-light">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="w-full h-px bg-site opacity-10 my-8" />
               <div>
