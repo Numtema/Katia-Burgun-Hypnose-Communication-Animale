@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Phone, MapPin, Calendar, MessageSquare, Zap, Heart, GraduationCap, Activity } from 'lucide-react';
+import { Phone, MapPin, Calendar, MessageSquare, Zap, Heart, GraduationCap } from 'lucide-react';
 import { SectionBadge, cn } from './UI';
 
 export default function ContactSection() {
@@ -120,7 +120,6 @@ export default function ContactSection() {
                  {[
                    { id: 'Hypnose Ericksonienne', icon: Zap, label: 'Hypnose' },
                    { id: 'Communication Animale', icon: Heart, label: 'Com. Animale' },
-                   { id: 'Difficultés physiques ou morales', icon: Activity, label: 'Physique & Moral' },
                    { id: 'Formation Initiation', icon: GraduationCap, label: 'Formation' }
                  ].map((s) => (
                    <button
