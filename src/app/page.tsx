@@ -1,6 +1,7 @@
 import React from 'react';
 import Script from 'next/script';
 import Hero from '../components/home/Hero';
+import MediaBanner from '../components/home/MediaBanner';
 import ServicesOrientation from '../components/home/ServicesOrientation';
 import Quote from '../components/home/Quote';
 import About from '../components/home/About';
@@ -25,6 +26,11 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Katia Burgun | Hypnose & Communication Animale",
+    "alternateName": [
+      "Katia Burgun Slessareff",
+      "Katia Burgun-Hoerle",
+      "Katia Burgun Hoerle"
+    ],
     "image": `https://www.katiaburgun.com${portraitKatia2}`,
     "@id": "https://www.katiaburgun.com",
     "url": "https://www.katiaburgun.com",
@@ -36,7 +42,12 @@ export default function Home() {
       "postalCode": "76740",
       "addressRegion": "Normandie",
       "addressCountry": "FR"
-    }
+    },
+    "sameAs": [
+      "https://fr.linkedin.com/in/katia-burgun-365b55195",
+      "https://www.facebook.com/100068454903116",
+      "https://galerie-creation.com/_shop/katia-burgun-slessareff/10546/"
+    ]
   };
 
   const faqJsonLd = {
@@ -66,6 +77,7 @@ export default function Home() {
       />
       
       <Hero />
+      <MediaBanner />
       <ServicesOrientation />
       <Quote />
       <About />

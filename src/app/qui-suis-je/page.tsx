@@ -42,7 +42,13 @@ export default function Bio() {
                 Je suis Katia Burgun. Après une vie professionnelle bien remplie dans le domaine de l'enseignement, je suis aujourd'hui praticienne en hypnose ericksonienne et en communication intuitive avec les animaux.
               </p>
               <p>
-                J’accompagne les humains ainsi que les animaux avec écoute, respect et délicatesse. Mon approche repose sur une attention particulière à ce qui ne se dit pas toujours avec les mots : les ressentis, les émotions, les silences, les tensions, les besoins profonds.
+                Mon parcours a été enrichi par plusieurs vies professionnelles et créatives. Après avoir exercé durant de nombreuses années dans l'enseignement public sous mon nom d'épouse <strong>Katia Burgun-Hoerle</strong> (ou <strong>Katia Burgun Hoerle</strong>), j'ai ensuite consacré une part importante de mon chemin à l'expression artistique en tant qu'artiste peintre et sculptrice sous ma signature de <strong>Katia Burgun Slessareff</strong>.
+              </p>
+              <p>
+                Cette transition de la pédagogie à la création artistique, puis vers la relation d'aide et d'écoute par l'hypnose et la communication intuitive, représente un fil conducteur unique : celui de chercher à comprendre, exprimer et apaiser ce qui vit au plus profond de chacun, humain comme animal.
+              </p>
+              <p>
+                J’accompagne aujourd'hui les humains ainsi que les compagnons de vie avec écoute, respect et délicatesse. Mon approche repose sur une attention particulière à ce qui ne se dit pas toujours avec les mots : les ressentis, les émotions, les silences, les tensions, les besoins profonds.
               </p>
               <p>
                 Je crois profondément que le mieux-être de chacun, humain comme animal, passe par l’écoute, la patience et l’honnêteté envers soi.
