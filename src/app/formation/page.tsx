@@ -41,7 +41,7 @@ export default function Formation() {
             </div>
           </div>
           <div className="relative aspect-[4/5] sm:aspect-square rounded-[3rem] overflow-hidden border border-site shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1200" alt="Lien privilégié animal" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/assets/cheval.jpg" alt="Lien privilégié animal" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </div>
         </div>
       </section>

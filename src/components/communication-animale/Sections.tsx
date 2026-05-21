@@ -104,7 +104,7 @@ export const Applications = () => (
 const species = [
   { name: 'Chiens', image: '/assets/species/dog.png' },
   { name: 'Chats', image: '/assets/species/cat.png' },
-  { name: 'Chevaux', image: '/assets/species/horse.png' },
+  { name: 'Chevaux', image: '/assets/cheval.jpg' },
   { name: 'Lapins', image: '/assets/species/rabbit.png' },
   { name: 'Oiseaux', image: '/assets/species/bird.png' },
   { name: 'Reptiles', image: '/assets/species/reptile.png' },
