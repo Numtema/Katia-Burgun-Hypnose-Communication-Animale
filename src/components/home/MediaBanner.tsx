@@ -2,87 +2,75 @@
 
 import React from 'react';
 import { Newspaper, Linkedin, Facebook, Palette, MapPin } from 'lucide-react';
-import { cn } from '../UI';
 
 const REFERENCES = [
   {
     name: "Actu.fr",
     icon: Newspaper,
     label: "Presse Locale Caux",
-    desc: "Salon des Calètes & Actu",
     link: "https://actu.fr",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
     label: "Profil Pro",
-    desc: "Cabinet d'Hypnothérapie",
     link: "https://fr.linkedin.com/in/katia-burgun-365b55195",
   },
   {
     name: "Facebook",
     icon: Facebook,
     label: "Échanges & Conseils",
-    desc: "Com. Intuitive Animaux",
     link: "https://www.facebook.com/100068454903116",
   },
   {
     name: "Galerie-Création",
     icon: Palette,
     label: "Art & Créations",
-    desc: "Œuvres sous signature Slessareff",
     link: "https://galerie-creation.com/_shop/katia-burgun-slessareff/10546/",
   },
   {
     name: "Autour de moi",
     icon: MapPin,
     label: "Annuaire Pro",
-    desc: "Présence Locale Houdetot",
     link: "https://service-d-hypnotherapie.autour-de-moi.com/",
   }
 ];
 
 export default function MediaBanner() {
-  return (
-    <section className="w-full bg-[var(--site-bg)] border-y border-site py-12 relative overflow-hidden transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-10">
-          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] text-[var(--text-sage)]">
-            Présence en ligne & Références locales
-          </span>
-          <h2 className="mt-2 text-xl sm:text-2xl font-heading italic text-site">
-            Retrouvez mes publications, profils & activités artistiques
-          </h2>
-        </div>
+  // Triple the references to ensure the screen width is fully occupied and the marquee loops seamlessly
+  const duplicatedReferences = [...REFERENCES, ...REFERENCES, ...REFERENCES, ...REFERENCES];
 
-        {/* Responsive Grid of Elegant Outbound Links */}
-        <div className="flex flex-wrap gap-4 justify-center">
-          {REFERENCES.map((ref) => {
-            const Icon = ref.icon;
-            return (
-              <a
-                key={ref.name}
-                href={ref.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "liquid-glass flex items-center gap-4 p-4 rounded-[2rem] border border-site w-full sm:w-[calc(50%-8px)] lg:w-60",
-                  "transition-all duration-300 hover:scale-[1.02] hover:border-[var(--text-sage)]/30 group cursor-pointer"
-                )}
-              >
-                <div className="h-10 w-10 shrink-0 rounded-2xl bg-[#8ba394]/10 border border-[#8ba394]/20 flex items-center justify-center transition-colors group-hover:bg-[#8ba394]/20">
-                  <Icon className="h-5 w-5 text-[var(--text-sage)] transition-transform group-hover:scale-110" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-[10px] font-bold uppercase tracking-widest text-site">
-                    {ref.name}
-                  </h3>
-                  <p className="text-[9px] text-[var(--site-muted)] font-medium mt-0.5">{ref.label}</p>
-                  <p className="text-[8px] text-[var(--site-muted)] font-light mt-0.5 line-clamp-1 opacity-80">{ref.desc}</p>
-                </div>
-              </a>
-            );
-          })}
+  return (
+    <section className="w-full bg-[var(--site-surface)]/30 border-y border-site py-8 relative overflow-hidden transition-colors duration-500">
+      {/* Premium Vignette/Blur Fade Out on Edges */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[var(--site-bg)] to-transparent z-20" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[var(--site-bg)] to-transparent z-20" />
+
+      <div className="w-full relative z-10 flex flex-col items-center">
+        <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.3em] text-[#8ba394] mb-5">
+          Présence en ligne & Références
+        </span>
+
+        {/* Infinite Ticker Container */}
+        <div className="w-full overflow-hidden py-2 flex">
+          <div className="animate-marquee flex items-center">
+            {duplicatedReferences.map((ref, idx) => {
+              const Icon = ref.icon;
+              return (
+                <a
+                  key={`${ref.name}-${idx}`}
+                  href={ref.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-6 py-2.5 rounded-full border border-site bg-[var(--site-surface)] transition-all duration-300 hover:border-[#8ba394]/30 hover:bg-[#8ba394]/5 hover:text-site whitespace-nowrap text-[var(--site-muted)] font-medium tracking-wide mx-3 group shrink-0"
+                >
+                  <Icon className="h-4 w-4 text-[#8ba394] transition-transform group-hover:scale-110" />
+                  <span className="text-[10px] uppercase tracking-widest">{ref.name}</span>
+                  <span className="text-[8px] opacity-60 font-light border-l border-site pl-2">{ref.label}</span>
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

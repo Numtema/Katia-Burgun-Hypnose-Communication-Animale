@@ -2,12 +2,50 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle, Heart, MessageSquare, Phone, MapPin, Calendar, Star, ShieldCheck, Zap, Users } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Heart, MessageSquare, Phone, MapPin, Calendar, Star, ShieldCheck, Zap, Users, Newspaper, Linkedin, Facebook, Palette } from 'lucide-react';
 import Image from 'next/image';
 import { SectionBadge, BlurText, PrimaryButton } from '../../components/UI';
 
 const portraitKatia = "/assets/katia-burgun-hypnotherapeute-normandie.jpeg";
 const diplomeKatia = "/assets/Formation katia burgun formation.png";
+
+const REFERENCES = [
+  {
+    name: "Actu.fr",
+    icon: Newspaper,
+    label: "Presse Locale Caux",
+    desc: "Salon des Calètes & Actu",
+    link: "https://actu.fr",
+  },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    label: "Profil Pro",
+    desc: "Cabinet d'Hypnothérapie",
+    link: "https://fr.linkedin.com/in/katia-burgun-365b55195",
+  },
+  {
+    name: "Facebook",
+    icon: Facebook,
+    label: "Échanges & Conseils",
+    desc: "Com. Intuitive Animaux",
+    link: "https://www.facebook.com/100068454903116",
+  },
+  {
+    name: "Galerie-Création",
+    icon: Palette,
+    label: "Art & Créations",
+    desc: "Œuvres sous signature Slessareff",
+    link: "https://galerie-creation.com/_shop/katia-burgun-slessareff/10546/",
+  },
+  {
+    name: "Autour de moi",
+    icon: MapPin,
+    label: "Annuaire Pro",
+    desc: "Présence Locale Houdetot",
+    link: "https://service-d-hypnotherapie.autour-de-moi.com/",
+  }
+];
 
 export default function Bio() {
   return (
@@ -276,16 +314,53 @@ export default function Bio() {
       </section>
 
       {/* Vision Section */}
-      <section className="py-24 px-6 lg:px-16 text-center bg-site">
-        <div className="mx-auto max-w-3xl">
+      <section className="py-24 px-6 lg:px-16 text-center bg-site border-b border-site">
+        <div className="mx-auto max-w-3xl mb-16">
            <SectionBadge>Intention</SectionBadge>
            <h2 className="mt-8 text-4xl sm:text-5xl text-site font-heading italic mb-10 leading-tight text-balance">Ce que je souhaite <span className="text-[#8ba394]">transmettre</span></h2>
            <p className="text-[var(--site-muted)] font-light leading-relaxed mb-12 text-lg italic">
             "Je souhaite créer un espace où l’on peut déposer ce qui pèse, écouter ce que cherche à se dire, et avancer avec plus de clarté."
            </p>
-           <p className="text-site font-medium uppercase tracking-[0.3em] text-[11px] mb-16">
+           <p className="text-site font-medium uppercase tracking-[0.3em] text-[11px]">
             Que l’accompagnement concerne l’humain, l’animal, ou le lien entre les deux, mon intention reste la même : accueillir avec respect, transmettre avec sincérité, et accompagner avec délicatesse.
            </p>
+        </div>
+
+        {/* Dynamic Presence Grid */}
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="mb-10 text-center">
+            <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.25em] text-[#8ba394]">
+              Présence en ligne & Références locales
+            </span>
+            <h3 className="mt-2 text-xl font-heading italic text-site">
+              Retrouvez mes publications, profils & activités artistiques
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-center text-left">
+            {REFERENCES.map((ref) => {
+              const Icon = ref.icon;
+              return (
+                <a
+                  key={ref.name}
+                  href={ref.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[var(--site-surface)] flex items-center gap-4 p-5 rounded-[2rem] border border-site transition-all duration-300 hover:scale-[1.02] hover:border-[#8ba394]/30 group cursor-pointer"
+                >
+                  <div className="h-10 w-10 shrink-0 rounded-2xl bg-[#8ba394]/10 border border-[#8ba394]/20 flex items-center justify-center transition-colors group-hover:bg-[#8ba394]/20">
+                    <Icon className="h-5 w-5 text-[#8ba394] transition-transform group-hover:scale-110" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-site">
+                      {ref.name}
+                    </h4>
+                    <p className="text-[9px] text-[var(--site-muted)] font-medium mt-0.5">{ref.label}</p>
+                    <p className="text-[8px] text-[var(--site-muted)] font-light mt-0.5 line-clamp-1 opacity-80">{ref.desc}</p>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
         </div>
       </section>
 
