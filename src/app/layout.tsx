@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
@@ -75,6 +75,11 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Katia Burgun | Hypnose & Communication Animale",
+    "alternateName": [
+      "Katia Burgun Slessareff",
+      "Katia Burgun-Hoerle",
+      "Katia Burgun Hoerle"
+    ],
     "image": "https://www.katiaburgun.com/assets/katia-burgun-hypnotherapeute-normandie.jpeg",
     "@id": "https://www.katiaburgun.com",
     "url": "https://www.katiaburgun.com",
@@ -102,12 +107,22 @@ const jsonLd = [
       ],
       "opens": "09:00",
       "closes": "19:00"
-    }
+    },
+    "sameAs": [
+      "https://fr.linkedin.com/in/katia-burgun-365b55195",
+      "https://www.facebook.com/100068454903116",
+      "https://galerie-creation.com/_shop/katia-burgun-slessareff/10546/"
+    ]
   },
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Katia Burgun",
+    "alternateName": [
+      "Katia Burgun Slessareff",
+      "Katia Burgun-Hoerle",
+      "Katia Burgun Hoerle"
+    ],
     "url": "https://www.katiaburgun.com",
     "jobTitle": "Praticienne en hypnose et communication animale",
     "knowsAbout": [
@@ -118,16 +133,29 @@ const jsonLd = [
       "Formation initiation"
     ],
     "sameAs": [
+      "https://fr.linkedin.com/in/katia-burgun-365b55195",
+      "https://www.facebook.com/100068454903116",
       "https://www.facebook.com/katiaburgun",
-      "https://www.instagram.com/katiaburgun"
+      "https://www.instagram.com/katiaburgun",
+      "https://galerie-creation.com/_shop/katia-burgun-slessareff/10546/"
     ]
   },
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Katia Burgun",
+    "alternateName": [
+      "Katia Burgun Slessareff",
+      "Katia Burgun-Hoerle",
+      "Katia Burgun Hoerle"
+    ],
     "url": "https://www.katiaburgun.com",
-    "logo": "https://www.katiaburgun.com/assets/katia-burgun-hypnotherapeute-normandie.jpeg"
+    "logo": "https://www.katiaburgun.com/assets/katia-burgun-hypnotherapeute-normandie.jpeg",
+    "sameAs": [
+      "https://fr.linkedin.com/in/katia-burgun-365b55195",
+      "https://www.facebook.com/100068454903116",
+      "https://galerie-creation.com/_shop/katia-burgun-slessareff/10546/"
+    ]
   }
 ];
 
