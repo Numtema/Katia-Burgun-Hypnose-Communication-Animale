@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ContactSection from "../components/ContactSection";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import { ThemeProvider } from "../context/ThemeContext";
+import { Analytics } from "@vercel/analytics/next";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -182,6 +183,7 @@ export default function RootLayout({
             <FloatingWhatsApp />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
