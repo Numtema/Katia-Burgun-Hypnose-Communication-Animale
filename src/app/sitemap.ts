@@ -20,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/prendre-rendez-vous', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/legal/mentions-legales', priority: 0.3, changeFrequency: 'yearly' as const },
     { url: '/legal/politique-confidentialite', priority: 0.3, changeFrequency: 'yearly' as const },
+    { url: '/legal/cgv', priority: 0.3, changeFrequency: 'yearly' as const },
+    { url: '/legal/cookies', priority: 0.3, changeFrequency: 'yearly' as const },
   ];
 
   return routes.map((route) => ({
