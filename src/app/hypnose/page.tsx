@@ -85,6 +85,18 @@ export default function Hypnose() {
       <Process />
       <Pricing />
       <PracticalInfo />
+
+      {/* Section Zone d'intervention SEO */}
+      <section className="py-16 px-6 bg-[var(--site-surface)] border-t border-site text-center">
+        <div className="mx-auto max-w-4xl">
+          <SectionBadge className="mb-4">Proximité</SectionBadge>
+          <h3 className="text-site font-heading italic text-2xl mb-6">Cabinet d'hypnothérapie en Seine-Maritime (76)</h3>
+          <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed max-w-3xl mx-auto">
+            Situé à <strong>Houdetot</strong> (76740), le cabinet d'hypnothérapie de Katia Burgun accueille des consultants venus de toute la Haute-Normandie, notamment des communes de <strong>Saint-Valery-en-Caux</strong>, <strong>Yvetot</strong>, <strong>Fécamp</strong>, <strong>Luneray</strong>, <strong>Doudeville</strong>, <strong>Cany-Barville</strong>, <strong>Yerville</strong>, <strong>Fontaine-le-Dun</strong> et <strong>Dieppe</strong>. Les consultations d'hypnose ericksonienne s'adressent aux adultes, adolescents et enfants pour l'accompagnement du stress, de l'anxiété (angoisses), des insomnies (sommeil), des phobies (peurs), de l'arrêt du tabac (sevrage tabagique), du burn-out, du deuil, du bruxisme, des acouphènes et de la perte de poids. Les séances sont également disponibles à distance (visioconférence).
+          </p>
+        </div>
+      </section>
+
       <FAQ items={faqs} />
 
       {/* Final CTA */}

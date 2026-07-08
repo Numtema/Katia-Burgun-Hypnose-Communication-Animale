@@ -87,6 +87,18 @@ export default function CommunicationAnimale() {
       <Species />
       <Process />
       <Philosophy />
+
+      {/* Section Zone d'intervention SEO */}
+      <section className="py-16 px-6 bg-[var(--site-surface)] border-t border-site text-center">
+        <div className="mx-auto max-w-4xl">
+          <SectionBadge className="mb-4">Zone d'accompagnement</SectionBadge>
+          <h3 className="text-site font-heading italic text-2xl mb-6">Communication Animale en Normandie & à distance</h3>
+          <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed max-w-3xl mx-auto">
+            Katia Burgun propose des séances de communication animale intuitive à distance (sur photo) dans toute la France, et accueille les gardiens d'animaux de Seine-Maritime (76) : <strong>Saint-Valery-en-Caux</strong>, <strong>Yvetot</strong>, <strong>Fécamp</strong>, <strong>Luneray</strong>, <strong>Doudeville</strong>, <strong>Cany-Barville</strong>, <strong>Yerville</strong>, <strong>Houdetot</strong> et <strong>Dieppe</strong>. Cette approche de communication d'âme à d'âme s'adresse aux chiens, chats, chevaux, oiseaux et NAC pour décoder leurs comportements, accompagner les transitions de vie (déménagement, séparation, fin de vie, deuil animal) et renforcer votre relation.
+          </p>
+        </div>
+      </section>
+
       <FAQ items={faqs} />
 
       {/* Final CTA Section */}
