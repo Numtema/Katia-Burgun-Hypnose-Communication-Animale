@@ -33,7 +33,7 @@ export default function Tarifs() {
     },
     {
       title: 'Hypnose ericksonienne',
-      price: '60 €',
+      price: '70 €',
       duration: 'Séance individuelle',
       desc: 'Un accompagnement bienveillant pour apaiser votre mental, dépasser certains blocages et retrouver un meilleur équilibre.',
       sections: [

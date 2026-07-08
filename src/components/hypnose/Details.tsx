@@ -45,7 +45,7 @@ export const Pricing = () => (
         <SectionBadge>Accompagnement individuel</SectionBadge>
         <h2 className="mt-6 text-3xl sm:text-4xl font-heading italic text-site mb-2">Hypnose ericksonienne</h2>
         <p className="text-[var(--site-muted)] text-sm font-light mb-8 italic">Un espace de calme pour votre évolution personnelle.</p>
-        <div className="text-6xl font-heading italic text-[#8ba394] mb-4">60 €</div>
+        <div className="text-6xl font-heading italic text-[#8ba394] mb-4">70 €</div>
         <p className="text-[10px] uppercase tracking-widest font-bold text-[var(--site-muted)] mb-8">
           Les effets d’un accompagnement hypnotique peuvent continuer à se déployer après le rendez-vous, selon votre rythme et ce qui a été travaillé pendant la séance.
         </p>

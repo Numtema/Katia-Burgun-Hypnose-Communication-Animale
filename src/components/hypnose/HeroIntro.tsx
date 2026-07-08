@@ -23,7 +23,7 @@ export const Hero = ({ image }: HeroProps) => (
         </p>
 
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-6 text-site opacity-90 font-medium text-[10px] uppercase tracking-widest">
-           <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">60 €</div> Par séance</div>
+           <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">70 €</div> Par séance</div>
            <div><div className="text-xl font-heading italic text-[#8ba394] mb-1">1h à 1h30</div> Durée moyenne</div>
            <div><div className="text-xl text-nowrap font-heading italic text-[#8ba394] mb-1">Houdetot / Visio</div> Lieux de consultation</div>
         </div>

@@ -36,7 +36,7 @@ export default function ServicesDetails() {
                  <span className="text-[var(--site-muted)] font-light leading-relaxed">Stress, anxiété, sommeil, surcharge émotionnelle, manque de confiance, schémas répétitifs, besoin de recentrage.</span>
               </div>
               <div className="flex items-center gap-3 mb-8 bg-[var(--site-surface)] px-6 py-3 rounded-full border border-site">
-                <span className="text-[var(--text-sage)] font-heading italic text-xl">60 €</span>
+                <span className="text-[var(--text-sage)] font-heading italic text-xl">70 €</span>
                 <span className="text-[10px] uppercase tracking-widest font-bold text-[var(--site-muted)]">La séance d'1h30</span>
               </div>
               <div className="flex flex-wrap gap-4">

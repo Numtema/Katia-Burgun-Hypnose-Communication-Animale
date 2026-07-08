@@ -218,7 +218,7 @@ export default function LegalPage() {
                  <h3 className="text-site font-body font-medium mb-4">Article 2 — Prestations</h3>
                  <p className="mb-4">Les prestations proposées sont :</p>
                  <ul className="list-disc pl-5 space-y-2 opacity-80">
-                   <li><strong>Séances d'hypnose ericksonienne :</strong> 60€ la séance (1h à 1h30), en cabinet ou en visio</li>
+                   <li><strong>Séances d'hypnose ericksonienne :</strong> 70€ la séance (1h à 1h30), en cabinet ou en visio</li>
                    <li><strong>Consultations en communication animale :</strong> 80€ la consultation, exclusivement à distance</li>
                    <li><strong>Formations d'initiation :</strong> 150€ par personne, journée complète à Houdetot</li>
                  </ul>
