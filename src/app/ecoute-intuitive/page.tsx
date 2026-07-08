@@ -4,8 +4,8 @@ import { Eye, MessageCircle, Heart, Star } from 'lucide-react';
 import { SectionBadge, BlurText } from '../../components/UI';
 
 export const metadata = {
-  title: "Écoute Intuitive | Katia Burgun",
-  description: "Découvrez l'écoute intuitive, une approche sensible pour comprendre les messages subtils de votre environnement et de vos animaux.",
+  title: "Écoute Intuitive | Katia Burgun Normandie",
+  description: "Découvrez l'écoute intuitive, une approche sensible pour décoder les ressentis de vos animaux et de votre environnement en Normandie.",
 };
 
 export default function EcouteIntuitivePage() {

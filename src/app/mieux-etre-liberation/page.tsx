@@ -4,8 +4,8 @@ import { Sparkles, Wind, Heart, Moon } from 'lucide-react';
 import { SectionBadge, BlurText } from '../../components/UI';
 
 export const metadata = {
-  title: "Mieux-être et Libération | Katia Burgun",
-  description: "Retrouvez votre équilibre intérieur avec les séances de mieux-être et de libération émotionnelle proposées par Katia Burgun.",
+  title: "Mieux-être & Libération Émotionnelle | Katia Burgun Normandie",
+  description: "Retrouvez votre équilibre et libérez vos blocages émotionnels à Houdetot (76) ou à distance avec Katia Burgun.",
 };
 
 export default function MieuxEtrePage() {

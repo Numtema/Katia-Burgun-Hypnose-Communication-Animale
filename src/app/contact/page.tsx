@@ -2,8 +2,8 @@ import React from 'react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 export const metadata = {
-  title: "Contact | Katia Burgun",
-  description: "Contactez Katia Burgun pour une séance d'hypnose ou de communication animale en Normandie ou à distance.",
+  title: "Contact & Prendre RDV | Katia Burgun Hypnothérapeute Houdetot",
+  description: "Prenez rendez-vous pour une séance d'hypnose ericksonienne ou une consultation de communication animale à Houdetot (Seine-Maritime) ou en ligne.",
 };
 
 export default function ContactPage() {

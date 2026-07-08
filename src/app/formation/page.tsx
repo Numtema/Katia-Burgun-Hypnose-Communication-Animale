@@ -283,6 +283,17 @@ export default function Formation() {
         </div>
       </section>
 
+      {/* Section Zone d'intervention SEO */}
+      <section className="py-16 px-6 bg-[var(--site-surface)] border-t border-site text-center">
+        <div className="mx-auto max-w-4xl">
+          <SectionBadge className="mb-4">Zone de formation</SectionBadge>
+          <h3 className="text-site font-heading italic text-2xl mb-6">Stages de Communication Animale en Normandie</h3>
+          <p className="text-[var(--site-muted)] text-sm font-light leading-relaxed max-w-3xl mx-auto">
+            Les ateliers et formations d'initiation à la communication animale de Katia Burgun se déroulent à <strong>Houdetot</strong> (76740), idéalement situés pour accueillir les stagiaires de Seine-Maritime et de toute la Normandie, notamment depuis <strong>Saint-Valery-en-Caux</strong>, <strong>Yvetot</strong>, <strong>Fécamp</strong>, <strong>Luneray</strong>, <strong>Doudeville</strong>, <strong>Cany-Barville</strong>, <strong>Yerville</strong>, <strong>Dieppe</strong>, <strong>Rouen</strong> et <strong>Le Havre</strong>. Apprenez à vous connecter intuitivement avec vos compagnons lors de ces journées d'initiation pratiques en petit groupe.
+          </p>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 px-6 lg:px-16 text-center">
         <div className="mx-auto max-w-2xl">
