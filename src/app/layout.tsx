@@ -6,6 +6,7 @@ import ContactSection from "../components/ContactSection";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import { ThemeProvider } from "../context/ThemeContext";
 import Script from "next/script";
+import CookieBanner from "../components/CookieBanner";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -196,6 +197,7 @@ export default function RootLayout({
             <ContactSection />
             <Footer />
             <FloatingWhatsApp />
+            <CookieBanner />
           </div>
         </ThemeProvider>
       </body>

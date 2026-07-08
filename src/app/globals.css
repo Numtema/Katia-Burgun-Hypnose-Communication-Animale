@@ -218,3 +218,48 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* CookieConsent Custom Theme variables adapted to Katia's website */
+#cc-main {
+  --cc-bg: var(--site-surface-solid);
+  --cc-primary-color: var(--site-fg);
+  --cc-secondary-color: var(--site-muted);
+
+  --cc-btn-primary-bg: #8ba394;
+  --cc-btn-primary-color: #ffffff;
+  --cc-btn-primary-hover-bg: #778e80;
+  --cc-btn-primary-hover-color: #ffffff;
+
+  --cc-btn-secondary-bg: var(--site-surface);
+  --cc-btn-secondary-color: var(--site-fg);
+  --cc-btn-secondary-hover-bg: var(--site-border);
+  --cc-btn-secondary-hover-color: var(--site-fg);
+  --cc-btn-secondary-border-color: var(--site-border);
+
+  --cc-cookie-category-block-bg: var(--site-surface);
+  --cc-cookie-category-block-border: var(--site-border);
+  --cc-cookie-category-block-hover-bg: var(--site-surface);
+  --cc-cookie-category-block-hover-border: #8ba394;
+  --cc-cookie-category-expanded-block-hover-bg: var(--site-surface);
+  --cc-cookie-category-expanded-block-bg: var(--site-surface-solid);
+
+  --cc-overlay-bg: rgba(0, 0, 0, 0.8) !important;
+
+  --cc-toggle-readonly-bg: var(--site-border);
+  --cc-toggle-on-knob-bg: var(--site-surface-solid);
+  --cc-toggle-off-bg: var(--site-muted);
+  --cc-toggle-readonly-knob-bg: var(--site-surface-solid);
+
+  --cc-separator-border-color: var(--site-border);
+
+  --cc-footer-border-color: var(--site-border);
+  --cc-footer-bg: var(--site-surface-solid);
+
+  --cc-btn-border-radius: 2rem;
+  --cc-modal-border-radius: 2.5rem;
+}
+
+#cc-main .cm,
+#cc-main .pm {
+  border: 1px solid var(--site-border);
+}
